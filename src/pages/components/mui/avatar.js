@@ -1,25 +1,25 @@
 // @mui
-import { useTheme, styled } from '@mui/material/styles';
-import { Box, Badge, Container, AvatarGroup } from '@mui/material';
-import { Masonry } from '@mui/lab';
+import { useTheme, styled } from "@mui/material/styles";
+import { Box, Badge, Container, AvatarGroup } from "@mui/material";
+import { Masonry } from "@mui/lab";
 // routes
-import { PATH_PAGE } from '../../../routes/paths';
+import { PATH_PAGE } from "../../../routes/paths";
 // layouts
-import Layout from '../../../layouts';
+import Layout from "../../../layouts";
 // components
-import Page from '../../../components/Page';
-import Avatar from '../../../components/Avatar';
-import Iconify from '../../../components/Iconify';
-import BadgeStatus from '../../../components/BadgeStatus';
-import HeaderBreadcrumbs from '../../../components/HeaderBreadcrumbs';
+import Page from "../../../components/Page";
+import Avatar from "../../../components/Avatar";
+import Iconify from "../../../components/Iconify";
+// import BadgeStatus from '../../../components/BadgeStatus';
+import HeaderBreadcrumbs from "../../../components/HeaderBreadcrumbs";
 // sections
-import { Block } from '../../../sections/overview/Block';
+import { Block } from "../../../sections/overview/Block";
 
 // ----------------------------------------------------------------------
 
-const RootStyle = styled('div')(({ theme }) => ({
+const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(11),
-  paddingBottom: theme.spacing(15),
+  paddingBottom: theme.spacing(15)
 }));
 
 // ----------------------------------------------------------------------
@@ -41,13 +41,17 @@ export default function MUIAvatar() {
             pt: 6,
             pb: 1,
             mb: 10,
-            bgcolor: (theme) => (theme.palette.mode === 'light' ? 'grey.200' : 'grey.800'),
+            bgcolor: (theme) =>
+              theme.palette.mode === "light" ? "grey.200" : "grey.800"
           }}
         >
           <Container>
             <HeaderBreadcrumbs
               heading="Avatar"
-              links={[{ name: 'Components', href: PATH_PAGE.components }, { name: 'Avatar' }]}
+              links={[
+                { name: "Components", href: PATH_PAGE.components },
+                { name: "Avatar" }
+              ]}
               moreLink="https://mui.com/components/avatars"
             />
           </Container>
@@ -57,10 +61,10 @@ export default function MUIAvatar() {
             <Block
               title="Image avatars"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               {[1, 2, 3, 4, 5].map((_, index) => (
@@ -75,10 +79,10 @@ export default function MUIAvatar() {
             <Block
               title="Letter avatars"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               <Avatar>H</Avatar>
@@ -92,10 +96,10 @@ export default function MUIAvatar() {
             <Block
               title="Icon avatars"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               <Avatar color="primary">
@@ -112,10 +116,10 @@ export default function MUIAvatar() {
             <Block
               title="Variant"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               <Avatar variant="square" color="primary">
@@ -126,7 +130,14 @@ export default function MUIAvatar() {
               </Avatar>
             </Block>
 
-            <Block title="Grouped" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Block
+              title="Grouped"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
               <AvatarGroup max={4}>
                 <Avatar
                   alt="Remy Sharp"
@@ -159,17 +170,17 @@ export default function MUIAvatar() {
             <Block
               title="With badge"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               <Badge
                 overlap="circular"
                 anchorOrigin={{
-                  vertical: 'bottom',
-                  horizontal: 'right',
+                  vertical: "bottom",
+                  horizontal: "right"
                 }}
                 badgeContent={
                   <Avatar
@@ -178,7 +189,7 @@ export default function MUIAvatar() {
                     sx={{
                       width: 24,
                       height: 24,
-                      border: `solid 2px ${theme.palette.background.paper}`,
+                      border: `solid 2px ${theme.palette.background.paper}`
                     }}
                   />
                 }
@@ -189,13 +200,13 @@ export default function MUIAvatar() {
                 />
               </Badge>
 
-              {['online', 'away', 'busy', 'invisible'].map((status, index) => (
-                <Box key={status} sx={{ position: 'relative' }}>
+              {["online", "away", "busy", "invisible"].map((status, index) => (
+                <Box key={status} sx={{ position: "relative" }}>
                   <Avatar
                     alt="Travis Howard"
                     src={`/assets/images/avatars/avatar_${index + 7}.jpg`}
                   />
-                  <BadgeStatus status={status} sx={{ right: 2, bottom: 2, position: 'absolute' }} />
+                  {/* <BadgeStatus status={status} sx={{ right: 2, bottom: 2, position: 'absolute' }} /> */}
                 </Box>
               ))}
             </Block>
@@ -203,10 +214,10 @@ export default function MUIAvatar() {
             <Block
               title="Sizes"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                '& > *': { mx: 1 },
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                "& > *": { mx: 1 }
               }}
             >
               {[24, 32, 48, 56, 64, 80, 128].map((size, index) => (

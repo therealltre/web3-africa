@@ -18,7 +18,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   // backgroundPosition: "center",
   height: "100vh",
   // objectFit: "fill",
-  backgroundColor: "#060606",
+  // backgroundColor: "#060606",
 
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
