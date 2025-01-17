@@ -154,14 +154,16 @@ export default function HomeEducation() {
     <RootStyle>
       <Container
         component={MotionViewport}
-        // sx={{
-        //   textAlign: "start",
-        //   mb: { xs: 10, md: 10 },
-        //   backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
-        //   backgroundRepeat: "no-repeat",
-        //   backgroundSize: "cover",
-        //   backgroundPosition: "right"
-        // }}
+        sx={{
+          textAlign: "start",
+          mb: { xs: 10, md: 10 },
+          backgroundImage: `url('/assets/images/home/african-woman-head.png')`,
+          // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "contain",
+          height: '60vh',
+          backgroundPosition: "right"
+        }}
       >
         <Box
           sx={{
@@ -216,16 +218,16 @@ export default function HomeEducation() {
           </Box>
         </Box>
 
-        <ContentStyle
-          sx={{
-            backgroundImage: `url('/assets/images/home/bg-african-pattern.png')`,
-            // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            zindex: 1
-          }}
-        >
+        {/* <ContentStyle
+          // sx={{
+          //   backgroundImage: `url('/assets/images/home/bg-african-pattern.png')`,
+          //   // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
+          //   backgroundRepeat: "no-repeat",
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          //   zindex: 1
+          // }}
+        > */}
           <Box
             sx={{
               display: "grid",
@@ -288,7 +290,7 @@ export default function HomeEducation() {
               </m.div>
             ))}
           </Box>
-        </ContentStyle>
+        {/* </ContentStyle> */}
 
         <Box
           sx={{
