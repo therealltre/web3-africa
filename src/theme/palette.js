@@ -22,9 +22,9 @@ const SECONDARY = {
   darker: "#FFD700"
 };
 const TEXT = {
-  main: '#333333',
-  dark: '#060606'
-}
+  main: "#333333",
+  dark: "#060606"
+};
 const INFO = {
   lighter: "#D0F2FF",
   light: "#74CAFF",
@@ -121,7 +121,8 @@ const palette = {
     ...COMMON,
     mode: "light",
     text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
-    background: { paper: "#fff", default: "#F4F6F8", neutral: GREY[200] }, //background and paper colors
+    background: { paper: "#F4EBD9", default: "#F4EBD9", neutral: GREY[500_16] },
+    // background: { paper: "#fff", default: "#F4F6F8", neutral: GREY[200] }, //background and paper colors
     action: { active: GREY[600], ...COMMON.action }
   },
   dark: {

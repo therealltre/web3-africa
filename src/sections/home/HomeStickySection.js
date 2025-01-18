@@ -51,7 +51,7 @@ export default function HomeStickySection() {
       <Box
         sx={{
           height: "auto", // Adjust this to match the height of your overlapping sections
-          background: "linear-gradient(to bottom, #ffffff, #f4f4f4)", // Example background for the next section
+          background: "linear-gradient(to bottom, #f4f4f4, #F4EBD9)", // Example background for the next section
           position: "relative",
           zIndex: 2 // Higher z-index to overlap the sticky Hero section
         }}

@@ -161,7 +161,7 @@ export default function HomeEducation() {
           // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-          height: '60vh',
+          height: '100%',
           backgroundPosition: "right"
         }}
       >
