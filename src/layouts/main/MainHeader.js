@@ -58,7 +58,8 @@ export default function MainHeader() {
   const isHome = pathname === "/";
 
   return (
-    <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
+    // <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
+     <AppBar sx={{ boxShadow: 0, bgcolor: "#333333" }}>
       <ToolbarStyle
         disableGutters
         sx={{
@@ -77,7 +78,7 @@ export default function MainHeader() {
         >
           <NextLink href="/">
             <Image
-              src="/assets/images/brand/w3a-logo-black.png"
+              src="/assets/images/brand/w3a-logo.png"
               alt="Web3 Africa Logo"
               width={92}
               height={40}

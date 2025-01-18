@@ -1,7 +1,9 @@
 // routes
 import { PATH_DASHBOARD } from "./routes/paths";
 
-// LAYOUT
+
+// API
+export const MAPBOX_API = process.env.NEXT_PUBLIC_MAP_API_KEY;
 // ----------------------------------------------------------------------
 
 export const HEADER = {

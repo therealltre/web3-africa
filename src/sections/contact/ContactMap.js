@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useTheme, styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
 // _mock
-import { _mapContact } from "../../_mock";
+import { _mapContact } from "@/_mock";
 // config
 import { MAPBOX_API } from "../../config";
 // components
@@ -20,6 +20,7 @@ import {
   MapControlNavigation,
   MapControlFullscreen
 } from "../../components/map";
+
 
 // ----------------------------------------------------------------------
 

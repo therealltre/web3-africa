@@ -28,10 +28,10 @@ export default function LogoOnlyLayout({ children }) {
     <>
       <HeaderStyle>
         <Image
-          src="/assets/images/brand/w3a-logo.png"
+          src="/assets/images/brand/w3a-logo-black.png"
           alt="brand name"
-          width={324}
-          height={140}
+          width={104}
+          height={50}
         />
       </HeaderStyle>
       {children}

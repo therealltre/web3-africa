@@ -1,5 +1,7 @@
 // ----------------------------------------------------------------------
 
+import { Component } from "react";
+
 export const PATH_PAGE = {
   comingSoon: "/coming-soon",
   maintenance: "/maintenance",
@@ -9,5 +11,6 @@ export const PATH_PAGE = {
   partnerships: "/partnerships",
   faqs: "/faqs",
   page404: "/404",
-  page500: "/500"
+  page500: "/500",
+  
 };

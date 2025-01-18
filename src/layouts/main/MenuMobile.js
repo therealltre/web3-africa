@@ -95,16 +95,15 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
         open={drawerOpen}
         onClose={handleDrawerClose}
         ModalProps={{ keepMounted: true }}
-        PaperProps={{ sx: { pb: 5, width: { xs: 390, md: 600 } } }} //mobile sidebar width
+        PaperProps={{ sx: { pb: 5, width: { xs: "100%", md: 600 } } }} //mobile sidebar width
       >
         <Scrollbar>
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-
-            <Box sx={{m:2.5}}>
+            <Box sx={{ m: 2.5 }}>
               <NextLink href="/">
                 <Image
                   src="/assets/images/brand/w3a-logo-black.png"
-                  alt="Web3 Africa Logo"
+                  alt="Web3AfricaGroup Logo"
                   width={92}
                   height={40}
                   sx={{ mx: 2.5, my: 2.5 }}
