@@ -28,8 +28,9 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   position: "sticky",
   top: 0,
   width: "100%",
-  height: "100%",
+  height: "100vh",
   zIndex: 1,
+  backgroundColor: "#333333",
   [theme.breakpoints.up("md")]: {
     display: "flex",
     alignItems: "center"
@@ -43,7 +44,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   zIndex: -1,
   width: "100%",
   height: "100%",
-  objectFit: "cover",
+  objectfit: "conver",
   backgroundColor: "#060606"
 }));
 
@@ -56,7 +57,7 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
     textAlign: "start",
     display: "flex",
     justifyContent: "start",
-    padding: theme.spacing(10, 2),
+    padding: theme.spacing(15, 2),
     [theme.breakpoints.up("md")]: {
       textAlign: "start",
       padding: theme.spacing(15)
@@ -71,20 +72,14 @@ export default function HomeHero() {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
 
-  const logos = [
-    "/assets/images/home/bank-of-ghana.png",
-    "/assets/images/home/gse.png",
-    "/assets/images/home/telos-x.png",
-    "/assets/images/home/un-digital-library.png",
-    "/assets/images/home/global_citizen.png"
-  ];
-
   return (
     <MotionContainer>
       <RootStyle>
         <HeroImgStyle
           alt="hero"
-          src="/assets/images/home/hero2.png"
+          src="/assets/images/home/african-patter-no-bg.png"
+          // src="/assets/images/home/bg-african-pattern.png"
+          // src="/assets/images/home/hero2.png"
           variants={varFade().inUp}
         />
 
@@ -102,7 +97,8 @@ export default function HomeHero() {
                       sx={{
                         fontSize: { xs: 42, lg: 72 },
                         fontWeight: 700,
-                        lineHeight: 1
+                        lineHeight: 1,
+                        color: "common.white"
                       }}
                     >
                       Leading Africa's <br /> Decentralized <br /> Revolution
@@ -112,7 +108,8 @@ export default function HomeHero() {
                       variant="subtitle2"
                       sx={{
                         fontSize: { xs: 18, lg: 24 },
-                        marginTop: 2
+                        marginTop: 2,
+                        color: "common.white"
                       }}
                     >
                       Empowering innovators to thrive in blockchain, Defi, and
@@ -159,10 +156,10 @@ export default function HomeHero() {
 
               <Grid item xs={12} md={6} sx={{ mt: 4 }}>
                 <m.div
-                  // variants={varFade().inUp}
+                // variants={varFade().inUp}
 
-                  // animate={{ y: [-20, 0, -20] }}
-                  // transition={{ duration: 4, repeat: Infinity }}
+                // animate={{ y: [-20, 0, -20] }}
+                // transition={{ duration: 4, repeat: Infinity }}
                 >
                   <Box
                     sx={{

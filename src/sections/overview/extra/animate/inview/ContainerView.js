@@ -61,7 +61,7 @@ export default function ContainerView({ isText, isMulti, selectVariant, ...other
                 my: 2,
                 width: 480,
                 borderRadius: 1,
-                objectFit: 'cover',
+                objectfit: 'cover',
                 height: isMulti ? 72 : 320,
                 boxShadow: (theme) => theme.customShadows.z8,
               }}

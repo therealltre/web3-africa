@@ -29,22 +29,20 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   }
 }));
 
-const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
-  ({ theme }) => ({
-    zIndex: 2,
-    maxWidth: 1440,
-    margin: "auto",
-    position: "relative",
+const ContentStyle = styled((props) => <Stack {...props} />)(({ theme }) => ({
+  zIndex: 2,
+  maxWidth: 1440,
+  margin: "auto",
+  position: "relative",
+  textAlign: "start",
+  display: "flex",
+  justifyContent: "start",
+  padding: theme.spacing(10, 2),
+  [theme.breakpoints.up("md")]: {
     textAlign: "start",
-    display: "flex",
-    justifyContent: "start",
-    padding: theme.spacing(10, 2),
-    [theme.breakpoints.up("md")]: {
-      textAlign: "start",
-      padding: theme.spacing(15)
-    }
-  })
-);
+    padding: theme.spacing(15)
+  }
+}));
 
 // ----------------------------------------------------------------------
 
@@ -117,7 +115,7 @@ export default function NewsBlog() {
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover",
+                        objectfit: "cover",
                         zIndex: 1
                       }}
                     />

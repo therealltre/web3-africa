@@ -232,7 +232,7 @@ export default function HomeAboutWeb3AG() {
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover" // Ensure the image covers the card
+                        objectfit: "cover" // Ensure the image covers the card
                       }}
                     />
 

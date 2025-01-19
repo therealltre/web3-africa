@@ -36,7 +36,7 @@ export default function MainLayout({ children }) {
           py: 5,
           textAlign: "center",
           position: "relative",
-          bgcolor: "#060606"
+          bgcolor: "#333333"
         }}
       >
         <Container>

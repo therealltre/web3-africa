@@ -29,7 +29,7 @@ export default function ContainerView({ selectVariant, ...other }) {
           component={m.img}
           src="/assets/images/feeds/feed_8.jpg"
           {...getVariant(selectVariant)}
-          sx={{ width: 1, height: 1, objectFit: 'cover' }}
+          sx={{ width: 1, height: 1, objectfit: 'cover' }}
         />
       ) : (
         <Box component={m.div} {...getVariant(selectVariant)} sx={{ height: 1, width: 1 }} />

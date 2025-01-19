@@ -59,20 +59,24 @@ const TESTIMONIALS = [
   }
 ];
 
-const RootStyle = styled('div')(({ theme }) => ({
-  textAlign: 'center',
+const RootStyle = styled("div")(({ theme }) => ({
+  textAlign: "center",
   padding: theme.spacing(10, 0),
-  backgroundSize: 'cover',
-  backgroundImage: `linear-gradient(to right, ${alpha(theme.palette.grey[900], 0.8)} , ${alpha(
+  backgroundSize: "cover",
+  backgroundImage: `linear-gradient(to right, ${alpha(
     theme.palette.grey[900],
     0.8
-  )}), url(/assets/images/about/testimonials.jpg)`,
-  [theme.breakpoints.up('md')]: {
-    textAlign: 'left',
+  )} , ${alpha(
+    theme.palette.grey[900],
+    0.8
+  )}), 
+  url(/assets/images/about/testimonials.jpg)`,
+  [theme.breakpoints.up("md")]: {
+    textAlign: "left",
     padding: 0,
     height: 840,
-    overflow: 'hidden',
-  },
+    overflow: "hidden"
+  }
 }));
 
 const tickerVariants = {

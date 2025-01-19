@@ -37,7 +37,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     border: 0,
     maxWidth: 668,
     minWidth: 358,
-    minHeight: 300,
+    minHeight: 350,
     // minHeight: 272,
     maxHeight: 480,
     margin: "auto",
@@ -115,32 +115,25 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 
 const CARDS = [
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Blockchain 101",
+    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    title: "Blockchain Development",
     href: "#1",
     description:
-      "The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects."
+      "Leading the development of decentralized infrastructure across Africa, Web 3 Africa Group builds scalable blockchain solutions to enhance transparency, efficiency, and financial inclusion. Our innovative technologies aim to drive Africa’s digital transformation and economic growth."
   },
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Block Chain Development",
+    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    title: "Digital Assets Policy Frameworks",
     href: "#2",
     description:
-      "Easy to customize and extend each component, saving you time and money."
+      "Partnering with governments and policymakers, we strive to establish robust legal frameworks that encourage innovation while ensuring regulatory compliance. Our mission is to legitimize digital assets in Africa, positioning the continent as a global leader in the decentralized economy."
   },
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Modeling",
+    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    title: "Blockchain Education",
     href: "#3",
     description:
-      "Consistent design in colors, fonts ... makes brand recognition easy."
-  },
-  {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Structuring",
-    href: "#4",
-    description:
-      "Consistent design in colors, fonts ... makes brand recognition easy."
+      "Web 3 Africa Group is dedicated to equipping individuals with essential knowledge and skills for success in blockchain and digital asset industries. Through partnerships and educational initiatives, we lay the foundation for a new generation of African innovators and leaders in Web 3."
   }
 ];
 
@@ -161,7 +154,7 @@ export default function HomeEducation() {
           // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
-          height: '100%',
+          height: "100%",
           backgroundPosition: "right"
         }}
       >
@@ -228,68 +221,68 @@ export default function HomeEducation() {
           //   zindex: 1
           // }}
         > */}
-          <Box
-            sx={{
-              display: "grid",
-              gap: { xs: 4, md: 3 },
-              gridTemplateColumns: {
-                xs: "repeat(1, 1fr)",
-                md: "repeat(2, 1fr)",
-                lg: "repeat(2, 1fr)"
-              }
-            }}
-          >
-            {CARDS.map((card, index) => (
-              <m.div key={card.title} variants={varFade().inUp}>
-                <NextLink href={card.href} passHref>
-                  <Link
-                    underline="none"
+        <Box
+          sx={{
+            display: "grid",
+            gap: { xs: 4, md: 3 },
+            gridTemplateColumns: {
+              xs: "repeat(1, 1fr)",
+              md: "repeat(2, 1fr)",
+              lg: "repeat(2, 1fr)"
+            }
+          }}
+        >
+          {CARDS.map((card, index) => (
+            <m.div key={card.title} variants={varFade().inUp}>
+              <NextLink href={card.href} passHref>
+                <Link
+                  underline="none"
+                  sx={{
+                    textDecoration: "none",
+                    display: "block",
+                    cursor: "pointer"
+                  }}
+                >
+                  <CardStyle
                     sx={{
-                      textDecoration: "none",
-                      display: "block",
-                      cursor: "pointer"
+                      // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
+                      padding: { xs: 3, md: 5 },
+                      transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                      "&:hover": {
+                        color: "#fff", // Text color changes to white on hover
+                        borderRadius: 1, // Border radius stays consistent
+                        transform: "translateY(-5px)", // Moves the card up by 5px
+                        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                      }
                     }}
                   >
-                    <CardStyle
+                    <Image
+                      src={card.backgroundImage}
+                      alt={card.title}
                       sx={{
-                        maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                        padding: { xs: 3, md: 5 },
-                        transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                        "&:hover": {
-                          color: "#fff", // Text color changes to white on hover
-                          borderRadius: 1, // Border radius stays consistent
-                          transform: "translateY(-5px)", // Moves the card up by 5px
-                          boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                        }
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectfit: "cover" // Ensure the image covers the card
                       }}
-                    >
-                      <Image
-                        src={card.icon}
-                        alt={card.title}
-                        sx={{
-                          position: "absolute",
-                          top: 0,
-                          left: 0,
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover" // Ensure the image covers the card
-                        }}
-                      />
+                    />
 
-                      <ContentWrapper sx={{ textAlign: "start" }}>
-                        <Typography variant="h5" paragraph>
-                          {card.title}
-                        </Typography>
-                        <Typography variant="body1">
-                          {card.description}
-                        </Typography>
-                      </ContentWrapper>
-                    </CardStyle>
-                  </Link>
-                </NextLink>
-              </m.div>
-            ))}
-          </Box>
+                    <ContentWrapper sx={{ textAlign: "start" }}>
+                      <Typography variant="h5" paragraph>
+                        {card.title}
+                      </Typography>
+                      <Typography variant="body1">
+                        {card.description}
+                      </Typography>
+                    </ContentWrapper>
+                  </CardStyle>
+                </Link>
+              </NextLink>
+            </m.div>
+          ))}
+        </Box>
         {/* </ContentStyle> */}
 
         <Box

@@ -214,7 +214,7 @@ export default function HomeProjects() {
                 >
                   <CardStyle
                     sx={{
-                      maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
+                      // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
                       padding: { xs: 3, md: 5 },
                       transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
                       "&:hover": {
@@ -234,7 +234,7 @@ export default function HomeProjects() {
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        objectFit: "cover" // Ensure the image covers the card
+                        objectfit: "cover" // Ensure the image covers the card
                       }}
                     />
 

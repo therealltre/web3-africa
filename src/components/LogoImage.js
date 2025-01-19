@@ -1,25 +1,23 @@
-import PropTypes from 'prop-types';
-import { forwardRef } from 'react';
-import NextLink from 'next/link';
+import PropTypes from "prop-types";
+import { forwardRef } from "react";
+import NextLink from "next/link";
 // @mui
-import { Box } from '@mui/material';
-import Image from 'next/image';
+import { Box } from "@mui/material";
+import Image from "next/image";
 
 // ----------------------------------------------------------------------
 
 const LogoImage = forwardRef(({ disabledLink = false, sx }, ref) => {
   const logoImg = (
-    <Box ref={ref} sx={{ width: 150, height: 60, cursor: 'pointer', ...sx }}>
+    <Box ref={ref} sx={{ width: 150, height: 60, cursor: "pointer", ...sx }}>
       <NextLink href="/" passhref="true">
-        {/* <a> */}
-          <Image
-            src="/logo/logo_full_mc.png" // replace with your image path
-            alt="Home"
-            width={160} // specify width
-            height={60} // specify height
-            priority // ensures the image is loaded quickly
-          />
-        {/* </a> */}
+        <Image
+          src="/logo/logo_full_mc.png" // replace with your image path
+          alt="Home"
+          width={160} // specify width
+          height={60} // specify height
+          priority // ensures the image is loaded quickly
+        />
       </NextLink>
     </Box>
   );
@@ -33,7 +31,7 @@ const LogoImage = forwardRef(({ disabledLink = false, sx }, ref) => {
 
 LogoImage.propTypes = {
   disabledLink: PropTypes.bool,
-  sx: PropTypes.object,
+  sx: PropTypes.object
 };
 
 export default LogoImage;

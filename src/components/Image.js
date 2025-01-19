@@ -41,7 +41,7 @@ export default function Image({ ratio, disabledEffect = false, effect = 'blur', 
           wrapperClassName="wrapper"
           effect={disabledEffect ? undefined : effect}
           placeholderSrc="/assets/illustrations/orbliv8-logo.png"
-          sx={{ width: 1, height: 1, objectFit: 'cover' }}
+          sx={{ width: 1, height: 1, objectfit: 'cover' }}
           {...other}
         />
       </Box>
@@ -64,7 +64,7 @@ export default function Image({ ratio, disabledEffect = false, effect = 'blur', 
         wrapperClassName="wrapper"
         effect={disabledEffect ? undefined : effect}
         placeholderSrc="/assets/illustrations/orbliv8-logo.png"
-        sx={{ width: 1, height: 1, objectFit: 'cover' }}
+        sx={{ width: 1, height: 1, objectfit: 'cover' }}
         {...other}
       />
     </Box>

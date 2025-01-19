@@ -17,7 +17,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   // backgroundSize: "cover",
   // backgroundPosition: "center",
   height: "100vh",
-  // objectFit: "fill",
+  // objectfit: "fill",
   // backgroundColor: "#060606",
 
   textAlign: "center",
@@ -90,7 +90,7 @@ export default function AboutHero() {
           backgroundSize: "cover",
           backgroundPosition: "right",
           height: "100%",
-          objectFit: "fit",
+          objectfit: "fit",
           padding: theme.spacing(2, 2)
         }}
       >

@@ -35,7 +35,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   zIndex: -1,
   width: "100%",
   height: "100%",
-  objectFit: "cover",
+  objectfit: "cover",
   backgroundColor: "#060606"
 }));
 
@@ -75,7 +75,7 @@ export default function NewsHero() {
         <Container>
           <ContentStyle>
             <Grid container>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={8}>
                 <Stack spacing={2}>
                   <m.div variants={varFade().inUp}>
                     <Typography
@@ -128,7 +128,7 @@ export default function NewsHero() {
                 </Stack>
               </Grid>
 
-              <Grid item xs={12} md={6} sx={{ mt: 4 }}>
+              <Grid item xs={12} md={4} sx={{ mt: 4 }}>
                 <m.div>
                   <Box
                     sx={{

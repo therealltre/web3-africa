@@ -95,11 +95,17 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
         open={drawerOpen}
         onClose={handleDrawerClose}
         ModalProps={{ keepMounted: true }}
-        PaperProps={{ sx: { pb: 5, width: { xs: "100%", md: 600 } } }} //mobile sidebar width
+        PaperProps={{
+          sx: {
+            pb: 5,
+            width: { xs: "100%", md: 600 },
+            backgroundColor: "background.default"
+          }
+        }} //mobile sidebar width
       >
         <Scrollbar>
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box sx={{ m: 2.5 }}>
+            <Box sx={{ m: 2 }}>
               <NextLink href="/">
                 <Image
                   src="/assets/images/brand/w3a-logo-black.png"
@@ -115,17 +121,7 @@ export default function MenuMobile({ isOffset, isHome, navConfig }) {
               <Iconify icon="eva:close-fill" width={24} height={24} />
             </IconButtonAnimate>
           </Box>
-          {/* <NextLink href="/" passhref="true" sx={{ mx: 2.5, my: 3 }}>
-            <a>
-              <Image
-                src="/logo/logo_full_mc.png" // replace with your image path
-                alt="Home"
-                width={120} // specify width
-                height={40} // specify height
-                priority // ensures the image is loaded quickly
-              />
-            </a>
-          </NextLink> */}
+
           <List disablePadding>
             {navConfig.map((link) => (
               <MenuMobileItem
@@ -187,26 +183,6 @@ function MenuMobileItem({ item, isOpen, onOpen }) {
             sx={{ width: 16, height: 16, ml: 1 }}
           />
         </ListItemStyle>
-
-        <Collapse in={isOpen} timeout="auto" unmountOnExit>
-          <Box sx={{ display: "flex", flexDirection: "column-reverse" }}>
-            <NavSectionVertical
-              navConfig={children}
-              sx={{
-                "& .MuiList-root:last-of-type .MuiListItemButton-root": {
-                  height: 200,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  bgcolor: "background.neutral",
-                  backgroundRepeat: "no-repeat",
-                  backgroundImage:
-                    "url(/assets/illustrations/illustration_dashboard.png)",
-                  "& > *:not(.MuiTouchRipple-root)": { display: "none" }
-                }
-              }}
-            />
-          </Box>
-        </Collapse>
       </>
     );
   }

@@ -29,7 +29,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   zIndex: -1, // Ensures the image is behind the content
   width: "100%",
   height: "100%",
-  objectFit: "cover",
+  objectfit: "cover",
   backgroundColor: "#060606"
 }));
 
@@ -41,9 +41,10 @@ export default function HomeStickySection() {
       <RootStyle>
         <HeroImgStyle
           alt="sticky"
-          src="/assets/images/home/bg-african-pattern1.png"
+          src="/assets/images/home/kente-pattern.png"
+          // src="/assets/images/home/bg-african-pattern1.png"
           // src="/assets/illustrations/kente-pattern.svg"
-          objectFit="cover"
+          objectfit="cover"
           variants={varFade().inUp}
         />
       </RootStyle>

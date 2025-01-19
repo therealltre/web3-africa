@@ -21,21 +21,21 @@ import NextLink from "next/link";
 const CARDS = [
   {
     imageUrl: "/assets/images/home/ellipse-red.svg",
-    title: "How Our Agency Can Help You To Boost Your Business",
+    title: "How Our Agency Can Help Your Business",
     description:
       "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
     href: "#contact"
   },
   {
     imageUrl: "/assets/images/home/ellipse-yellow.svg",
-    title: "How Our Agency Can Help You To Boost Your Business",
+    title: "How Our Company Can Boost Your Business",
     description:
       "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
     href: "#about"
   },
   {
     imageUrl: "/assets/images/home/ellipse-green.svg",
-    title: "How Our Agency Can Help You To Boost Your Business",
+    title: "How Our Organization Can Help Boost Your Business",
     description:
       "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
     href: "#"
@@ -69,7 +69,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "White"
+      backgroundColor: "#fff"
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -91,7 +91,7 @@ const CardStyle = styled(Card)(({ theme }) => {
           width: "calc(100% - 40px)",
           height: "calc(100% - 40px)",
           borderRadius: Number(theme.shape.borderRadius) * 2,
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: "#fff",
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
         }
       }
@@ -99,6 +99,11 @@ const CardStyle = styled(Card)(({ theme }) => {
   };
 });
 
+const IMAGE_POSITIONS = [
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 500 } },
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 900 } },
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 1300 } }
+];
 // ----------------------------------------------------------------------
 
 export default function HomeAbout() {
@@ -115,11 +120,11 @@ export default function HomeAbout() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
           backgroundPosition: "right",
+          // position: "absolute",
           // height: "60vh",
           padding: theme.spacing(2, 2)
         }}
       >
-      
         <Box
           sx={{
             textAlign: "center",
@@ -161,26 +166,71 @@ export default function HomeAbout() {
             </Stack>
           </m.div>
 
-          <m.div variants={varFade().inDown}>
-            <Typography variant="body1" sx={{ fontWeight: "regular" }}>
-              Lorem ipsum dolor sit amet consectetur. Mi in maecenas sodales
-              velit molestie pharetra id consequat. Viverra bibendum id diam id
-              eu malesuada montes in dui. Lectus diam auctor donec euismod
-              semper. In tortor dictum sit cursus vulputate non.
-            </Typography>
-          </m.div>
-
           <Box
-            sx={{ width: 200, justifyContent: "center", textAlign: "center" }}
-          ></Box>
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              padding: 2, // Reduced padding
+              maxWidth: 700, // Limit the maximum width of the Box
+              margin: "auto" // Center align within its container
+            }}
+          >
+            <m.div variants={varFade().inDown}>
+              <Typography
+                variant="body1" // Use a smaller typography variant
+                sx={{
+                  fontWeight: "regular",
+                  lineHeight: 1.5 // Set a comfortable line height
+                }}
+              >
+                At Web3 Africa Group, our mission is to drive Africa's digital
+                transformation by establishing a network of Web 3 hubs that
+                foster innovation, education, and policy development. <br />
+                We are dedicated to empowering entrepreneurs, creators, and
+                communities with the tools and knowledge needed to thrive in the
+                decentralized economy, while shaping a sustainable and inclusive
+                digital future for the continent.
+              </Typography>
+            </m.div>
+          </Box>
         </Box>
-
+        {IMAGE_POSITIONS.map((pos, index) => (
+          <m.div variants={varFade().inUp}>
+            <Image
+              key={index}
+              src={"/assets/images/home/africa-button.png"}
+              sx={{
+                position: "absolute",
+                top: pos.top,
+                left: pos.left,
+                width: "90px",
+                height: " 90px",
+                display: { xs: "none", sm: "block" }, // Hide on xs, show on sm and up
+                transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                "&:hover": {
+                  // borderRadius: 2, // Border radius stays consistent
+                  transform: "translateY(-5px)" // Moves the card up by 5px
+                  // boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                }
+              }}
+            />
+          </m.div>
+        ))}
         <Grid container spacing={2}>
           {CARDS.map((card, index) => (
-            <Grid item xs={12} lg={4} key={card.title}>
-              {/* <Grid item xs={12} lg={index === 0 ? 12 : 6} key={card.title}> */}
+            <Grid item xs={12} lg={4} key={card.index}>
               <m.div variants={varFade().inUp}>
-                <CardStyle>
+                <CardStyle
+                  sx={{
+                    padding: { xs: 3, md: 5 },
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                    "&:hover": {
+                      borderRadius: 2, // Border radius stays consistent
+                      transform: "translateY(-5px)", // Moves the card up by 5px
+                      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                    }
+                  }}
+                >
                   <Image
                     src={card.imageUrl}
                     alt={card.title}
