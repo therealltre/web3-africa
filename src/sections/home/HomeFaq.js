@@ -56,7 +56,7 @@ export default function HomeFaq() {
             </Stack>
           </m.div>
         </Box>
-        <Grid container spacing={2} sx={{background: theme.light}}>
+        <Grid container spacing={2} >
           <Grid item xs={12} md={6}>
             <FaqsList />
           </Grid>
