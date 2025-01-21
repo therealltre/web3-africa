@@ -41,7 +41,7 @@ export default function HomeStickySection() {
       <RootStyle>
         <HeroImgStyle
           alt="sticky"
-          src="/assets/images/home/kente-pattern.png"
+          src="/assets/images/home/W3A-kente-Pattern.png"
           // src="/assets/images/home/bg-african-pattern1.png"
           // src="/assets/illustrations/kente-pattern.svg"
           objectfit="cover"
