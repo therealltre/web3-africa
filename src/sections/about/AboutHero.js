@@ -121,7 +121,7 @@ export default function AboutHero() {
             <Typography
               sx={{
                 fontSize: { xs: 42, lg: 72 },
-                fontWeight: 800,
+                fontWeight: 700,
                 lineHeight: 1
                 // color: "common.white"
               }}
