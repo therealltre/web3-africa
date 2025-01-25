@@ -14,6 +14,7 @@ import {
 import { PATH_PAGE } from "../../routes/paths";
 // components
 import SocialsButton from "../../components/SocialsButton";
+import Image from "next/image";
 // ----------------------------------------------------------------------
 
 const LINKS = [
@@ -21,7 +22,9 @@ const LINKS = [
     headline: "Web3AfricaGroup",
     children: [
       { name: "About us", href: PATH_PAGE.about },
-      { name: "Contact us", href: PATH_PAGE.contact }
+      { name: "Contact us", href: PATH_PAGE.contact },
+      { name: "News & Insights", href: PATH_PAGE.news },
+      { name: "Partnerships", href: PATH_PAGE.contact }
       // { name: 'FAQs', href: PATH_PAGE.faqs },
     ]
   },
@@ -30,14 +33,14 @@ const LINKS = [
     children: [
       { name: "Terms and Condition", href: "#" },
       { name: "Privacy Policy", href: "#" },
-      { name: "Accessibility", href: "#" },
-      { name: "Site Map", href: "#" }
+
+
     ]
   },
   {
     headline: "Contact",
     children: [
-      { name: "support@w3aafricagroup.com", href: PATH_PAGE.contact },
+      { name: "support@web3africagroup.com", href: PATH_PAGE.contact },
       { name: "Address Accra, 35 ave", href: PATH_PAGE.contact }
     ]
   }
@@ -45,8 +48,8 @@ const LINKS = [
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: theme.palette.background.default
-  // backgroundColor: theme.palette.primary.main,
+  // backgroundColor: theme.palette.background.default
+  backgroundColor: '#333333',
   // color: theme.palette.background.default,
 }));
 
@@ -56,7 +59,7 @@ export default function MainFooter() {
   return (
     <RootStyle>
       <Divider />
-      <Container sx={{ pt: 10 }}>
+      <Container sx={{ pt: 5 }}>
         <Grid
           container
           justifyContent={{ xs: "center", md: "space-between" }}
@@ -67,14 +70,14 @@ export default function MainFooter() {
               <Image
                 src="/assets/images/brand/w3a-logo.png"
                 alt="brand name"
-                width={324}
-                height={140}
+                width={120}
+                height={50}
                 sx={{ mx: { xs: "auto", md: "inherit" } }}
               />
             </NextLink>
           </Grid>
           <Grid item xs={8} md={4}>
-            <Typography variant="body2" sx={{ pr: { md: 5 } }}>
+            <Typography variant="body2" sx={{ pr: { md: 5 }, color: 'common.white' }}>
               A little description here about the website
             </Typography>
 
@@ -95,7 +98,7 @@ export default function MainFooter() {
             >
               {LINKS.map((list) => (
                 <Stack key={list.headline} spacing={2}>
-                  <Typography component="p" variant="overline">
+                  <Typography component="p" variant="overline" sx={{ color: 'common.white' }}>
                     {list.headline}
                   </Typography>
                   {list.children.map((link) => (
@@ -103,12 +106,16 @@ export default function MainFooter() {
                       key={link.name}
                       href={link.href}
                       passhref="true"
-                      legacyBehavior
+
                     >
                       <Link
-                        color="color.primary"
+                        color="common.white"
                         variant="body2"
-                        sx={{ display: "block" }}
+                        sx={{
+                          display: "block", textDecoration: 'none', "&:hover": {
+                            color: "primary.dark", // Apply secondary.main on hover
+                          },
+                        }}
                       >
                         {link.name}
                       </Link>
@@ -124,13 +131,14 @@ export default function MainFooter() {
           component="p"
           variant="body2"
           sx={{
-            mt: 10,
+            mt: 5,
             pb: 5,
             fontSize: 13,
-            textAlign: { xs: "center", md: "left" }
+            textAlign: { xs: "center", md: "left" },
+            color: 'common.white'
           }}
         >
-          © 2024. All rights reserved
+          © 2024. All rights reserved Web3AfricaGroup
         </Typography>
       </Container>
     </RootStyle>

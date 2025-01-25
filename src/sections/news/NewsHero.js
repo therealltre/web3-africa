@@ -68,7 +68,7 @@ export default function NewsHero() {
       <RootStyle>
         <HeroImgStyle
           alt="hero"
-          src="/assets/images/home/african-masks.png"
+          src="/assets/images/home/hero1.png"
           variants={varFade().inUp}
         />
 

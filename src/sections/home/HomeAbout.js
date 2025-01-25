@@ -21,24 +21,24 @@ import NextLink from "next/link";
 const CARDS = [
   {
     imageUrl: "/assets/images/home/ellipse-red.svg",
-    title: "How Our Agency Can Help Your Business",
+    title: "Empowering Africa’s Decentralized Future",
     description:
-      "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
-    href: "#contact"
+      "At Web3 Africa Group, our mission is to drive Africa's digital transformation by establishing a network of Web 3 hubs..",
+    // href: "#contact"
   },
   {
     imageUrl: "/assets/images/home/ellipse-yellow.svg",
     title: "How Our Company Can Boost Your Business",
     description:
       "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
-    href: "#about"
+    // href: "#about"
   },
   {
     imageUrl: "/assets/images/home/ellipse-green.svg",
-    title: "How Our Organization Can Help Boost Your Business",
+    title: "Our Core Values",
     description:
-      "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
-    href: "#"
+      "Leading the charge in developing and scaling digital solutions. Ensuring communities across Africa benefit from digital growth. Providing the tools and education needed for economic ...",
+    // href: "#"
   }
 ];
 
@@ -205,7 +205,7 @@ export default function HomeAbout() {
                 left: pos.left,
                 width: "90px",
                 height: " 90px",
-                display: { xs: "none", sm: "block" }, // Hide on xs, show on sm and up
+                display: { xs: "none", lg: "block" }, // Hide on xs, show on sm and up
                 transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
                 "&:hover": {
                   // borderRadius: 2, // Border radius stays consistent
@@ -264,40 +264,44 @@ export default function HomeAbout() {
                     {card.description}
                   </Typography>
 
-                  <Button
-                    variant="contained"
-                    href={card.href}
-                    sx={{
-                      position: "relative",
-                      overflow: "hidden",
-                      backgroundColor: theme.palette.primary.main,
-                      color: "#fff",
-                      marginTop: 2,
-                      border: "2px solid transparent", // Ensures a default border is present
-                      borderRadius: 1, // Border radius stays consistent
-                      transition:
-                        "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
-                      "&:hover": {
-                        color: "#fff", // Text color changes to white on hover
 
-                        borderRadius: 1, // Border radius stays consistent
-                        backgroundColor: theme.palette.primary.dark, // Background changes to black
-                        transform: "translateY(-5px)" // Moves the button up by 5px on hover
-                      }
-                    }}
-                  >
-                    Read More
-                    <Icon
-                      icon="material-symbols:arrow-forward-ios-rounded"
-                      width="14"
-                      height="14"
-                    />{" "}
-                  </Button>
                 </CardStyle>
               </m.div>
             </Grid>
           ))}
         </Grid>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="contained"
+            href={'/about-us'}
+            sx={{
+              position: "relative",
+              overflow: "hidden",
+              backgroundColor: theme.palette.primary.main,
+              color: "#fff",
+              marginTop: 2,
+              border: "2px solid transparent", // Ensures a default border is present
+              borderRadius: 1, // Border radius stays consistent
+              transition:
+                "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
+              "&:hover": {
+                color: "#fff", // Text color changes to white on hover
+
+                borderRadius: 1, // Border radius stays consistent
+                backgroundColor: theme.palette.primary.dark, // Background changes to black
+                transform: "translateY(-5px)" // Moves the button up by 5px on hover
+              }
+            }}
+          >
+            Read More
+            <Icon
+              icon="material-symbols:arrow-forward-ios-rounded"
+              width="14"
+              height="14"
+            />{" "}
+          </Button>
+        </Box>
       </Container>
     </RootStyle>
   );

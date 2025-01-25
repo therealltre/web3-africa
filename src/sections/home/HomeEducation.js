@@ -104,12 +104,6 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   right: 0,
   padding: theme.spacing(3),
   background: `linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent)`,
-
-  // background: `linear-gradient(to top, ${theme.palette.grey[900]} 0%,${alpha(
-  //   theme.palette.grey[900],
-  //   0
-  // )} 100%)`,
-
   color: theme.palette.common.white
 }));
 
@@ -174,7 +168,7 @@ export default function HomeEducation() {
               <Stack
                 direction={{ xs: "column", md: "row" }}
                 spacing={1}
-                // sx={{ justifyContent: "start" }}
+              // sx={{ justifyContent: "start" }}
               >
                 <Typography variant="h2">Education &</Typography>
                 <Typography
@@ -259,6 +253,9 @@ export default function HomeEducation() {
                     <Image
                       src={card.backgroundImage}
                       alt={card.title}
+                      width={100}
+                      height={100}
+
                       sx={{
                         position: "absolute",
                         top: 0,
@@ -284,43 +281,6 @@ export default function HomeEducation() {
           ))}
         </Box>
         {/* </ContentStyle> */}
-
-        <Box
-          sx={{
-            textAlign: "center",
-            marginTop: 2
-          }}
-        >
-          <m.div variants={varFade().inUp}>
-            <NextLink href="/about-us" passHref>
-              <Link>
-                <Button
-                  variant="contained"
-                  sx={{
-                    position: "relative",
-                    overflow: "hidden",
-                    backgroundColor: theme.palette.primary.main,
-                    color: "#fff",
-                    marginTop: 2,
-                    border: "2px solid transparent", // Ensures a default border is present
-                    borderRadius: 1, // Border radius stays consistent
-                    transition:
-                      "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
-                    "&:hover": {
-                      color: "#fff", // Text color changes to white on hover
-
-                      borderRadius: 1, // Border radius stays consistent
-                      backgroundColor: theme.palette.primary.dark, // Background changes to black
-                      transform: "translateY(-5px)" // Moves the button up by 5px on hover
-                    }
-                  }}
-                >
-                  View More
-                </Button>
-              </Link>
-            </NextLink>
-          </m.div>
-        </Box>
       </Container>
     </RootStyle>
   );

@@ -111,7 +111,7 @@ export default function AboutTestimonials() {
             <Box sx={{ maxWidth: { md: 360 } }}>
               <m.div variants={varFade().inUp}>
                 <Typography variant="h2" sx={{ mb: 3, color: "common.white" }}>
-                  FREQUENTLY ASKED QUESTIONS
+                  WHAT OTHERS ARE SAYING
                 </Typography>
               </m.div>
 

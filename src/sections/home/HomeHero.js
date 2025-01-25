@@ -19,6 +19,7 @@ import HomeFaq from "./HomeFaq";
 import HomeAbout from "./HomeAbout";
 import { AboutTestimonials } from "../about";
 import HomeProjects from "./HomeProjects";
+import HomeKeyMarkets from "./HomeKeyMarkets";
 import { HomeTrustedBy } from ".";
 import NextLink from "next/link";
 
@@ -90,8 +91,8 @@ export default function HomeHero() {
                 <Stack spacing={2}>
                   <m.div
                     variants={varFade().inUp}
-                    // animate={{ y: [-20, 0, -20] }}
-                    // transition={{ duration: 4, repeat: Infinity }}
+                  // animate={{ y: [-20, 0, -20] }}
+                  // transition={{ duration: 4, repeat: Infinity }}
                   >
                     <Typography
                       sx={{
@@ -119,8 +120,8 @@ export default function HomeHero() {
 
                   <m.div
                     variants={varFade().inDown}
-                    // animate={{ y: [-20, 0, -20] }}
-                    // transition={{ duration: 4, repeat: Infinity }}
+                  // animate={{ y: [-20, 0, -20] }}
+                  // transition={{ duration: 4, repeat: Infinity }}
                   >
                     <NextLink passhref="true" href="/contact-us">
                       <Link>
@@ -201,6 +202,7 @@ export default function HomeHero() {
         <HomeEducation />
         <HomeCommunity />
         <HomeProjects />
+        <HomeKeyMarkets />
         <AboutTestimonials />
       </Box>
     </MotionContainer>
