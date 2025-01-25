@@ -194,6 +194,7 @@ export default function HomeAbout() {
             </m.div>
           </Box>
         </Box>
+
         {IMAGE_POSITIONS.map((pos, index) => (
           <m.div variants={varFade().inUp}>
             <Image

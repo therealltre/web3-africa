@@ -16,7 +16,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(15),
 
   [theme.breakpoints.up("md")]: {
-    paddingBottom: theme.spacing(15)
+    paddingBottom: theme.spacing(0)
   }
 }));
 
@@ -33,7 +33,7 @@ export default function HomeKeyMarkets() {
           textAlign: "start",
           position: "relative",
           height: "100%",
-          mb: { xs: 10, md: 20 },
+          mb: { xs: 10, md: 0 },
         }}
       >
 
@@ -101,7 +101,7 @@ export default function HomeKeyMarkets() {
             zIndex: 0, // Place it behind other content
             backgroundImage: `url('/assets/images/home/market-area.svg')`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: { xs: "contain", sm: "cover" }, // Use 'contain' for small screens and 'cover' for larger ones
+            backgroundSize: "cover", // Use 'contain' for small screens and 'cover' for larger ones
             backgroundPosition: "center"
           }}
         />

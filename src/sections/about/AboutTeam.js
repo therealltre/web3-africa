@@ -181,10 +181,10 @@ function MemberCard({ member }) {
       <Typography variant="body2" sx={{ mb: 2, color: "text.secondary" }}>
         {role}
       </Typography>
-      <Image alt={name} src={avatar} ratio="1/1" sx={{ borderRadius: 1.5 }} />
-      <Stack alignItems="center" sx={{ mt: 2, mb: 1 }}>
+      <Image alt={name} src={avatar} ratio="1/1" sx={{ borderRadius: 1.5, mb: 5 }} />
+      {/* <Stack alignItems="center" sx={{ mt: 2, mb: 1 }}>
         <SocialsButton sx={{ color: "action.active" }} />
-      </Stack>
+      </Stack> */}
     </Card>
   );
 }

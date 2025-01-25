@@ -4,16 +4,18 @@
 <g clip-path="url(#clip1_253_558)">
 <mask id="mask0_253_558" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="270" y="0" width="901" height="900">
 <path d="M270.5 0H1170.5V900H270.5V0Z" fill="white"/>
+<path d="M271.304 0.803571H1169.7V899.196H271.304V0.803571Z" stroke="white" stroke-width="1.60714"/>
 </mask>
 <g mask="url(#mask0_253_558)">
 <mask id="mask1_253_558" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="270" y="0" width="901" height="900">
 <path d="M270.5 0H1170.5V900H270.5V0Z" fill="url(#paint0_radial_253_558)"/>
+<path d="M271.304 0.803571H1169.7V899.196H271.304V0.803571Z" stroke="#333333" stroke-opacity="0.2" stroke-width="1.60714"/>
 </mask>
 <g mask="url(#mask1_253_558)">
-<path d="M720.5 594.641C800.384 594.641 865.143 529.882 865.143 449.998C865.143 370.114 800.384 305.355 720.5 305.355C640.616 305.355 575.857 370.114 575.857 449.998C575.857 529.882 640.616 594.641 720.5 594.641Z" stroke="white" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
-<path d="M720.5 739.285C880.268 739.285 1009.79 609.768 1009.79 450C1009.79 290.231 880.268 160.714 720.5 160.714C560.732 160.714 431.215 290.231 431.215 450C431.215 609.768 560.732 739.285 720.5 739.285Z" stroke="white" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
-<path d="M270.5 -0.00195312L1170.5 899.998M1170.5 -0.00195312L270.5 899.998" stroke="white" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
-<path d="M720.5 -186.396V1086.4M1356.9 450H84.1039" stroke="white" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
+<path d="M720.5 594.641C800.384 594.641 865.143 529.882 865.143 449.998C865.143 370.114 800.384 305.355 720.5 305.355C640.616 305.355 575.857 370.114 575.857 449.998C575.857 529.882 640.616 594.641 720.5 594.641Z" stroke="#333333" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
+<path d="M720.5 739.285C880.268 739.285 1009.79 609.768 1009.79 450C1009.79 290.231 880.268 160.714 720.5 160.714C560.732 160.714 431.215 290.231 431.215 450C431.215 609.768 560.732 739.285 720.5 739.285Z" stroke="#333333" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
+<path d="M270.5 -0.00195312L1170.5 899.998M1170.5 -0.00195312L270.5 899.998" stroke="#333333" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
+<path d="M720.5 -186.396V1086.4M1356.9 450H84.1039" stroke="#333333" stroke-width="1.60714" stroke-dasharray="4.82 4.82"/>
 </g>
 </g>
 <g clip-path="url(#clip2_253_558)">

@@ -17,16 +17,32 @@ import NextLink from "next/link";
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(m.div)(({ theme }) => ({
-  position: "sticky",
-  top: 0,
+  position: "relative",
   width: "100%",
   height: "100%",
   zIndex: 1,
+  overflow: "hidden",
+  backgroundColor: "#060606", // Ensure this matches the hero image background
+  [theme.breakpoints.up("lg")]: {
+    "&::before": {
+      content: '""',
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      zIndex: 0,
+      background: theme.palette.background.default, // Adjust as needed
+      clipPath: "polygon(100% 100%, 50% 100%, 75% 0, 100% 0)", // Slash effect visible on large screens
+    },
+
+  },
   [theme.breakpoints.up("md")]: {
     display: "flex",
-    alignItems: "center"
-  }
+    alignItems: "center",
+  },
 }));
+
 
 const HeroImgStyle = styled(m.img)(({ theme }) => ({
   position: "absolute",
@@ -90,40 +106,16 @@ export default function NewsHero() {
                     </Typography>
 
                     <Typography
-                      variant="subtitle2"
+                      variant="subtitle1"
                       sx={{
                         fontSize: { xs: 18, lg: 24 },
                         marginTop: 2,
                         color: "common.white"
                       }}
                     >
-                      Discover the latest updates, expert opinions, and in-depth
+                      Discover the latest updates, expert opinions, <br />and in-depth
                       analysis shaping our world today.
                     </Typography>
-                  </m.div>
-
-                  <m.div variants={varFade().inDown}>
-                    <NextLink passHref href="/news">
-                      <Link>
-                        <Button
-                          variant="contained"
-                          sx={{
-                            backgroundColor: theme.palette.primary.main,
-                            color: "#fff",
-                            marginTop: 2,
-                            borderRadius: 1,
-                            transition:
-                              "transform 0.3s ease, background-color 0.3s ease",
-                            "&:hover": {
-                              backgroundColor: theme.palette.primary.dark,
-                              transform: "translateY(-5px)"
-                            }
-                          }}
-                        >
-                          Read More
-                        </Button>
-                      </Link>
-                    </NextLink>
                   </m.div>
                 </Stack>
               </Grid>
@@ -141,10 +133,10 @@ export default function NewsHero() {
                       src="/assets/images/home/african-warrior-mask.png"
                       alt="news-hero-graphic"
                       width={
-                        isSmallScreen ? 310 : 650 || isMediumScreen ? 370 : 610
+                        isSmallScreen ? 210 : 650 || isMediumScreen ? 370 : 610
                       }
                       height={
-                        isSmallScreen ? 330 : 690 || isMediumScreen ? 396 : 650
+                        isSmallScreen ? 230 : 690 || isMediumScreen ? 396 : 650
                       }
                       priority
                     />

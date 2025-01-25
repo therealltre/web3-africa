@@ -282,88 +282,112 @@ export default function NewsBlog() {
           </ContentStyle>
 
           {/* Section 2 */}
-          <ContentStyle>
-            <Typography
-              variant="h3"
-              sx={{
-                fontSize: { xs: 36, lg: 48 },
-                fontWeight: 700,
-                textAlign: "center",
-                mb: 5
-              }}
-            >
-              News & Insights
-            </Typography>
-
-            <Box
-              sx={{
-                display: "grid",
-                gap: { xs: 4, md: 3 },
-                gridTemplateColumns: {
-                  xs: "repeat(1, 1fr)",
-                  md: "repeat(2, 1fr)",
-                  lg: "repeat(2, 1fr)"
-                }
-              }}
-            >
-
-              {newsCards.map((news, index) => (
-                <m.div key={news.title} variants={varFade().inUp}>
-                  <NextLink href={news.href} passHref>
-                    <Link
-                      underline="none"
-                      sx={{
-                        textDecoration: "none",
-                        display: "block",
-                        cursor: "pointer"
-                      }}
+          <RootStyle>
+            <Container sx={{ backgroundColor: theme.palette.background.default }}>
+              <ContentStyle>
+                <Box
+                  sx={{
+                    textAlign: "start",
+                    mb: { xs: 10, md: 10 }
+                  }}
+                >
+                  <m.div variants={varFade().inDown}>
+                    <Stack
+                      direction={{ xs: "column", md: "row" }}
+                      spacing={1}
+                    // sx={{ justifyContent: "start" }}
                     >
-
-                      <CardStyle
+                      <Typography variant="h2">News &</Typography>
+                      <Typography
+                        variant="h2"
                         sx={{
-                          // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                          padding: { xs: 3, md: 5 },
-                          transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                          "&:hover": {
-                            color: "#fff", // Text color changes to white on hover
-                            borderRadius: 1, // Border radius stays consistent
-                            transform: "translateY(-5px)", // Moves the card up by 5px
-                            boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                          }
+                          backgroundcolor: "primary",
+                          backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+                          backgroundSize: "100%",
+                          backgroundRepeat: "repeat",
+                          backgroundClip: "text",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          fontWeight: 600
                         }}
                       >
-                        <Image
-                          src={news.image}
-                          alt={news.title}
-                          layout="fill"
-                          objectFit="cover"
+                        Insights
+                      </Typography>
+                    </Stack>
+                  </m.div>
+                </Box>
+
+                <Box
+                  sx={{
+                    display: "grid",
+                    gap: { xs: 4, md: 3 },
+                    gridTemplateColumns: {
+                      xs: "repeat(1, 1fr)",
+                      md: "repeat(2, 1fr)",
+                      lg: "repeat(2, 1fr)"
+                    }
+                  }}
+                >
+
+                  {newsCards.map((news, index) => (
+                    <m.div key={news.title} variants={varFade().inUp}>
+                      <NextLink href={news.href} passHref>
+                        <Link
+                          underline="none"
                           sx={{
-                            position: "absolute",
-                            top: 0,
-                            left: 0,
-                            width: "100%",
-                            height: "100%",
-                            objectfit: "cover" // Ensure the image covers the card
+                            textDecoration: "none",
+                            display: "block",
+                            cursor: "pointer"
                           }}
-                        />
+                        >
+
+                          <CardStyle
+                            sx={{
+                              // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
+                              padding: { xs: 3, md: 5 },
+                              transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                              "&:hover": {
+                                color: "#fff", // Text color changes to white on hover
+                                borderRadius: 1, // Border radius stays consistent
+                                transform: "translateY(-5px)", // Moves the card up by 5px
+                                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                              }
+                            }}
+                          >
+                            <Image
+                              src={news.image}
+                              alt={news.title}
+                              layout="fill"
+                              objectFit="cover"
+                              sx={{
+                                position: "absolute",
+                                top: 0,
+                                left: 0,
+                                width: "100%",
+                                height: "100%",
+                                objectfit: "cover" // Ensure the image covers the card
+                              }}
+                            />
 
 
-                        <ContentWrapper sx={{ textAlign: "start" }}>
-                          <Typography variant="h5" paragraph>
-                            {news.title}
-                          </Typography>
-                          <Typography variant="body1">
-                            {news.description}
-                          </Typography>
-                        </ContentWrapper>
-                      </CardStyle>
-                    </Link>
-                  </NextLink>
-                </m.div>
-              ))}
+                            <ContentWrapper sx={{ textAlign: "start" }}>
+                              <Typography variant="h5" paragraph>
+                                {news.title}
+                              </Typography>
+                              <Typography variant="body1">
+                                {news.description}
+                              </Typography>
+                            </ContentWrapper>
+                          </CardStyle>
+                        </Link>
+                      </NextLink>
+                    </m.div>
+                  ))}
 
-            </Box>
-          </ContentStyle>
+                </Box>
+              </ContentStyle>
+            </Container>
+          </RootStyle>
         </Container >
       </RootStyle >
     </MotionContainer >

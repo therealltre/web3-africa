@@ -91,13 +91,20 @@ export default function AboutWhat() {
               </Typography>
             </Stack>
 
-            <m.div variants={varFade().inRight}>
-              <Typography variant="body1">
-                At Web3 Africa Group, our mission is to drive Africa's digital
-                transformation by establishing a network of Web 3 hubs that
-                foster innovation, education, and policy development.{" "}
-              </Typography>
-            </m.div>
+            <Stack gap={2}>
+              <m.div variants={varFade().inRight}>
+                <Typography variant="body1">
+                  At Web3 Africa Group, our mission is to drive Africa's digital
+                  transformation by establishing a network of Web 3 hubs that
+                  foster innovation, education, and policy development.
+                </Typography>
+              </m.div>
+              <m.div variants={varFade().inRight}>
+                <Typography variant="body1">
+                  We are dedicated to empowering entrepreneurs, creators, and communities with the tools and knowledge needed to thrive in the decentralized economy, while shaping a sustainable and inclusive digital future for the continent.
+                </Typography>
+              </m.div>
+            </Stack>
           </Grid>
         </Grid>
       </Container>
