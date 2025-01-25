@@ -98,6 +98,7 @@ export default function AboutTeam() {
 
   return (
     <Container component={MotionViewport} sx={{ pb: 10, textAlign: "center" }}>
+
       <m.div variants={varFade().inDown}>
         <Typography
           component="p"
@@ -109,9 +110,28 @@ export default function AboutTeam() {
       </m.div>
 
       <m.div variants={varFade().inUp}>
-        <Typography variant="h2" sx={{ mb: 3 }}>
-          Great team is the key
-        </Typography>
+        <Stack
+          direction={"row"}
+          spacing={1}
+          sx={{ justifyContent: "center" }}
+        >
+          <Typography variant="h2"> Great Team</Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              backgroundcolor: "primary",
+              backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+              backgroundSize: "100%",
+              backgroundRepeat: "repeat",
+              backgroundClip: "text",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              fontWeight: 600
+            }}
+          >
+            Is The Key
+          </Typography>
+        </Stack>
       </m.div>
 
       <m.div variants={varFade().inUp}>
@@ -145,17 +165,6 @@ export default function AboutTeam() {
           </Slider>
         </CarouselArrows>
       </Box>
-      {/* <Button
-        variant="outlined"
-        color="inherit"
-        size="large"
-        endIcon={
-          <Iconify icon={"ic:round-arrow-right-alt"} width={24} height={24} />
-        }
-        sx={{ mx: "auto" }}
-      >
-        View all team members
-      </Button> */}
     </Container>
   );
 }

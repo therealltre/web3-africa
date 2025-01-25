@@ -73,8 +73,8 @@ export default function TrustedBy() {
         <TickerContainer>
           <LeftFadeOverlay />
           <TickerContent
-            animate={{ x: ["0%", "-40%"] }}
-            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+            animate={{ x: ["0%", "-30%"] }}
+            transition={{ repeat: Infinity, duration: 20, repeatType: "loop", ease: "linear" }}
           >
             {/* Duplicate logos for infinite loop */}
             {logos.concat(logos).map((logo, index) => (

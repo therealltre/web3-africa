@@ -33,10 +33,10 @@ export default function HomePage() {
     <Page title="News And Insights">
       <RootStyle>
         <NewsHero />
-        <NewsBlog />
 
+        {/* <NewsBlog /> */}
         {/* <ContentStyle>
-          <HomeFaq />
+          <NewsBlog />
         </ContentStyle> */}
       </RootStyle>
     </Page>

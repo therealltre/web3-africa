@@ -217,6 +217,8 @@ export default function HomeAbout() {
             />
           </m.div>
         ))}
+
+
         <Grid container spacing={2}>
           {CARDS.map((card, index) => (
             <Grid item xs={12} lg={4} key={card.index}>

@@ -17,10 +17,11 @@ import {
 // ----------------------------------------------------------------------
 
 const RootStyle = styled("div")(({ theme }) => ({
-  paddingTop: theme.spacing(8),
-  [theme.breakpoints.up("md")]: {
-    paddingTop: theme.spacing(11)
-  }
+  height: "100%"
+  // paddingTop: theme.spacing(8),
+  // [theme.breakpoints.up("md")]: {
+  //   paddingTop: theme.spacing(11)
+  // }
 }));
 
 // ----------------------------------------------------------------------
@@ -36,14 +37,14 @@ export default function About() {
     <Page title="About us">
       <RootStyle>
         <AboutHero id="about-hero" />
-        <AboutWhat id="about-what" />
+        {/* <AboutWhat id="about-what" />
         <AboutVision id="about-vision" />
         <Divider
           orientation="vertical"
           sx={{ my: 10, mx: "auto", width: 2, height: 40 }}
         />
         <AboutTeam />
-        <AboutTestimonials />
+        <AboutTestimonials /> */}
       </RootStyle>
     </Page>
   );

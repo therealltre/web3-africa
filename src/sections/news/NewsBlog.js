@@ -10,7 +10,8 @@ import {
   Card,
   CardActions,
   CardMedia,
-  Link
+  Link,
+  Divider
 } from "@mui/material";
 import { MotionContainer, varFade } from "../../components/animate";
 import NextLink from "next/link";
@@ -149,14 +150,16 @@ const newsCards = [
     description:
       "Empowering the Unbanked with CBDCs A conversation between Ourfounder Del Titus Bawuah, Head of fintech Kwame Oppong and the University of Ethereum.",
     href: "https://blog.ueth.org/p/blockchain-and-financial-inclusion",
-    image: "/assets/images/news/blockchain-financial-inclusion.png"
+    image: "/assets/images/news/blockchain-financial-inclusion.png",
+    date: 'Dec 20, 2023',
   },
   {
     title: "What Is Web 3.0 and Can It Help End Extreme Poverty?",
     description:
       "We spoke to a Ghanaian techpreneur to find out how Web 3.0 can alleviate poverty for Africa’s youth.",
     href: "https://www.globalcitizen.org/en/content/what-is-web-30-and-can-it-end-extreme-poverty/",
-    image: "/assets/images/news/what-is-web3.png"
+    image: "/assets/images/news/what-is-web3.png",
+    date: 'Nov 4, 2022',
 
   },
   {
@@ -164,14 +167,16 @@ const newsCards = [
     description:
       "",
     href: "https://newsghana.com.gh/vitalik-buterin-mo-ghoneim-and-kwame-a-a-opoku-debate-the-value-of-web3-to-africa-at-the-inaugural-africa-web-3-summit-in-accra/",
-    image: "/assets/images/news/vitalik-buterin-headlines-the-web3-accra.png"
+    image: "/assets/images/news/vitalik-buterin-headlines-the-web3-accra.png",
+    date: 'March 4, 2023',
   },
   {
     title: "Del Titus Bawuah Addresses the University of the United Nations",
     description:
       "at EDCON 2024 in Japan alongside 24 other global leaders, hosted by Vitalik Buterin and the Ethereum Foundation.",
     href: "https://www.youtube.com/live/7dPKrzSVUTs",
-    image: "/assets/images/news/blog-4.png"
+    image: "/assets/images/news/blog-4.png",
+    date: 'March 4, 2023',
   }
 ];
 
@@ -245,35 +250,45 @@ export default function NewsBlog() {
                     padding: theme.spacing(2),
                     height: "100%",
                     overflowY: "auto",
+                    backgroundColor: 'transparent',
+                    boxShadow: 'none'
                   }}
                 >
+                  <Typography
+                    variant="h5"
+                    fontWeight="bold"
+                    sx={{ mb: 2, textAlign: "start" }}
+                  >
+                    What's New
+                  </Typography>
                   {videoList.map((video, index) => (
-                    <Box
-                      key={index}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 2,
-                        mb: 2,
-                        cursor: "pointer",
-                        "&:hover": { opacity: 0.8 },
-                      }}
-                      onClick={() => setCurrentVideo(video)}
-                    >
-                      <CardMedia
-                        component="img"
-                        image={video.thumbnail}
-                        alt={video.title}
+                    <Box key={index}>
+                      <Box
                         sx={{
-                          width: 100,
-                          height: 56,
-                          borderRadius: 1,
-                          objectFit: "cover",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 2,
+                          cursor: "pointer",
+                          "&:hover": { opacity: 0.8 },
                         }}
-                      />
-                      <Typography variant="body1" fontWeight={500}>
-                        {video.title}
-                      </Typography>
+                        onClick={() => setCurrentVideo(video)}
+                      >
+                        <CardMedia
+                          component="img"
+                          image={video.thumbnail}
+                          alt={video.title}
+                          sx={{
+                            width: 100,
+                            height: 76,
+                            borderRadius: 1,
+                            objectFit: "cover",
+                          }}
+                        />
+                        <Typography variant="body1" fontWeight={500}>
+                          {video.title}
+                        </Typography>
+                      </Box>
+                      {index < videoList.length - 1 && <Divider sx={{ my: 2 }} />}
                     </Box>
                   ))}
                 </Card>
@@ -282,112 +297,118 @@ export default function NewsBlog() {
           </ContentStyle>
 
           {/* Section 2 */}
-          <RootStyle>
-            <Container sx={{ backgroundColor: theme.palette.background.default }}>
-              <ContentStyle>
-                <Box
-                  sx={{
-                    textAlign: "start",
-                    mb: { xs: 10, md: 10 }
-                  }}
-                >
-                  <m.div variants={varFade().inDown}>
-                    <Stack
-                      direction={{ xs: "column", md: "row" }}
-                      spacing={1}
-                    // sx={{ justifyContent: "start" }}
+
+          <Container sx={{ backgroundColor: theme.palette.background.default }}>
+            <ContentStyle>
+              <Box
+                sx={{
+                  textAlign: "start",
+                  mb: { xs: 10, md: 10 }
+                }}
+              >
+                <m.div variants={varFade().inDown}>
+                  <Stack
+                    direction={{ xs: "column", md: "row" }}
+                    spacing={1}
+                  // sx={{ justifyContent: "start" }}
+                  >
+                    <Typography variant="h2">News &</Typography>
+                    <Typography
+                      variant="h2"
+                      sx={{
+                        backgroundcolor: "primary",
+                        backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+                        backgroundSize: "100%",
+                        backgroundRepeat: "repeat",
+                        backgroundClip: "text",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        fontWeight: 600
+                      }}
                     >
-                      <Typography variant="h2">News &</Typography>
-                      <Typography
-                        variant="h2"
+                      Insights
+                    </Typography>
+                  </Stack>
+                </m.div>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "grid",
+                  gap: { xs: 4, md: 3 },
+                  gridTemplateColumns: {
+                    xs: "repeat(1, 1fr)",
+                    md: "repeat(2, 1fr)",
+                    lg: "repeat(2, 1fr)"
+                  }
+                }}
+              >
+
+                {newsCards.map((news, index) => (
+                  <m.div key={news.title} variants={varFade().inUp}>
+                    <NextLink href={news.href} passHref>
+                      <Link
+                        underline="none"
                         sx={{
-                          backgroundcolor: "primary",
-                          backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
-                          backgroundSize: "100%",
-                          backgroundRepeat: "repeat",
-                          backgroundClip: "text",
-                          WebkitBackgroundClip: "text",
-                          WebkitTextFillColor: "transparent",
-                          fontWeight: 600
+                          textDecoration: "none",
+                          display: "block",
+                          cursor: "pointer"
                         }}
                       >
-                        Insights
-                      </Typography>
-                    </Stack>
-                  </m.div>
-                </Box>
 
-                <Box
-                  sx={{
-                    display: "grid",
-                    gap: { xs: 4, md: 3 },
-                    gridTemplateColumns: {
-                      xs: "repeat(1, 1fr)",
-                      md: "repeat(2, 1fr)",
-                      lg: "repeat(2, 1fr)"
-                    }
-                  }}
-                >
-
-                  {newsCards.map((news, index) => (
-                    <m.div key={news.title} variants={varFade().inUp}>
-                      <NextLink href={news.href} passHref>
-                        <Link
-                          underline="none"
+                        <CardStyle
                           sx={{
-                            textDecoration: "none",
-                            display: "block",
-                            cursor: "pointer"
+                            // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
+                            padding: { xs: 3, md: 5 },
+                            transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                            "&:hover": {
+                              color: "#fff", // Text color changes to white on hover
+                              borderRadius: 1, // Border radius stays consistent
+                              transform: "translateY(-5px)", // Moves the card up by 5px
+                              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                            }
                           }}
                         >
-
-                          <CardStyle
+                          <Image
+                            src={news.image}
+                            alt={news.title}
+                            layout="fill"
+                            objectFit="cover"
                             sx={{
-                              // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                              padding: { xs: 3, md: 5 },
-                              transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                              "&:hover": {
-                                color: "#fff", // Text color changes to white on hover
-                                borderRadius: 1, // Border radius stays consistent
-                                transform: "translateY(-5px)", // Moves the card up by 5px
-                                boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                              }
+                              position: "absolute",
+                              top: 0,
+                              left: 0,
+                              width: "100%",
+                              height: "100%",
+                              objectfit: "cover" // Ensure the image covers the card
                             }}
-                          >
-                            <Image
-                              src={news.image}
-                              alt={news.title}
-                              layout="fill"
-                              objectFit="cover"
-                              sx={{
-                                position: "absolute",
-                                top: 0,
-                                left: 0,
-                                width: "100%",
-                                height: "100%",
-                                objectfit: "cover" // Ensure the image covers the card
-                              }}
-                            />
+                          />
 
 
-                            <ContentWrapper sx={{ textAlign: "start" }}>
+                          <ContentWrapper sx={{ textAlign: "start" }}>
+
+                            <Stack spacing={1}>
                               <Typography variant="h5" paragraph>
                                 {news.title}
                               </Typography>
                               <Typography variant="body1">
                                 {news.description}
                               </Typography>
-                            </ContentWrapper>
-                          </CardStyle>
-                        </Link>
-                      </NextLink>
-                    </m.div>
-                  ))}
+                              <Typography variant="subtitle2" paragraph>
+                                {news.date}
+                              </Typography>
+                            </Stack>
+                          </ContentWrapper>
+                        </CardStyle>
+                      </Link>
+                    </NextLink>
+                  </m.div>
+                ))}
 
-                </Box>
-              </ContentStyle>
-            </Container>
-          </RootStyle>
+              </Box>
+            </ContentStyle>
+          </Container>
+
         </Container >
       </RootStyle >
     </MotionContainer >

@@ -7,14 +7,7 @@ import Page from "../components/Page";
 // sections
 import {
   HomeHero,
-  HomeAboutWeb3AG,
-  HomeDarkMode,
-  HomeLookingFor,
-  HomeColorPresets,
-  HomePricingPlans,
-  HomeAdvertisement,
-  HomeCleanInterfaces,
-  HomeFaq,
+
   HomeStickySection
 } from "../sections/home";
 // ----------------------------------------------------------------------

@@ -1,24 +1,28 @@
 import { m } from "framer-motion";
 // @mui
 import { alpha, useTheme, styled } from "@mui/material/styles";
-import { Box, Button, Card, Container, Link, Typography } from "@mui/material";
+import { Box, Button, Card, Container, Divider, Link, Typography } from "@mui/material";
 // components
 import Image from "../../components/Image";
-import { MotionViewport, varFade } from "../../components/animate";
+import { MotionContainer, MotionViewport, varFade } from "../../components/animate";
 import NextLink from "next/link";
+import AboutWhat from "./AboutWhat";
+import AboutVision from "./AboutVision";
+import AboutTeam from "./AboutTeam";
+import AboutTestimonials from "./AboutTestimonials";
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled("div")(({ theme }) => ({
+  position: "sticky",
+  top: 0,
   paddingTop: theme.spacing(15),
   paddingBottom: theme.spacing(15),
-  // backgroundImage: `url('/assets/illustrations/kente-pattern.svg')`,
-  // backgroundRepeat: "no-repeat",
-  // backgroundSize: "cover",
-  // backgroundPosition: "center",
+  zIndex: 1,
+  width: "100%",
   height: "100vh",
   // objectfit: "fill",
-  // backgroundColor: "#060606",
+  backgroundColor: "#060606",
 
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
@@ -81,79 +85,126 @@ export default function AboutHero() {
   const isLight = theme.palette.mode === "dark";
 
   return (
-    <RootStyle>
-      <Container
-        component={MotionViewport}
-        sx={{
-          // backgroundImage: `url('/assets//illustrations/kente-pattern.svg')`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "right",
-          height: "100%",
-          objectfit: "fit",
-          padding: theme.spacing(2, 2)
-        }}
-      >
-        <Box
+    <MotionContainer>
+      <RootStyle>
+        <Container
+          component={MotionViewport}
           sx={{
-            textAlign: "center",
-            mb: { xs: 10, md: 10 }
+            // backgroundImage: `url('/assets//illustrations/kente-pattern.svg')`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "right",
+            height: "100%",
+            objectfit: "fit",
+            padding: theme.spacing(2, 2)
           }}
         >
-          <Image
-            visibleByDefault
-            disabledEffect
-            alt="image shape"
-            src="/assets/images/home/shape.svg" //replace with african pattern
+          <Box
             sx={{
-              top: 0,
-              right: 0,
-              bottom: 0,
-              width: 720,
-              height: 720,
-              opacity: 0.48,
-              my: "auto",
-              position: "absolute",
-              display: { xs: "none", md: "block" }
+              textAlign: "center",
+              mb: { xs: 10, md: 10 }
             }}
-          />
-          <m.div variants={varFade().inUp}>
-            <Typography
+          >
+            <Image
+              visibleByDefault
+              disabledEffect
+              alt="image shape"
+              src="/assets/images/home/shape.svg" //replace with african pattern
               sx={{
-                fontSize: { xs: 42, lg: 72 },
-                fontWeight: 700,
-                lineHeight: 1
-                // color: "common.white"
+                top: 0,
+                right: 0,
+                bottom: 0,
+                width: 720,
+                height: 720,
+                opacity: 0.48,
+                my: "auto",
+                position: "absolute",
+                display: { xs: "none", md: "block" }
               }}
-            >
-              ABOUT WEB3 <br />
-              AFRICA GROUP
-            </Typography>
-          </m.div>
-          <m.div variants={varFade().inUp}>
-            <Typography
-              sx={{
-                marginTop: 2,
-                textAlign: "center"
-                // color: "common.white"
-                // width: 500
-                // fontSize: { xs: 18, lg: 24 }
-              }}
-            >
-              Web3 Africa Group (W3AG) is a visionary organization committed to
-              spearheading the decentralized digital revolution across Africa.
-              As the parent company of various Web 3 hubs across the continent,
-              W3AG aims to establish innovation centers that will drive
-              education, policy advocacy, and community development in the Web 3
-              ecosystem. Our flagship hub, Web 3 Accra (W3A), based in Ghana,
-              serves as a pioneering incubator and a launchpad for
-              entrepreneurs, creators, and innovators within the decentralized
-              space.
-            </Typography>
-          </m.div>
-        </Box>
-      </Container>
-      {/* <Box sx={{ height: { md: "100vh" } }} /> */}
-    </RootStyle>
+            />
+            <m.div variants={varFade().inUp}>
+              <Typography
+                sx={{
+                  mt: 10,
+                  fontSize: { xs: 42, lg: 72 },
+                  fontWeight: 700,
+                  lineHeight: 1,
+                  color: "common.white",
+                  textAlign: "center", // Ensure text is centered
+                  // margin: "0 auto",    // Center text block
+                }}
+              >
+                ABOUT WEB3 <br />
+                AFRICA GROUP
+              </Typography>
+            </m.div>
+            <m.div variants={varFade().inUp}>
+              <Typography
+                sx={{
+                  marginTop: 2,
+                  color: "common.white",
+                  textAlign: "center", // Aligns all text to center
+                }}
+              >
+                Web3 Africa Group (W3AG) is a visionary organization committed to
+                spearheading the decentralized digital revolution across Africa. As
+                the parent company of various Web 3 hubs across the continent, W3AG
+                aims to establish innovation centers that will drive education, policy
+                advocacy, and community development in the Web 3 ecosystem. Our
+                flagship hub, Web 3 Accra (W3A), based in Ghana, serves as a pioneering
+                incubator and a launchpad for entrepreneurs, creators, and innovators
+                within the decentralized space.
+              </Typography>
+            </m.div>
+            <m.div variants={varFade().inUp}>
+              <m.div
+                animate={{
+                  scale: [1, 1.1, 1], // Pulsing effect
+                }}
+                transition={{
+                  duration: 6, // Duration of each pulse
+                  repeat: Infinity, // Infinite repeat
+                  repeatType: "loop",
+                }}
+              >
+                <Image
+                  visibleByDefault
+                  disabledEffect
+                  alt="W3A Logo"
+                  src="/assets/images/brand/w3a-logo.png"
+                  sx={{
+                    marginTop: 4,
+                    width: 300,
+                    height: "auto",
+                    mx: "auto",
+                    display: "block",
+                  }}
+                />
+              </m.div>
+            </m.div>
+
+          </Box>
+        </Container>
+
+      </RootStyle>
+      <Box
+        sx={{
+          height: "auto",
+          background: theme.palette.background.default,
+          position: "relative",
+          zIndex: 2
+        }}
+      >
+
+        <AboutWhat id="about-what" />
+        <AboutVision id="about-vision" />
+        <Divider
+          orientation="vertical"
+          sx={{ my: 10, mx: "auto", width: 2, height: 40 }}
+        />
+        <AboutTeam />
+        <AboutTestimonials />
+      </Box>
+    </MotionContainer>
   );
 }

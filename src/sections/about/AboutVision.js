@@ -93,10 +93,25 @@ export default function AboutVision() {
       >
         <Image
           src="/assets/images/home/about-img.png"
-          // src="/assets/images/about/vision.jpg"
           alt="about-vision"
           effect="black-and-white"
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
         />
+
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black
+          }}
+        />
+
 
         <Box
           sx={{
@@ -122,7 +137,7 @@ export default function AboutVision() {
                 src={`/assets/images/about/${logo}.png`}
                 sx={{
                   m: { xs: 1.5, md: 3 },
-                  height: { xs: 24, md: 64 }
+                  height: { xs: 32, md: 84 }
                 }}
               />
             </m.div>

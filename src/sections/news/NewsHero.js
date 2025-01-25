@@ -13,13 +13,15 @@ import {
 import { MotionContainer, varFade } from "../../components/animate";
 import Image from "next/image";
 import NextLink from "next/link";
+import NewsBlog from "./NewsBlog";
 
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(m.div)(({ theme }) => ({
-  position: "relative",
+  position: "sticky",
+  top: 0,
   width: "100%",
-  height: "100%",
+  height: "100vh",
   zIndex: 1,
   overflow: "hidden",
   backgroundColor: "#060606", // Ensure this matches the hero image background
@@ -33,7 +35,7 @@ const RootStyle = styled(m.div)(({ theme }) => ({
       height: "100%",
       zIndex: 0,
       background: theme.palette.background.default, // Adjust as needed
-      clipPath: "polygon(100% 100%, 50% 100%, 75% 0, 100% 0)", // Slash effect visible on large screens
+      clipPath: "polygon(100% 100%, 45% 100%, 65% 0, 100% 0)", // Slash effect visible on large screens
     },
 
   },
@@ -91,7 +93,7 @@ export default function NewsHero() {
         <Container>
           <ContentStyle>
             <Grid container>
-              <Grid item xs={12} md={8}>
+              <Grid item xs={12} md={8} mt={5}>
                 <Stack spacing={2}>
                   <m.div variants={varFade().inUp}>
                     <Typography
@@ -113,8 +115,8 @@ export default function NewsHero() {
                         color: "common.white"
                       }}
                     >
-                      Discover the latest updates, expert opinions, <br />and in-depth
-                      analysis shaping our world today.
+                      Discover the latest updates, <br /> expert opinions,and in-depth
+                      analysis  <br /> shaping our world today.
                     </Typography>
                   </m.div>
                 </Stack>
@@ -129,14 +131,31 @@ export default function NewsHero() {
                       justifyContent: "center"
                     }}
                   >
+                    {/* Background Image */}
                     <Image
                       src="/assets/images/home/african-warrior-mask.png"
+                      alt="background-mask"
+                      width={isSmallScreen ? 330 : 470 || isMediumScreen ? 510 : 660}
+                      height={isSmallScreen ? 330 : 470 || isMediumScreen ? 510 : 660}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        zIndex: -1,
+                        opacity: 0.3, // Adjust opacity for a subtle background effect
+
+                      }}
+                      priority
+                    />
+                    <Image
+                      src="/assets/images/home/globe.svg"
                       alt="news-hero-graphic"
+
                       width={
-                        isSmallScreen ? 210 : 650 || isMediumScreen ? 370 : 610
+                        isSmallScreen ? 310 : 450 || isMediumScreen ? 500 : 610
                       }
                       height={
-                        isSmallScreen ? 230 : 690 || isMediumScreen ? 396 : 650
+                        isSmallScreen ? 310 : 450 || isMediumScreen ? 500 : 610
                       }
                       priority
                     />
@@ -147,6 +166,17 @@ export default function NewsHero() {
           </ContentStyle>
         </Container>
       </RootStyle>
+      <Box
+        sx={{
+          height: "auto",
+          background: theme.palette.background.default,
+          position: "relative",
+          zIndex: 2
+        }}
+      >
+
+        <NewsBlog />
+      </Box>
     </MotionContainer>
   );
 }

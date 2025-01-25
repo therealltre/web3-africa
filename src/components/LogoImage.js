@@ -12,7 +12,7 @@ const LogoImage = forwardRef(({ disabledLink = false, sx }, ref) => {
     <Box ref={ref} sx={{ width: 150, height: 60, cursor: "pointer", ...sx }}>
       <NextLink href="/" passhref="true">
         <Image
-          src="/logo/logo_full_mc.png" // replace with your image path
+          src="/assets/images/brand/w3a-logo.png" // replace with your image path
           alt="Home"
           width={160} // specify width
           height={60} // specify height
