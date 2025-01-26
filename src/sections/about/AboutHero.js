@@ -21,9 +21,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   zIndex: 1,
   width: "100%",
   height: "100vh",
-  // objectfit: "fill",
   backgroundColor: "#060606",
-
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
     paddingBottom: theme.spacing(15)
@@ -77,27 +75,33 @@ const CardStyle = styled(Card)(({ theme }) => {
   };
 });
 
+const HeroImgStyle = styled(m.img)(({ theme }) => ({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  zIndex: -1,
+  width: "100%",
+  height: "100%",
+  objectfit: "cover",
+  backgroundColor: "#060606",
+  opacity: 0.5
+}));
+
 // ----------------------------------------------------------------------
 
 export default function AboutHero() {
   const theme = useTheme();
 
-  const isLight = theme.palette.mode === "dark";
-
   return (
     <MotionContainer>
       <RootStyle>
+        <HeroImgStyle
+          alt="hero"
+          src="/assets/images/about/about-bg.png"
+          variants={varFade().inUp}
+        />
+
         <Container
-          component={MotionViewport}
-          sx={{
-            // backgroundImage: `url('/assets//illustrations/kente-pattern.svg')`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "right",
-            height: "100%",
-            objectfit: "fit",
-            padding: theme.spacing(2, 2)
-          }}
         >
           <Box
             sx={{

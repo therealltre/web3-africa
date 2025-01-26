@@ -22,7 +22,7 @@ import Image from "next/image";
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(m.div)(({ theme }) => ({
-  paddingTop: theme.spacing(15),
+  paddingTop: theme.spacing(5),
   position: "sticky",
   top: 0,
   width: "100%",
@@ -193,7 +193,7 @@ export default function NewsBlog() {
             <Box
               sx={{
                 textAlign: "start",
-                mb: { xs: 10, md: 10 }
+                mb: 5
               }}
             >
               <m.div variants={varFade().inDown}>
