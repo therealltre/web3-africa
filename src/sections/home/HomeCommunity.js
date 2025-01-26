@@ -36,16 +36,23 @@ export default function HomeCommunity() {
   };
 
   return (
-    <RootStyle>
-      <Container component={MotionViewport}>
+    <RootStyle sx={{
+      textAlign: "start",
+      mb: { xs: 10, md: 10 },
+      backgroundImage: `url('/assets/images/home/wires-1.svg')`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "contain",
+      height: "100%",
+      backgroundPosition: "right"
+    }}>
+      <Container
+        component={MotionViewport}
+
+      >
         <Box
           sx={{
             textAlign: "center",
             mb: { xs: 10, md: 10 },
-            backgroundImage: `url("/assets/images/home/african-warrior-mask.png")`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
-            backgroundPosition: "center"
           }}
         >
           <m.div variants={varFade().inDown}>

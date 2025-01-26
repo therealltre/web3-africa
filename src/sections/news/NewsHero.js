@@ -154,7 +154,7 @@ export default function NewsHero() {
                       priority
                     />
                     <m.div
-                      initial={{ scale: 0.8, rotate: 0, opacity: 0 }}
+                      // initial={{ scale: 0.8, rotate: 0, opacity: 0 }}
                       animate={{ scale: 1, rotate: 360, opacity: 1 }}
                       transition={{
                         duration: 10,

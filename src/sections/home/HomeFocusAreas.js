@@ -41,20 +41,12 @@ export default function HomeFocusAreas() {
         <RootStyle>
             <Container
                 component={MotionViewport}
-                sx={{
-                    textAlign: "start",
-                    mb: { xs: 10, md: 10 },
-                    backgroundImage: `url('/assets/images/home/dao.png')`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "contain",
-                    height: "100%",
-                    backgroundPosition: "right",
-                }}
             >
                 <Box
                     sx={{
                         textAlign: "start",
                         mb: { xs: 10, md: 10 },
+                        position: "relative", // Ensure the blob can position itself correctly
                     }}
                 >
                     <Box>
@@ -93,56 +85,84 @@ export default function HomeFocusAreas() {
                             </Typography>
                         </m.div>
                     </Box>
-                </Box>
 
-                {/* Animated SVG Circle with Image */}
-                <Box
-                    sx={{
-                        display: "flex",
-                        justifyContent: "start",
-                        alignItems: "center",
-                        mt: 5,
-                    }}
-                >
-                    <m.div
-                        animate={{
-                            y: [0, -20, 0], // Move up and down
-                        }}
-                        transition={{
-                            duration: 5, // Time to complete one cycle
-                            repeat: Infinity, // Infinite looping
-                            ease: "easeInOut",
+
+                    {/* Animated SVG Circle with Image */}
+                    <Box
+                        sx={{
+                            display: "flex",
+                            justifyContent: "start",
+                            alignItems: "center",
+                            mt: 5,
                         }}
                     >
-                        <svg
-                            width="300"
-                            height="300"
-                            viewBox="0 0 200 200"
-                            xmlns="http://www.w3.org/2000/svg"
-                            style={{ display: "block" }}
+                        <m.div
+                            animate={{
+                                y: [0, -20, 0], // Move up and down
+                            }}
+                            transition={{
+                                duration: 5, // Time to complete one cycle
+                                repeat: Infinity, // Infinite looping
+                                ease: "easeInOut",
+                            }}
                         >
-                            <circle
-                                cx="100"
-                                cy="100"
-                                r="95"
-                                fill={'#333333'}
-                                stroke={'#333333'}
-                                strokeWidth="5"
-                            />
-                            <foreignObject x="25" y="25" width="180" height="180">
-                                <Image
-                                    src="/assets/images/home/africa-web3.png"
-                                    alt="Africa Web3"
-                                    sx={{
-                                        width: "100%",
-                                        height: "100%",
-                                        objectFit: "cover",
-                                        borderRadius: "50%",
-                                    }}
+                            <svg
+                                width="300"
+                                height="300"
+                                viewBox="0 0 200 200"
+                                xmlns="http://www.w3.org/2000/svg"
+                                style={{ display: "block" }}
+                            >
+                                <circle
+                                    cx="100"
+                                    cy="100"
+                                    r="95"
+                                    fill={'#333333'}
+                                    stroke={'#333333'}
+                                    strokeWidth="5"
                                 />
-                            </foreignObject>
-                        </svg>
-                    </m.div>
+                                <foreignObject x="25" y="25" width="180" height="180">
+                                    <Image
+                                        src="/assets/images/home/africa-web3.png"
+                                        alt="Africa Web3"
+                                        sx={{
+                                            width: "100%",
+                                            height: "100%",
+                                            objectFit: "cover",
+                                            borderRadius: "50%",
+                                        }}
+                                    />
+                                </foreignObject>
+                            </svg>
+                        </m.div>
+                    </Box>
+
+                    <Box
+                        sx={{
+                            width: 400,
+                            height: 400,
+                            position: "absolute",
+                            top: 50,
+                            right: 0,
+                            zIndex: 1,
+                            display: { xs: "none", md: "block" }, // Hide on small screens, show on medium and up
+                        }}
+                    >
+                        <m.div
+                          variants={varFade().inRight}
+                        ><Image
+                                src="/assets/images/home/color-blob.svg"
+                                alt="blob"
+                                objectFit="contain"
+                                sx={{
+                                    backgroundRepeat: "no-repeat",
+                                    backgroundSize: "contain",
+                                    height: "100%",
+                                    width: "100%",
+                                }}
+                            /></m.div>
+
+                    </Box>
                 </Box>
             </Container>
         </RootStyle>
