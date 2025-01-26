@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Container,
+  Grid,
   Link,
   Stack,
   Typography
@@ -27,29 +28,23 @@ const RootStyle = styled("div")(({ theme }) => ({
 
 const CardStyle = styled(Card)(({ theme }) => {
   const shadowCard = (opacity) =>
-    theme.palette.mode === "dark"
+    theme.palette.mode === "light"
       ? alpha(theme.palette.grey[500], opacity)
       : alpha(theme.palette.common.black, opacity);
 
   return {
-    cursor: "pointer",
-    position: "relative", // Enable positioning for overlay
     border: 0,
-    maxWidth: 668,
-    minWidth: 358,
-    minHeight: 350,
-    // minHeight: 272,
-    maxHeight: 480,
+    // maxWidth: 365,
+    width: "100%",
+    // height: "100%",
+    height: 450,
     margin: "auto",
     textAlign: "start",
-    overflow: "hidden", // Ensure image doesn't overflow the card
-    // padding: theme.spacing(5, 5, 5),
+    padding: theme.spacing(5, 5, 5),
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "transparent"
-      //   backgroundColor:
-      //     theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+      backgroundColor: "#fff"
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -71,7 +66,7 @@ const CardStyle = styled(Card)(({ theme }) => {
           width: "calc(100% - 40px)",
           height: "calc(100% - 40px)",
           borderRadius: Number(theme.shape.borderRadius) * 2,
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: "#fff",
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
         }
       }
@@ -109,27 +104,29 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 
 const CARDS = [
   {
-    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    backgroundImage: "/assets/images/home/blockchain-development.svg",
     title: "Blockchain Development",
     href: "#1",
     description:
       "Leading the development of decentralized infrastructure across Africa, Web 3 Africa Group builds scalable blockchain solutions to enhance transparency, efficiency, and financial inclusion. Our innovative technologies aim to drive Africa’s digital transformation and economic growth."
   },
   {
-    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    backgroundImage: "/assets/images/home/digital-assets.svg",
     title: "Digital Assets Policy Frameworks",
     href: "#2",
     description:
       "Partnering with governments and policymakers, we strive to establish robust legal frameworks that encourage innovation while ensuring regulatory compliance. Our mission is to legitimize digital assets in Africa, positioning the continent as a global leader in the decentralized economy."
   },
   {
-    backgroundImage: "/assets/images/home/card-image-placeholder.png",
+    backgroundImage: "/assets/images/home/blockchain-education.svg",
     title: "Blockchain Education",
     href: "#3",
     description:
       "Web 3 Africa Group is dedicated to equipping individuals with essential knowledge and skills for success in blockchain and digital asset industries. Through partnerships and educational initiatives, we lay the foundation for a new generation of African innovators and leaders in Web 3."
   }
 ];
+
+const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
 // ----------------------------------------------------------------------
 
@@ -222,62 +219,61 @@ export default function HomeEducation() {
             gridTemplateColumns: {
               xs: "repeat(1, 1fr)",
               md: "repeat(2, 1fr)",
-              lg: "repeat(2, 1fr)"
+              lg: "repeat(3, 1fr)"
             }
           }}
         >
           {CARDS.map((card, index) => (
-            <m.div key={card.title} variants={varFade().inUp}>
-              <NextLink href={card.href} passHref>
-                <Link
-                  underline="none"
+            <Grid item xs={12} lg={4} key={index}>
+              <m.div variants={varFade().inUp}>
+                <CardStyle
                   sx={{
-                    textDecoration: "none",
-                    display: "block",
-                    cursor: "pointer"
+                    padding: { xs: 3, md: 5 },
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                    "&:hover": {
+                      borderRadius: 2, // Border radius stays consistent
+                      transform: "translateY(-5px)", // Moves the card up by 5px
+                      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                    }
                   }}
                 >
-                  <CardStyle
+                  <Image
+                    src={card.backgroundImage}
+                    alt={card.title}
                     sx={{
-                      // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                      padding: { xs: 3, md: 5 },
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                      "&:hover": {
-                        color: "#fff", // Text color changes to white on hover
-                        borderRadius: 1, // Border radius stays consistent
-                        transform: "translateY(-5px)", // Moves the card up by 5px
-                        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                      }
+                      mb: 3,
+                      width: 60,
+                      height: 60,
+                      filter: (theme) => shadowIcon(theme.palette.primary.main),
+                      ...(index === 0 && {
+                        filter: (theme) => shadowIcon(theme.palette.info.main)
+                      }),
+                      ...(index === 1 && {
+                        filter: (theme) => shadowIcon(theme.palette.error.main)
+                      })
+                    }}
+                  />
+                  <Typography
+                    variant="h5"
+                    paragraph
+                    sx={{ textAlign: "start" }}
+                  >
+                    {card.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "text.secondary",
+                      textAlign: "start"
                     }}
                   >
-                    <Image
-                      src={card.backgroundImage}
-                      alt={card.title}
-                      width={100}
-                      height={100}
+                    {card.description}
+                  </Typography>
 
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectfit: "cover" // Ensure the image covers the card
-                      }}
-                    />
 
-                    <ContentWrapper sx={{ textAlign: "start" }}>
-                      <Typography variant="h5" paragraph>
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body1">
-                        {card.description}
-                      </Typography>
-                    </ContentWrapper>
-                  </CardStyle>
-                </Link>
-              </NextLink>
-            </m.div>
+                </CardStyle>
+              </m.div>
+            </Grid>
           ))}
         </Box>
         {/* </ContentStyle> */}

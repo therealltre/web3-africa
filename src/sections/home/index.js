@@ -8,5 +8,6 @@ export { default as HomeStickySection } from "./HomeStickySection";
 export { default as HomeProjects } from "./HomeProjects";
 export { default as HomeAbout } from "./HomeAbout";
 export { default as HomeKeyMarkets } from "./HomeKeyMarkets";
+export { default as HomeFocusAreas } from "./HomeFocusAreas";
 
 export { default as HomeFaq } from "./HomeFaq";

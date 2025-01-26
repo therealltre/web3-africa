@@ -191,7 +191,7 @@ export default function AboutVision() {
 
       <Grid container spacing={2}>
         {CARDS.map((card, index) => (
-          <Grid item xs={12} lg={4} key={card.index}>
+          <Grid item xs={12} lg={4} key={index}>
             <m.div variants={varFade().inUp}>
               <CardStyle
                 sx={{

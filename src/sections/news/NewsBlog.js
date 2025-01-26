@@ -250,7 +250,7 @@ export default function NewsBlog() {
                     padding: theme.spacing(2),
                     height: "100%",
                     overflowY: "auto",
-                    backgroundColor: 'transparent',
+                    // backgroundColor: 'transparent',
                     boxShadow: 'none'
                   }}
                 >
@@ -380,7 +380,7 @@ export default function NewsBlog() {
                               left: 0,
                               width: "100%",
                               height: "100%",
-                              objectfit: "cover" // Ensure the image covers the card
+                              // objectfit: "cover" // Ensure the image covers the card
                             }}
                           />
 

@@ -25,7 +25,7 @@ const RootStyle = styled('div')(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundImage:
-    'url(/assets/overlay1.svg), url(/assets/images/contact/contact-us.avif)',
+    'url(/assets/overlay1.svg), url(/assets/images/partnership/handshake.avif)',
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up('md')]: {
     height: 560,
@@ -44,36 +44,17 @@ const ContentStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function ContactHero() {
+export default function PatnershipHero() {
   return (
     <RootStyle>
       <Container component={MotionContainer} sx={{ position: 'relative', height: '100%' }}>
         <ContentStyle>
-          <TextAnimate text="Where" variants={varFade().inRight} sx={{ color: 'common.white' }} />
+          <TextAnimate text="Partner" variants={varFade().inRight} sx={{ color: 'common.white' }} />
           <br />
           <Box sx={{ display: 'inline-flex', color: 'common.white' }}>
-            <TextAnimate text="to" sx={{ mr: 2, color: 'common.white' }} />
-            <TextAnimate text="find" sx={{ mr: 2, color: 'common.white' }} />
-            <TextAnimate text="us?" sx={{ color: 'common.white' }} />
+            <TextAnimate text="with" sx={{ mr: 2, color: 'common.white' }} />
+            <TextAnimate text="us" sx={{ color: 'common.white' }} />
           </Box>
-
-          <Grid container spacing={5} sx={{ mt: 5, }}>
-            {CONTACTS.map((contact) => (
-              <Grid key={contact.country} item xs={12} sm={6} md={6} lg={6} sx={{ pr: { md: 5 } }}>
-                <m.div variants={varFade().in}>
-                  <Typography variant="h6" paragraph sx={{ color: 'common.white' }}>
-                    {contact.country}
-                  </Typography>
-                </m.div>
-                <m.div variants={varFade().inRight}>
-                  <Typography variant="body2" sx={{ color: 'common.white' }}>
-                    {contact.address}
-                    <br /> {contact.phoneNumber}
-                  </Typography>
-                </m.div>
-              </Grid>
-            ))}
-          </Grid>
         </ContentStyle>
       </Container>
     </RootStyle>

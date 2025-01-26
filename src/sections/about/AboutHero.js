@@ -20,7 +20,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   paddingBottom: theme.spacing(15),
   zIndex: 1,
   width: "100%",
-  height: "100vh",
+  height: "100%",
   backgroundColor: "#060606",
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
@@ -98,6 +98,7 @@ export default function AboutHero() {
         <HeroImgStyle
           alt="hero"
           src="/assets/images/about/about-bg.png"
+          // src="/assets/images/about/web3-bg-svg.svg"
           variants={varFade().inUp}
         />
 

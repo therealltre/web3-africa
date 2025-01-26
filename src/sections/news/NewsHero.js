@@ -21,11 +21,11 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   position: "sticky",
   top: 0,
   width: "100%",
-  height: "100vh",
+  height: "100%",
   zIndex: 1,
   overflow: "hidden",
   backgroundColor: "#060606", // Ensure this matches the hero image background
-  [theme.breakpoints.up("lg")]: {
+  [theme.breakpoints.up("sm")]: {
     "&::before": {
       content: '""',
       position: "absolute",
@@ -34,14 +34,18 @@ const RootStyle = styled(m.div)(({ theme }) => ({
       width: "100%",
       height: "100%",
       zIndex: 0,
-      background: theme.palette.background.default, // Adjust as needed
+      background: "#060606", // Adjust as needed
+      // background: theme.palette.background.default, // Adjust as needed
       clipPath: "polygon(100% 100%, 45% 100%, 65% 0, 100% 0)", // Slash effect visible on large screens
     },
 
   },
-  [theme.breakpoints.up("md")]: {
+  [theme.breakpoints.up("lg")]: {
     display: "flex",
     alignItems: "center",
+    height: "100vh",
+    display: 'flex',
+    alignItems: 'center'
   },
 }));
 
@@ -69,7 +73,9 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
     padding: theme.spacing(10, 2),
     [theme.breakpoints.up("md")]: {
       textAlign: "start",
-      padding: theme.spacing(15)
+
+
+      // padding: theme.spacing(15)
     }
   })
 );
@@ -83,17 +89,17 @@ export default function NewsHero() {
 
   return (
     <MotionContainer>
-      <RootStyle>
+      <RootStyle >
         <HeroImgStyle
           alt="hero"
           src="/assets/images/home/hero1.png"
           variants={varFade().inUp}
         />
 
-        <Container>
+        <Container >
           <ContentStyle>
             <Grid container>
-              <Grid item xs={12} md={8} mt={5}>
+              <Grid item xs={12} md={8} mt={10}>
                 <Stack spacing={2}>
                   <m.div variants={varFade().inUp}>
                     <Typography
@@ -128,37 +134,48 @@ export default function NewsHero() {
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "center"
+                      justifyContent: "center",
                     }}
                   >
                     {/* Background Image */}
                     <Image
                       src="/assets/images/home/african-warrior-mask.png"
                       alt="background-mask"
-                      width={isSmallScreen ? 330 : 470 || isMediumScreen ? 510 : 660}
-                      height={isSmallScreen ? 330 : 470 || isMediumScreen ? 510 : 660}
+                      width={isSmallScreen ? 330 : 470 || isMediumScreen ? 410 : 660}
+                      height={isSmallScreen ? 330 : 470 || isMediumScreen ? 410 : 660}
                       style={{
                         position: "absolute",
-                        top: 0,
-                        left: 0,
-                        zIndex: -1,
+                        top: { xs: 100, md: 0 },
+                        left: 100,
+                        zIndex: -2,
                         opacity: 0.3, // Adjust opacity for a subtle background effect
 
                       }}
                       priority
                     />
-                    <Image
-                      src="/assets/images/home/globe.svg"
-                      alt="news-hero-graphic"
+                    <m.div
+                      initial={{ scale: 0.8, rotate: 0, opacity: 0 }}
+                      animate={{ scale: 1, rotate: 360, opacity: 1 }}
+                      transition={{
+                        duration: 10,
+                        ease: "linear",
+                        repeat: Infinity,
+                        repeatType: "loop",
+                      }}
+                    >
+                      <Image
+                        src="/assets/images/news/globe.svg"
+                        alt="news-hero-graphic"
 
-                      width={
-                        isSmallScreen ? 310 : 450 || isMediumScreen ? 500 : 610
-                      }
-                      height={
-                        isSmallScreen ? 310 : 450 || isMediumScreen ? 500 : 610
-                      }
-                      priority
-                    />
+                        width={
+                          isSmallScreen ? 250 : 450 || isMediumScreen ? 400 : 610
+                        }
+                        height={
+                          isSmallScreen ? 250 : 450 || isMediumScreen ? 400 : 610
+                        }
+                        priority
+                      />
+                    </m.div>
                   </Box>
                 </m.div>
               </Grid>
@@ -177,6 +194,6 @@ export default function NewsHero() {
 
         <NewsBlog />
       </Box>
-    </MotionContainer>
+    </MotionContainer >
   );
 }

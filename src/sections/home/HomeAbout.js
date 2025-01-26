@@ -196,7 +196,7 @@ export default function HomeAbout() {
         </Box>
 
         {IMAGE_POSITIONS.map((pos, index) => (
-          <m.div variants={varFade().inUp}>
+         <m.div key={`image-${index}`} variants={varFade().inUp}> {/* Added key */}
             <Image
               key={index}
               src={"/assets/images/home/africa-button.png"}
@@ -221,7 +221,7 @@ export default function HomeAbout() {
 
         <Grid container spacing={2}>
           {CARDS.map((card, index) => (
-            <Grid item xs={12} lg={4} key={card.index}>
+            <Grid item xs={12} lg={4} key={`card-${index}`}> {/* Added key */}
               <m.div variants={varFade().inUp}>
                 <CardStyle
                   sx={{

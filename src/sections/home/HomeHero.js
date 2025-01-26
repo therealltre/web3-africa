@@ -20,7 +20,7 @@ import HomeAbout from "./HomeAbout";
 import { AboutTestimonials } from "../about";
 import HomeProjects from "./HomeProjects";
 import HomeKeyMarkets from "./HomeKeyMarkets";
-import { HomeTrustedBy } from ".";
+import { HomeFocusAreas, HomeTrustedBy } from ".";
 import NextLink from "next/link";
 
 // ----------------------------------------------------------------------
@@ -29,12 +29,13 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   position: "sticky",
   top: 0,
   width: "100%",
-  height: "100vh",
+  // height: "100vh",
   zIndex: 1,
   backgroundColor: "#333333",
-  [theme.breakpoints.up("md")]: {
+  [theme.breakpoints.up("lg")]: {
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
+    height: "100vh",
   }
 }));
 
@@ -60,8 +61,10 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
     justifyContent: "start",
     padding: theme.spacing(15, 2),
     [theme.breakpoints.up("md")]: {
-      textAlign: "start",
-      padding: theme.spacing(15)
+      textAlign: "start", // Center text for medium screens
+      justifyContent: "center", // Center content horizontally
+      alignItems: "center", // Center content vertically
+      // padding: theme.spacing(15)
     }
   })
 );
@@ -99,7 +102,8 @@ export default function HomeHero() {
                         fontSize: { xs: 42, lg: 72 },
                         fontWeight: 700,
                         lineHeight: 1,
-                        color: "common.white"
+                        color: "common.white",
+                        mt: 5
                       }}
                     >
                       Leading Africa's <br /> Decentralized <br /> Revolution
@@ -123,33 +127,27 @@ export default function HomeHero() {
                   // animate={{ y: [-20, 0, -20] }}
                   // transition={{ duration: 4, repeat: Infinity }}
                   >
-                    <NextLink passhref="true" href="/contact-us">
-                      <Link>
-                        <Button
-                          variant="contained"
-                          sx={{
-                            position: "relative",
-                            overflow: "hidden",
-                            backgroundColor: theme.palette.primary.main,
+                    <NextLink passHref href="/contact-us">
+                      <Button
+                        variant="contained"
+                        sx={{
+                          position: "relative",
+                          overflow: "hidden",
+                          backgroundColor: theme.palette.primary.main,
+                          color: "#fff",
+                          marginTop: 2,
+                          border: "2px solid transparent",
+                          borderRadius: 1,
+                          transition: "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
+                          "&:hover": {
                             color: "#fff",
-                            marginTop: 2,
-                            border: "2px solid transparent", // Ensures a default border is present
-                            borderRadius: 1, // Border radius stays consistent
-                            transition:
-                              "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
-                            "&:hover": {
-                              color: "#fff", // Text color changes to white on hover
-
-                              borderRadius: 1, // Border radius stays consistent
-                              backgroundColor: theme.palette.primary.dark, // Background changes to black
-                              transform: "translateY(-5px)" // Moves the button up by 5px on hover
-                            }
-                          }}
-                          F
-                        >
-                          Contact Us
-                        </Button>
-                      </Link>
+                            backgroundColor: theme.palette.primary.dark,
+                            transform: "translateY(-5px)"
+                          }
+                        }}
+                      >
+                        Contact Us
+                      </Button>
                     </NextLink>
                   </m.div>
                 </Stack>
@@ -202,6 +200,7 @@ export default function HomeHero() {
         <HomeEducation />
         <HomeCommunity />
         <HomeProjects />
+        <HomeFocusAreas />
         <HomeKeyMarkets />
         <AboutTestimonials />
       </Box>
