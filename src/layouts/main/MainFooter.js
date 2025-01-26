@@ -106,11 +106,12 @@ export default function MainFooter() {
                       key={link.name}
                       href={link.href}
                       passhref="true"
-
+                      style={{ textDecoration: "none" }}
                     >
                       <Link
                         color="common.white"
                         variant="body2"
+                        underline="none"
                         sx={{
                           display: "block", textDecoration: 'none', "&:hover": {
                             color: "primary.dark", // Apply secondary.main on hover
