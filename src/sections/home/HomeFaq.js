@@ -1,6 +1,7 @@
 // @mui
-import { styled } from '@mui/material/styles';
 import { Container, Grid, Typography, Box, Stack, Button } from '@mui/material';
+import { useTheme, styled } from "@mui/material/styles";
+
 //framermotion
 import { MotionViewport, varFade } from '../../components/animate';
 import { m } from 'framer-motion';
@@ -21,6 +22,7 @@ const RootStyle = styled('div')(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function HomeFaq() {
+  const theme = useTheme();
   return (
     <RootStyle>
       <Container component={MotionViewport}>
@@ -79,7 +81,28 @@ export default function HomeFaq() {
 
             </Stack>
 
-            <Button  variant="contained" href='/contact-us'>
+            <Button
+              variant="contained"
+              href={'/contact-us'}
+              sx={{
+                position: "relative",
+                overflow: "hidden",
+                backgroundColor: theme.palette.primary.main,
+                color: "#fff",
+                marginTop: 2,
+                border: "2px solid transparent", // Ensures a default border is present
+                borderRadius: 1, // Border radius stays consistent
+                transition:
+                  "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
+                "&:hover": {
+                  color: "#fff", // Text color changes to white on hover
+
+                  borderRadius: 1, // Border radius stays consistent
+                  backgroundColor: theme.palette.primary.dark, // Background changes to black
+                  transform: "translateY(-5px)" // Moves the button up by 5px on hover
+                }
+              }}
+            >
               Contact Us
             </Button>
           </m.div>
