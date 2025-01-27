@@ -97,7 +97,7 @@ export default function AboutHero() {
       <RootStyle>
         <HeroImgStyle
           alt="hero"
-          src="/assets/images/about/about-bg.png"
+          src="/assets/images/about/about-hero.png"
           // src="/assets/images/about/web3-bg-svg.svg"
           variants={varFade().inUp}
         />
@@ -130,7 +130,7 @@ export default function AboutHero() {
             <m.div variants={varFade().inUp}>
               <Typography
                 sx={{
-                  mt: 10,
+                  mt: 20,
                   fontSize: { xs: 42, lg: 72 },
                   fontWeight: 700,
                   lineHeight: 1,
@@ -148,6 +148,7 @@ export default function AboutHero() {
                 sx={{
                   marginTop: 2,
                   color: "common.white",
+                  fontSize: { xs: 18, lg: 24 },
                   textAlign: "center", // Aligns all text to center
                 }}
               >
