@@ -131,16 +131,22 @@ const videoList = [
     type: "mp4"
   },
   {
-    title: "Exploring Blockchain",
-    thumbnail: "/assets/videos/thumbnail/web3africa-img.png",
-    videoSrc: "https://www.youtube.com/embed/FExp9YuTzbY",
+    title: "Davos 2025: Del Titus Bawuah at Africa House on Web3.",
+    thumbnail: "https://img.youtube.com/vi/FvejFtsySPY/maxresdefault.jpg",
+    videoSrc: "https://www.youtube.com/embed/FvejFtsySPY",
     type: "youtube"
   },
   {
-    title: "The Rise of NFTs",
-    thumbnail: "/assets/videos/thumbnail/web3africa-img.png",
-    videoSrc: "/assets/videos/news.mp4",
-    type: "mp4"
+    title: "Del Titus, CEO of Telos Africa at Binance Blockchain Week 2024",
+    thumbnail: "https://img.youtube.com/vi/8ymXjp0lmPQ/maxresdefault.jpg",
+    videoSrc: "https://www.youtube.com/embed/8ymXjp0lmPQ",
+    type: "youtube"
+  },
+  {
+    title: "Africa Powered By Web 3.0: Redefining a Continent's Destiny",
+    thumbnail: "https://img.youtube.com/vi/cpFv_bQh_tY/maxresdefault.jpg",
+    videoSrc: "https://www.youtube.com/embed/cpFv_bQh_tY",
+    type: "youtube"
   }
 ];
 
@@ -244,14 +250,17 @@ export default function NewsBlog() {
               </Grid>
 
               {/* Video List */}
+              {/* Video List */}
               <Grid item xs={12} md={4}>
                 <Card
                   sx={{
                     padding: theme.spacing(2),
                     height: "100%",
-                    overflowY: "auto",
-                    // backgroundColor: 'transparent',
-                    boxShadow: 'none'
+                    maxHeight: 450, // Set maximum height
+                    overflowY: "auto", // Enable scrolling
+                    boxShadow: "none", // Remove box shadow
+                    border: `1px solid ${theme.palette.divider}`, // Optional: Add a subtle border
+                    // borderRadius: theme.shape.borderRadius, // Optional: Rounded corners
                   }}
                 >
                   <Typography
@@ -279,7 +288,7 @@ export default function NewsBlog() {
                           alt={video.title}
                           sx={{
                             width: 100,
-                            height: 76,
+                            height: 70,
                             borderRadius: 1,
                             objectFit: "cover",
                           }}
@@ -293,6 +302,7 @@ export default function NewsBlog() {
                   ))}
                 </Card>
               </Grid>
+
             </Grid>
           </ContentStyle>
 

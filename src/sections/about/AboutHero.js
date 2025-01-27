@@ -81,7 +81,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   left: 0,
   zIndex: -1,
   width: "100%",
-  height: "100%",
+  height: "100vh",
   objectfit: "cover",
   backgroundColor: "#060606",
   opacity: 0.5
