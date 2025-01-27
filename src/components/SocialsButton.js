@@ -62,7 +62,7 @@ export default function SocialsButton({ initialColor = false, simple = true, lin
                 }}
                 {...other}
               >
-                <Iconify icon={icon} sx={{ width: 20, height: 20 }} />
+                <Iconify icon={icon} sx={{ width: 32, height: 32 }} />
               </IconButton>
             </Tooltip>
           </Link>

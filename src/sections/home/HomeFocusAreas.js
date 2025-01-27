@@ -87,56 +87,6 @@ export default function HomeFocusAreas() {
                     </Box>
 
 
-                    {/* Animated SVG Circle with Image */}
-                    <Box
-                        sx={{
-                            display: "flex",
-                            justifyContent: "start",
-                            alignItems: "center",
-                            mt: 5,
-                        }}
-                    >
-                        <m.div
-                            animate={{
-                                y: [0, -20, 0], // Move up and down
-                            }}
-                            transition={{
-                                duration: 5, // Time to complete one cycle
-                                repeat: Infinity, // Infinite looping
-                                ease: "easeInOut",
-                            }}
-                        >
-                            <svg
-                                width="300"
-                                height="300"
-                                viewBox="0 0 200 200"
-                                xmlns="http://www.w3.org/2000/svg"
-                                style={{ display: "block" }}
-                            >
-                                <circle
-                                    cx="100"
-                                    cy="100"
-                                    r="95"
-                                    fill={'#333333'}
-                                    stroke={'#333333'}
-                                    strokeWidth="5"
-                                />
-                                <foreignObject x="25" y="25" width="180" height="180">
-                                    <Image
-                                        src="/assets/images/home/africa-web3.png"
-                                        alt="Africa Web3"
-                                        sx={{
-                                            width: "100%",
-                                            height: "100%",
-                                            objectFit: "cover",
-                                            borderRadius: "50%",
-                                        }}
-                                    />
-                                </foreignObject>
-                            </svg>
-                        </m.div>
-                    </Box>
-
                     <Box
                         sx={{
                             width: 400,
@@ -149,7 +99,13 @@ export default function HomeFocusAreas() {
                         }}
                     >
                         <m.div
-                          variants={varFade().inRight}
+                            // animate={{ scale: 1, rotate: 360, opacity: 1 }}
+                            transition={{
+                                duration: 10,
+                                ease: "linear",
+                                repeat: Infinity,
+                                repeatType: "loop",
+                            }}
                         ><Image
                                 src="/assets/images/home/color-blob.svg"
                                 alt="blob"
@@ -157,8 +113,8 @@ export default function HomeFocusAreas() {
                                 sx={{
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "contain",
-                                    height: "100%",
-                                    width: "100%",
+                                    height: 300,
+                                    width: 300,
                                 }}
                             /></m.div>
 

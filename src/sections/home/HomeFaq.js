@@ -1,6 +1,6 @@
 // @mui
-import {  styled } from '@mui/material/styles';
-import { Container, Grid, Typography, Box, Stack } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { Container, Grid, Typography, Box, Stack, Button } from '@mui/material';
 //framermotion
 import { MotionViewport, varFade } from '../../components/animate';
 import { m } from 'framer-motion';
@@ -35,6 +35,7 @@ export default function HomeFaq() {
               FAQS
             </Typography>
           </m.div>
+
           <m.div variants={varFade().inDown}>
             <Stack direction={'row'} spacing={1} justifyContent={'center'}>
               <Typography variant="h2">Looking For</Typography>
@@ -55,16 +56,34 @@ export default function HomeFaq() {
               </Typography>
             </Stack>
           </m.div>
+
         </Box>
         <Grid container spacing={2} >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={12}>
             <FaqsList />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <FaqsForm />
-          </Grid>
+          </Grid> */}
         </Grid>
+        <Box
+          sx={{
+            textAlign: 'center',
+            mt: { xs: 10, md: 10 },
+          }}
+        >
+          <m.div variants={varFade().inDown}>
+            <Stack direction={'row'} spacing={1} justifyContent={'center'}>
+              <Typography variant="h4">Haven't found the right help?</Typography>
+
+            </Stack>
+
+            <Button  variant="contained" href='/contact-us'>
+              Contact Us
+            </Button>
+          </m.div>
+        </Box>
       </Container>
     </RootStyle>
   );

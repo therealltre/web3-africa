@@ -7,9 +7,12 @@ import {
   Stack,
   Grid,
   useMediaQuery,
+  Button,
+  Link
 } from "@mui/material";
 import { MotionContainer, varFade } from "../../components/animate";
 import Image from "next/image";
+import NextLink from "next/link";
 import NewsBlog from "./NewsBlog";
 
 // ----------------------------------------------------------------------
@@ -21,7 +24,7 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   height: "100%",
   zIndex: 1,
   overflow: "hidden",
-  backgroundColor: "#060606",
+  backgroundColor: "#060606", // Ensure this matches the hero image background
   [theme.breakpoints.up("sm")]: {
     "&::before": {
       content: '""',
@@ -31,16 +34,21 @@ const RootStyle = styled(m.div)(({ theme }) => ({
       width: "100%",
       height: "100%",
       zIndex: 0,
-      background: "#060606",
-      clipPath: "polygon(100% 100%, 45% 100%, 65% 0, 100% 0)",
+      background: "#060606", // Adjust as needed
+      // background: theme.palette.background.default, // Adjust as needed
+      clipPath: "polygon(100% 100%, 45% 100%, 65% 0, 100% 0)", // Slash effect visible on large screens
     },
+
   },
   [theme.breakpoints.up("lg")]: {
     display: "flex",
     alignItems: "center",
     height: "100vh",
+    display: 'flex',
+    alignItems: 'center'
   },
 }));
+
 
 const HeroImgStyle = styled(m.img)(({ theme }) => ({
   position: "absolute",
@@ -49,8 +57,8 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   zIndex: -1,
   width: "100%",
   height: "100%",
-  objectFit: "cover",
-  backgroundColor: "#060606",
+  objectfit: "cover",
+  backgroundColor: "#060606"
 }));
 
 const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
@@ -65,7 +73,10 @@ const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
     padding: theme.spacing(10, 2),
     [theme.breakpoints.up("md")]: {
       textAlign: "start",
-    },
+
+
+      // padding: theme.spacing(15)
+    }
   })
 );
 
@@ -78,14 +89,14 @@ export default function NewsHero() {
 
   return (
     <MotionContainer>
-      <RootStyle>
+      <RootStyle >
         <HeroImgStyle
           alt="hero"
           src="/assets/images/home/hero1.png"
           variants={varFade().inUp}
         />
 
-        <Container>
+        <Container >
           <ContentStyle>
             <Grid container>
               <Grid item xs={12} md={8} mt={10}>
@@ -96,7 +107,7 @@ export default function NewsHero() {
                         fontSize: { xs: 36, lg: 64 },
                         fontWeight: 700,
                         lineHeight: 1.2,
-                        color: "common.white",
+                        color: "common.white"
                       }}
                     >
                       Stay Informed with <br /> Latest News <br /> & Insights
@@ -107,11 +118,11 @@ export default function NewsHero() {
                       sx={{
                         fontSize: { xs: 18, lg: 24 },
                         marginTop: 2,
-                        color: "common.white",
+                        color: "common.white"
                       }}
                     >
-                      Discover the latest updates, <br /> expert opinions, and
-                      in-depth analysis <br /> shaping our world today.
+                      Discover the latest updates, <br /> expert opinions,and in-depth
+                      analysis  <br /> shaping our world today.
                     </Typography>
                   </m.div>
                 </Stack>
@@ -126,6 +137,7 @@ export default function NewsHero() {
                       justifyContent: "center",
                     }}
                   >
+                    {/* Background Image */}
                     <Image
                       src="/assets/images/home/african-warrior-mask.png"
                       alt="background-mask"
@@ -136,22 +148,32 @@ export default function NewsHero() {
                         top: { xs: 100, md: 0 },
                         left: 100,
                         zIndex: -2,
-                        opacity: 0.3,
+                        opacity: 0.3, // Adjust opacity for a subtle background effect
+
                       }}
                       priority
                     />
-                    <m.div>
-                      <video
-                        src="/assets/videos/davos-2025.mp4"
-                        width={isSmallScreen ? 350 : 450 || isMediumScreen ? 500 : 610}
-                        height={isSmallScreen ? 350 : 450 || isMediumScreen ? 500 : 610}
-                        autoPlay
-                        muted
-                        loop
-                        style={{
-                          borderRadius: "50%", // To match the globe shape
-                          objectFit: "cover",
-                        }}
+                    <m.div
+                      // initial={{ scale: 0.8, rotate: 0, opacity: 0 }}
+                      animate={{ scale: 1, rotate: 360, opacity: 1 }}
+                      transition={{
+                        duration: 10,
+                        ease: "linear",
+                        repeat: Infinity,
+                        repeatType: "loop",
+                      }}
+                    >
+                      <Image
+                        src="/assets/images/news/globe.svg"
+                        alt="news-hero-graphic"
+
+                        width={
+                          isSmallScreen ? 250 : 450 || isMediumScreen ? 400 : 610
+                        }
+                        height={
+                          isSmallScreen ? 250 : 450 || isMediumScreen ? 400 : 610
+                        }
+                        priority
                       />
                     </m.div>
                   </Box>
@@ -166,11 +188,12 @@ export default function NewsHero() {
           height: "auto",
           background: theme.palette.background.default,
           position: "relative",
-          zIndex: 2,
+          zIndex: 2
         }}
       >
+
         <NewsBlog />
       </Box>
-    </MotionContainer>
+    </MotionContainer >
   );
 }

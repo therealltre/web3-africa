@@ -69,7 +69,8 @@ const CardStyle = styled(Card)(({ theme }) => {
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "#fff"
+      backgroundColor: "#060606",
+      color: '#fff'
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -196,7 +197,7 @@ export default function HomeAbout() {
         </Box>
 
         {IMAGE_POSITIONS.map((pos, index) => (
-         <m.div key={`image-${index}`} variants={varFade().inUp}> {/* Added key */}
+          <m.div key={`image-${index}`} variants={varFade().inUp}> {/* Added key */}
             <Image
               key={index}
               src={"/assets/images/home/africa-button.png"}
@@ -260,7 +261,7 @@ export default function HomeAbout() {
                   <Typography
                     variant="body1"
                     sx={{
-                      color: isLight ? "text.secondary" : "common.white",
+                      color: "common.white",
                       textAlign: "start"
                     }}
                   >

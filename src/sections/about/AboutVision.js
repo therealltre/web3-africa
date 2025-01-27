@@ -101,7 +101,7 @@ export default function AboutVision() {
           }}
         />
 
-        <Box
+        {/* <Box
           sx={{
             position: "absolute",
             top: 0,
@@ -110,7 +110,7 @@ export default function AboutVision() {
             height: "100%",
             backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black
           }}
-        />
+        /> */}
 
 
         <Box
@@ -191,7 +191,7 @@ export default function AboutVision() {
 
       <Grid container spacing={2}>
         {CARDS.map((card, index) => (
-          <Grid item xs={12} lg={4} key={index}>
+          <Grid item xs={12} lg={4} key={card.index}>
             <m.div variants={varFade().inUp}>
               <CardStyle
                 sx={{

@@ -17,7 +17,7 @@ import {
 // ----------------------------------------------------------------------
 
 const RootStyle = styled("div")(({ theme }) => ({
-  height: "100%"
+    height: "100%"
   // paddingTop: theme.spacing(8),
   // [theme.breakpoints.up("md")]: {
   //   paddingTop: theme.spacing(11)

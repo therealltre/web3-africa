@@ -131,19 +131,13 @@ const videoList = [
     type: "mp4"
   },
   {
-    title: "Davos 2025: Del Titus Bawuah at Africa House on Web3.",
-    thumbnail: "https://img.youtube.com/vi/FvejFtsySPY/maxresdefault.jpg",
-    videoSrc: "https://www.youtube.com/embed/FvejFtsySPY",
-    type: "youtube"
-  },
-  {
-    title: "Del Titus, CEO of Telos Africa at Binance Blockchain Week 2024",
+    title: "Del Titus at Binance Blockchain Week 2024",
     thumbnail: "https://img.youtube.com/vi/8ymXjp0lmPQ/maxresdefault.jpg",
     videoSrc: "https://www.youtube.com/embed/8ymXjp0lmPQ",
     type: "youtube"
   },
   {
-    title: "Africa Powered By Web 3.0: Redefining a Continent's Destiny",
+    title: "Del Titus at TedxAccra",
     thumbnail: "https://img.youtube.com/vi/cpFv_bQh_tY/maxresdefault.jpg",
     videoSrc: "https://www.youtube.com/embed/cpFv_bQh_tY",
     type: "youtube"

@@ -59,7 +59,7 @@ export default function MainHeader() {
 
   return (
     // <AppBar sx={{ boxShadow: 0, bgcolor: "transparent" }}>
-     <AppBar sx={{ boxShadow: 0, bgcolor: "#333333" }}>
+     <AppBar sx={{ boxShadow: 0, bgcolor: "#060606" }}>
       <ToolbarStyle
         disableGutters
         sx={{

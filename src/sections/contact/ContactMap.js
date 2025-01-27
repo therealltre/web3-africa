@@ -7,8 +7,7 @@ import { useState } from "react";
 // @mui
 import { useTheme, styled } from "@mui/material/styles";
 import { Typography } from "@mui/material";
-// _mock
-import { _mapContact } from "@/_mock";
+
 // config
 import { MAPBOX_API } from "../../config";
 // components
@@ -21,6 +20,26 @@ import {
   MapControlFullscreen
 } from "../../components/map";
 
+
+// ----------------------------------------------------------------------
+const _mapContact = [
+  {
+    latlng: [5.6037, -0.1870],
+    address: "",
+    phoneNumber: "",
+  },
+  {
+    latlng: [51.5074, -0.1278],
+    address: "",
+    phoneNumber: "",
+  },
+  {
+    latlng: [38.9072, -77.0369],
+    address: "",
+    phoneNumber: "",
+  },
+
+];
 
 // ----------------------------------------------------------------------
 
@@ -40,14 +59,14 @@ const RootStyle = styled("div")(({ theme }) => ({
 export default function ContactMap() {
   const theme = useTheme();
 
-  const isLight = theme.palette.mode === "light";
+  // const isLight = theme.palette.mode === "light";
 
   const [tooltip, setTooltip] = useState(null);
 
   const [viewport, setViewport] = useState({
-    latitude: 8,
-    longitude: -1,
-    zoom: 4
+    latitude: 5,
+    longitude: -30,
+    zoom: 1
   });
 
   return (

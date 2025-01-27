@@ -20,7 +20,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   paddingBottom: theme.spacing(15),
   zIndex: 1,
   width: "100%",
-  height: "100%",
+  height: "100vh",
   backgroundColor: "#060606",
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
@@ -161,32 +161,7 @@ export default function AboutHero() {
                 within the decentralized space.
               </Typography>
             </m.div>
-            <m.div variants={varFade().inUp}>
-              <m.div
-                animate={{
-                  scale: [1, 1.1, 1], // Pulsing effect
-                }}
-                transition={{
-                  duration: 6, // Duration of each pulse
-                  repeat: Infinity, // Infinite repeat
-                  repeatType: "loop",
-                }}
-              >
-                <Image
-                  visibleByDefault
-                  disabledEffect
-                  alt="W3A Logo"
-                  src="/assets/images/brand/w3a-logo.png"
-                  sx={{
-                    marginTop: 4,
-                    width: 300,
-                    height: "auto",
-                    mx: "auto",
-                    display: "block",
-                  }}
-                />
-              </m.div>
-            </m.div>
+
 
           </Box>
         </Container>

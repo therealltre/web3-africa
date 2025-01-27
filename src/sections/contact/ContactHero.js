@@ -1,9 +1,10 @@
 import { m } from 'framer-motion';
 // @mui
 import { styled } from '@mui/material/styles';
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography, Grid, Stack } from '@mui/material';
 //
 import { TextAnimate, MotionContainer, varFade } from '../../components/animate';
+import SocialsButton from '@/components/SocialsButton';
 
 // ----------------------------------------------------------------------
 
@@ -28,7 +29,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     'url(/assets/overlay1.svg), url(/assets/images/contact/contact-us.avif)',
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up('md')]: {
-    height: 560,
+    height: 660,
     padding: 0,
   },
 }));
@@ -58,21 +59,10 @@ export default function ContactHero() {
           </Box>
 
           <Grid container spacing={5} sx={{ mt: 5, }}>
-            {CONTACTS.map((contact) => (
-              <Grid key={contact.country} item xs={12} sm={6} md={6} lg={6} sx={{ pr: { md: 5 } }}>
-                <m.div variants={varFade().in}>
-                  <Typography variant="h6" paragraph sx={{ color: 'common.white' }}>
-                    {contact.country}
-                  </Typography>
-                </m.div>
-                <m.div variants={varFade().inRight}>
-                  <Typography variant="body2" sx={{ color: 'common.white' }}>
-                    {contact.address}
-                    <br /> {contact.phoneNumber}
-                  </Typography>
-                </m.div>
-              </Grid>
-            ))}
+            <Stack alignItems="center" sx={{ mt: 2, mb: 1 }}>
+              <SocialsButton sx={{ color: "common.white", width: 80, height: 80 }} />
+            </Stack>
+
           </Grid>
         </ContentStyle>
       </Container>
