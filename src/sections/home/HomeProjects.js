@@ -6,6 +6,7 @@ import {
   Button,
   Card,
   Container,
+  Grid,
   Link,
   Stack,
   Typography
@@ -27,29 +28,23 @@ const RootStyle = styled("div")(({ theme }) => ({
 
 const CardStyle = styled(Card)(({ theme }) => {
   const shadowCard = (opacity) =>
-    theme.palette.mode === "dark"
+    theme.palette.mode === "light"
       ? alpha(theme.palette.grey[500], opacity)
       : alpha(theme.palette.common.black, opacity);
 
   return {
-    cursor: "pointer",
-    position: "relative", // Enable positioning for overlay
     border: 0,
-    maxWidth: 668,
-    minWidth: 358,
-    minHeight: 300,
-    // minHeight: 272,
-    maxHeight: 480,
+    // maxWidth: 365,
+    width: "100%",
+    // height: "100%",
+    height: 450,
     margin: "auto",
     textAlign: "start",
-    overflow: "hidden", // Ensure image doesn't overflow the card
-    // padding: theme.spacing(5, 5, 5),
+    padding: theme.spacing(5, 5, 5),
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "transparent"
-      //   backgroundColor:
-      //     theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+      backgroundColor: "#fff"
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -71,13 +66,14 @@ const CardStyle = styled(Card)(({ theme }) => {
           width: "calc(100% - 40px)",
           height: "calc(100% - 40px)",
           borderRadius: Number(theme.shape.borderRadius) * 2,
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: "#fff",
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
         }
       }
     }
   };
 });
+
 
 // Image Wrapper for overlay styling
 const ContentWrapper = styled(Box)(({ theme }) => ({
@@ -98,30 +94,37 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 
 const CARDS = [
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Blockchain 101",
+    icon: "/assets/images/home/telos-x.png",
+    title: "Telos",
     href: "#1",
     description:
       "The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects."
   },
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Block Chain Development",
+    icon: "/assets/images/home/bank-of-ghana.png",
+    title: "Bank Of Ghana",
     href: "#2",
     description:
       "Easy to customize and extend each component, saving you time and money."
   },
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Modeling",
+    icon: "/assets/images/home/gse.png",
+    title: "Ghana Stock Exchange",
     href: "#3",
     description:
       "Consistent design in colors, fonts ... makes brand recognition easy."
   },
   {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Structuring",
+    icon: "/assets/images/home/global_citizen.png",
+    title: "Global Citizen",
     href: "#4",
+    description:
+      "Consistent design in colors, fonts ... makes brand recognition easy."
+  },
+  {
+    icon: "/assets/images/home/un-digital-library.png",
+    title: "United Nations Digital Library",
+    href: "#5",
     description:
       "Consistent design in colors, fonts ... makes brand recognition easy."
   }
@@ -152,7 +155,7 @@ export default function HomeProjects() {
             <Stack
               direction={"row"}
               spacing={1}
-              // sx={{ justifyContent: "start" }}
+            // sx={{ justifyContent: "start" }}
             >
               <Typography variant="h2">Our</Typography>
               <Typography
@@ -168,7 +171,7 @@ export default function HomeProjects() {
                   fontWeight: 600
                 }}
               >
-                Projects
+                Partnerships
               </Typography>
             </Stack>
           </m.div>
@@ -197,62 +200,63 @@ export default function HomeProjects() {
             gridTemplateColumns: {
               xs: "repeat(1, 1fr)",
               md: "repeat(2, 1fr)",
-              lg: "repeat(2, 1fr)"
+              lg: "repeat(3, 1fr)"
             }
           }}
         >
           {CARDS.map((card, index) => (
-            <m.div key={card.title} variants={varFade().inUp}>
-              <NextLink href={card.href} passHref>
-                <Link
-                  underline="none"
+            <Grid item xs={12} lg={4} key={index}>
+              <m.div variants={varFade().inUp}>
+                <CardStyle
                   sx={{
-                    textDecoration: "none",
-                    display: "block",
-                    cursor: "pointer"
+                    padding: { xs: 3, md: 5 },
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                    "&:hover": {
+                      borderRadius: 2, // Border radius stays consistent
+                      transform: "translateY(-5px)", // Moves the card up by 5px
+                      boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                    }
                   }}
                 >
-                  <CardStyle
+                  <Image
+                    src={card.icon}
+                    alt={card.title}
                     sx={{
-                      // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                      padding: { xs: 3, md: 5 },
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                      "&:hover": {
-                        color: "#fff", // Text color changes to white on hover
-                        borderRadius: 1, // Border radius stays consistent
-                        transform: "translateY(-5px)", // Moves the card up by 5px
-                        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                      }
+                      mb: 3,
+                      width: 60,
+                      height: 60,
+                      filter: (theme) => shadowIcon(theme.palette.primary.main),
+                      ...(index === 0 && {
+                        filter: (theme) => shadowIcon(theme.palette.info.main)
+                      }),
+                      ...(index === 1 && {
+                        filter: (theme) => shadowIcon(theme.palette.error.main)
+                      })
+                    }}
+                  />
+                  <Typography
+                    variant="h5"
+                    paragraph
+                    sx={{ textAlign: "start" }}
+                  >
+                    {card.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      color: "text.secondary",
+                      textAlign: "start"
                     }}
                   >
-                    <Image
-                      src={card.icon}
-                      alt={card.title}
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectfit: "cover" // Ensure the image covers the card
-                      }}
-                    />
+                    {card.description}
+                  </Typography>
 
-                    <ContentWrapper sx={{ textAlign: "start" }}>
-                      <Typography variant="h5" paragraph>
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body1">
-                        {card.description}
-                      </Typography>
-                    </ContentWrapper>
-                  </CardStyle>
-                </Link>
-              </NextLink>
-            </m.div>
+
+                </CardStyle>
+              </m.div>
+            </Grid>
           ))}
         </Box>
-
         <Box
           sx={{
             textAlign: "center",
@@ -260,7 +264,7 @@ export default function HomeProjects() {
           }}
         >
           <m.div variants={varFade().inUp}>
-            <NextLink href="/about-us" passHref>
+            <NextLink href="/partnerships" passHref>
               <Link>
                 <Button
                   variant="contained"
