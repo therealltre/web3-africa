@@ -341,7 +341,7 @@ export default function NewsBlog() {
                   <Box
                     sx={{
                       textAlign: "start",
-                      mb: { xs: 10, md: 10 }
+                      mb: { xs: 10, md: 5 }
                     }}
                   >
                     <m.div variants={varFade().inDown}>
