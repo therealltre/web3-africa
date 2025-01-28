@@ -64,16 +64,15 @@ const CardStyle = styled(Card)(({ theme }) => {
     maxWidth: 668,
     minWidth: 358,
     minHeight: 250,
-    // minHeight: 272,
     maxHeight: 480,
     margin: "auto",
     textAlign: "start",
     overflow: "hidden", // Ensure image doesn't overflow the card
-    // padding: theme.spacing(5, 5, 5),
+    padding: theme.spacing(0, 0, 0 , 5),
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "transparent"
+      backgroundColor: "#fff"
       //   backgroundColor:
       //     theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
     },
@@ -178,6 +177,21 @@ const newsCards = [
     image: "/assets/images/news/blog-4.png",
     date: 'March 4, 2023',
   }
+];
+
+const announcements = [
+  {
+    title: "Announcement Title 1",
+    description: "This is the first announcement description. Keep it brief and to the point.",
+  },
+  {
+    title: "Announcement Title 2",
+    description: "Another important message or announcement can go here.",
+  },
+  {
+    title: "Announcement Title 3",
+    description: "Feel free to add as many announcements as you like.",
+  },
 ];
 
 export default function NewsBlog() {
@@ -304,113 +318,154 @@ export default function NewsBlog() {
 
           {/* Section 2 */}
 
-          <Container sx={{ backgroundColor: theme.palette.background.default }}>
-            <ContentStyle>
-              <Box
-                sx={{
-                  textAlign: "start",
-                  mb: { xs: 10, md: 10 }
-                }}
-              >
-                <m.div variants={varFade().inDown}>
-                  <Stack
-                    direction={{ xs: "column", md: "row" }}
-                    spacing={1}
-                  // sx={{ justifyContent: "start" }}
+          <Container>
+            <ContentStyle
+            >
+              <Grid container spacing={4}>
+                {/* Left - News Grid */}
+                <Grid item xs={12} md={8}>
+                  <Box
+                    sx={{
+                      textAlign: "start",
+                      mb: { xs: 10, md: 10 }
+                    }}
                   >
-                    <Typography variant="h2">News</Typography>
-                    <Typography
-                      variant="h2"
-                      sx={{
-                        backgroundcolor: "primary",
-                        backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
-                        backgroundSize: "100%",
-                        backgroundRepeat: "repeat",
-                        backgroundClip: "text",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        fontWeight: 600
-                      }}
-                    >
-                      Highlights
-                    </Typography>
-                  </Stack>
-                </m.div>
-              </Box>
-
-              <Box
-                sx={{
-                  display: "grid",
-                  gap: { xs: 4, md: 3 },
-                  gridTemplateColumns: {
-                    xs: "repeat(1, 1fr)",
-                    md: "repeat(1, 1fr)",
-                  },
-                }}
-              >
-                {newsCards.map((news, index) => (
-                  <m.div key={news.title} variants={varFade().inUp}>
-                    <NextLink href={news.href} passHref>
-                      <Link
-                        underline="none"
-                        sx={{
-                          textDecoration: "none",
-                          display: "block",
-                          cursor: "pointer",
-                        }}
+                    <m.div variants={varFade().inDown}>
+                      <Stack
+                        direction={{ xs: "column", md: "row" }}
+                        spacing={1}
+                      // sx={{ justifyContent: "start" }}
                       >
-                        <CardStyle
+                        <Typography variant="h2">News</Typography>
+                        <Typography
+                          variant="h2"
                           sx={{
-                            display: "flex",
-                            flexDirection: { xs: "column", md: "row" },
-                            padding: { xs: 3, md: 5 },
-                            gap: 2,
-                            transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                            "&:hover": {
-                              transform: "translateY(-5px)",
-                              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
-                            },
+                            backgroundcolor: "primary",
+                            backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+                            backgroundSize: "100%",
+                            backgroundRepeat: "repeat",
+                            backgroundClip: "text",
+                            WebkitBackgroundClip: "text",
+                            WebkitTextFillColor: "transparent",
+                            fontWeight: 600
                           }}
                         >
-                          {/* Image Section */}
-                          <Box
+                          Highlights
+                        </Typography>
+                      </Stack>
+                    </m.div>
+                  </Box>
+
+                  <Box
+                    sx={{
+                      display: "grid",
+                      gap: { xs: 4, md: 3 },
+                      gridTemplateColumns: {
+                        xs: "repeat(1, 1fr)",
+                        md: "repeat(1, 1fr)",
+                      },
+                    }}
+                  >
+                    {newsCards.map((news, index) => (
+                      <m.div key={news.title} variants={varFade().inUp}>
+                        <NextLink href={news.href} passHref>
+                          <Link
+                            underline="none"
                             sx={{
-                              position: "relative",
-                              minWidth: { md: 200 },
-                              height: { xs: 200, md: "auto" },
-                              flexShrink: 0,
-                              overflow: "hidden",
-                              borderRadius: 1,
+                              textDecoration: "none",
+                              display: "block",
+                              cursor: "pointer",
                             }}
                           >
-                            <Image
-                              src={news.image}
-                              alt={news.title}
-                              layout="fill"
-                              objectFit="cover"
-                            />
-                          </Box>
+                            <CardStyle
+                              sx={{
+                                display: "flex",
+                                flexDirection: { xs: "column", md: "row" },
+                                // padding: { xs: 3, md: 5 },
+                                gap: 2,
+                                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                                "&:hover": {
+                                  transform: "translateY(-5px)",
+                                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
+                                },
+                              }}
+                            >
+                              {/* Image Section */}
+                              <Box
+                                sx={{
+                                  position: "relative",
+                                  minWidth: { md: 200 },
+                                  height: { xs: 200, md: "auto" },
+                                  flexShrink: 0,
+                                  overflow: "hidden",
+                                  borderRadius: 1,
+                                }}
+                              >
+                                <Image
+                                  src={news.image}
+                                  alt={news.title}
+                                  layout="fill"
+                                  objectFit="cover"
+                                />
+                              </Box>
 
-                          {/* Content Section */}
-                          <Stack spacing={2} sx={{ textAlign: "start" }}>
-                            <Typography variant="subtitle2" color="text.secondary">
-                              {news.date}
-                            </Typography>
-                            <Typography variant="h5" fontWeight="bold">
-                              {news.title}
-                            </Typography>
-                            <Typography variant="body1">{news.description}</Typography>
+                              {/* Content Section */}
+                              <Stack spacing={2} sx={{ textAlign: "start" }}>
+                                <Typography variant="subtitle2" color="text.secondary">
+                                  {news.date}
+                                </Typography>
+                                <Typography variant="h5" fontWeight="bold">
+                                  {news.title}
+                                </Typography>
+                                <Typography variant="body1">{news.description}</Typography>
 
-                          </Stack>
-                        </CardStyle>
-                      </Link>
-                    </NextLink>
-                  </m.div>
-                ))}
-              </Box>
+                              </Stack>
+                            </CardStyle>
+                          </Link>
+                        </NextLink>
+                      </m.div>
+                    ))}
+                  </Box>
+                </Grid>
 
+                {/* Right - Announcement Section */}
+                <Grid item xs={12} md={4}>
+                  <Card
+                    sx={{
+                      padding: 3,
+                      height: "auto",
+                      boxShadow: "none",
+                      border: (theme) => `1px solid ${theme.palette.divider}`,
+                      borderRadius: 2,
+                      background: "#fff",
+                    }}
+                  >
+                    <Typography
+                      variant="h5"
+                      fontWeight="bold"
+                      sx={{ mb: 3, textAlign: "start" }}
+                    >
+                      Announcements
+                    </Typography>
+                    <Stack spacing={3}>
+                      {announcements.map((announcement, index) => (
+                        <Box key={index}>
+                          <Typography variant="h6" fontWeight="bold">
+                            {announcement.title}
+                          </Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            {announcement.description}
+                          </Typography>
+                          {index < announcements.length - 1 && <Divider />}
+                        </Box>
+                      ))}
+                    </Stack>
+                  </Card>
+                </Grid>;
+              </Grid>
             </ContentStyle>
           </Container>
+
 
         </Container >
       </RootStyle >
