@@ -22,6 +22,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   width: "100%",
   height: "100vh",
   backgroundColor: "#060606",
+  backgroundImage: `url(/assets/images/about/about-hero.png)`,
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
     paddingBottom: theme.spacing(15)
@@ -95,12 +96,12 @@ export default function AboutHero() {
   return (
     <MotionContainer>
       <RootStyle>
-        <HeroImgStyle
+        {/* <HeroImgStyle
           alt="hero"
           src="/assets/images/about/about-hero.png"
           // src="/assets/images/about/web3-bg-svg.svg"
           variants={varFade().inUp}
-        />
+        /> */}
 
         <Container
         >
