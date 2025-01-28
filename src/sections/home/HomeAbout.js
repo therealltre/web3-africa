@@ -67,6 +67,8 @@ const CardStyle = styled(Card)(({ theme }) => {
     textAlign: "start",
     padding: theme.spacing(5, 5, 5),
     boxShadow: theme.customShadows.z12,
+    backgroundColor: "#060606",
+    color: '#fff',
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
       backgroundColor: "#060606",
