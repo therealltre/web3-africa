@@ -63,7 +63,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     border: 0,
     maxWidth: 668,
     minWidth: 358,
-    minHeight: 350,
+    minHeight: 250,
     // minHeight: 272,
     maxHeight: 480,
     margin: "auto",
@@ -78,7 +78,7 @@ const CardStyle = styled(Card)(({ theme }) => {
       //     theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
     },
     "&.cardLeft": {
-      [theme.breakpoints.up("md")]: { marginTop: -40 }
+      [theme.breakpoints.up("md")]: { marginTop: -1 }
     },
     "&.cardCenter": {
       [theme.breakpoints.up("md")]: {
@@ -241,9 +241,11 @@ export default function NewsBlog() {
                     allowFullScreen
                   />
                 )}
+                <Typography variant="h5">
+                  {currentVideo.title}
+                </Typography>
               </Grid>
 
-              {/* Video List */}
               {/* Video List */}
               <Grid item xs={12} md={4}>
                 <Card
@@ -316,7 +318,7 @@ export default function NewsBlog() {
                     spacing={1}
                   // sx={{ justifyContent: "start" }}
                   >
-                    <Typography variant="h2">News &</Typography>
+                    <Typography variant="h2">News</Typography>
                     <Typography
                       variant="h2"
                       sx={{
@@ -330,7 +332,7 @@ export default function NewsBlog() {
                         fontWeight: 600
                       }}
                     >
-                      Insights
+                      Highlights
                     </Typography>
                   </Stack>
                 </m.div>
@@ -342,12 +344,10 @@ export default function NewsBlog() {
                   gap: { xs: 4, md: 3 },
                   gridTemplateColumns: {
                     xs: "repeat(1, 1fr)",
-                    md: "repeat(2, 1fr)",
-                    lg: "repeat(2, 1fr)"
-                  }
+                    md: "repeat(1, 1fr)",
+                  },
                 }}
               >
-
                 {newsCards.map((news, index) => (
                   <m.div key={news.title} variants={varFade().inUp}>
                     <NextLink href={news.href} passHref>
@@ -356,60 +356,59 @@ export default function NewsBlog() {
                         sx={{
                           textDecoration: "none",
                           display: "block",
-                          cursor: "pointer"
+                          cursor: "pointer",
                         }}
                       >
-
                         <CardStyle
                           sx={{
-                            // maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
+                            display: "flex",
+                            flexDirection: { xs: "column", md: "row" },
                             padding: { xs: 3, md: 5 },
-                            transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                            gap: 2,
+                            transition: "transform 0.3s ease, box-shadow 0.3s ease",
                             "&:hover": {
-                              color: "#fff", // Text color changes to white on hover
-                              borderRadius: 1, // Border radius stays consistent
-                              transform: "translateY(-5px)", // Moves the card up by 5px
-                              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                            }
+                              transform: "translateY(-5px)",
+                              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
+                            },
                           }}
                         >
-                          <Image
-                            src={news.image}
-                            alt={news.title}
-                            layout="fill"
-                            objectFit="cover"
+                          {/* Image Section */}
+                          <Box
                             sx={{
-                              position: "absolute",
-                              top: 0,
-                              left: 0,
-                              width: "100%",
-                              height: "100%",
-                              // objectfit: "cover" // Ensure the image covers the card
+                              position: "relative",
+                              minWidth: { md: 200 },
+                              height: { xs: 200, md: "auto" },
+                              flexShrink: 0,
+                              overflow: "hidden",
+                              borderRadius: 1,
                             }}
-                          />
+                          >
+                            <Image
+                              src={news.image}
+                              alt={news.title}
+                              layout="fill"
+                              objectFit="cover"
+                            />
+                          </Box>
 
+                          {/* Content Section */}
+                          <Stack spacing={2} sx={{ textAlign: "start" }}>
+                            <Typography variant="subtitle2" color="text.secondary">
+                              {news.date}
+                            </Typography>
+                            <Typography variant="h5" fontWeight="bold">
+                              {news.title}
+                            </Typography>
+                            <Typography variant="body1">{news.description}</Typography>
 
-                          <ContentWrapper sx={{ textAlign: "start" }}>
-
-                            <Stack spacing={1}>
-                              <Typography variant="h5" paragraph>
-                                {news.title}
-                              </Typography>
-                              <Typography variant="body1">
-                                {news.description}
-                              </Typography>
-                              <Typography variant="subtitle2" paragraph>
-                                {news.date}
-                              </Typography>
-                            </Stack>
-                          </ContentWrapper>
+                          </Stack>
                         </CardStyle>
                       </Link>
                     </NextLink>
                   </m.div>
                 ))}
-
               </Box>
+
             </ContentStyle>
           </Container>
 
