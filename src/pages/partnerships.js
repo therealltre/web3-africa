@@ -13,7 +13,7 @@ import { PartnershipAbout, PatnershipHero } from '@/sections/partnership';
 const RootStyle = styled('div')(({ theme }) => ({
   paddingTop: theme.spacing(8),
   [theme.breakpoints.up('md')]: {
-    paddingTop: theme.spacing(11),
+    // paddingTop: theme.spacing(11),
   },
 }));
 

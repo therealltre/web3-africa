@@ -31,7 +31,11 @@ const RootStyle = styled(m.div)(({ theme }) => ({
   width: "100%",
   // height: "100vh",
   zIndex: 1,
-  backgroundColor: "#333333",
+  backgroundColor: "#060606",
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+  backgroundImage:
+    'url(/assets/images/home/african-patter-no-bg.png)',
   [theme.breakpoints.up("lg")]: {
     display: "flex",
     alignItems: "center",
@@ -79,13 +83,13 @@ export default function HomeHero() {
   return (
     <MotionContainer>
       <RootStyle>
-        <HeroImgStyle
+        {/* <HeroImgStyle
           alt="hero"
           src="/assets/images/home/african-patter-no-bg.png"
           // src="/assets/images/home/bg-african-pattern.png"
           // src="/assets/images/home/hero2.png"
           variants={varFade().inUp}
-        />
+        /> */}
 
         <Container>
           <ContentStyle>

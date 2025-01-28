@@ -8,20 +8,6 @@ import SocialsButton from '@/components/SocialsButton';
 
 // ----------------------------------------------------------------------
 
-const CONTACTS = [
-  {
-    country: 'Bali',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(239) 555-0108',
-  },
-  {
-    country: 'London',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(319) 555-0115',
-  },
-
-];
-
 const RootStyle = styled('div')(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',

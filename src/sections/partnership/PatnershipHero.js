@@ -7,20 +7,6 @@ import { TextAnimate, MotionContainer, varFade } from '../../components/animate'
 
 // ----------------------------------------------------------------------
 
-const CONTACTS = [
-  {
-    country: 'Bali',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(239) 555-0108',
-  },
-  {
-    country: 'London',
-    address: '508 Bridle Avenue Newnan, GA 30263',
-    phoneNumber: '(319) 555-0115',
-  },
-
-];
-
 const RootStyle = styled('div')(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -28,7 +14,7 @@ const RootStyle = styled('div')(({ theme }) => ({
     'url(/assets/overlay1.svg), url(/assets/images/partnership/handshake.avif)',
   padding: theme.spacing(10, 0),
   [theme.breakpoints.up('md')]: {
-    height: 560,
+    height: 660,
     padding: 0,
   },
 }));
