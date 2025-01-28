@@ -14,6 +14,17 @@ const RootStyle = styled("div")(({ theme }) => ({
     }
 }));
 
+// const HeroImgStyle = styled(m.img)(({ theme }) => ({
+//     position: "absolute",
+//     top: 0,
+//     left: 0,
+//     zIndex: -1,
+//     width: "500px",
+//     height: "500px",
+//     objectfit: "contain",
+//     // backgroundColor: "#060606"
+// }));
+
 //------------------------------------------------------------
 
 const HomeCryptoPrices = () => {
@@ -60,19 +71,26 @@ const HomeCryptoPrices = () => {
                 component={MotionViewport}
                 sx={{
                     textAlign: "start",
-                    mb: { xs: 10, md: 10 },
+                    mb: { xs: 10, md: 2 },
                     backgroundImage: `url('/assets/images/home/bitcoin-bg.png')`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "contain",
                     height: "100%",
-                    backgroundPosition: "left"
+                    backgroundPosition: "right"
                 }}
             >
+                {/* <HeroImgStyle
+                    alt="hero"
+                    src="/assets/images/home/bitcoin-bg.png"
+                    // src="/assets/images/home/bg-african-pattern.png"
+                    // src="/assets/images/home/hero2.png"
+                    variants={varFade().inUp}
+                /> */}
 
                 <Box
                     sx={{
                         textAlign: "start",
-                        mb: { xs: 10, md: 10 }
+                        mb: { xs: 10, md: 5 }
                     }}
                 >
                     <m.div variants={varFade().inDown}>
@@ -104,7 +122,6 @@ const HomeCryptoPrices = () => {
 
 
                 <Grid container spacing={3}>
-
                     <Grid item xs={12} sm={4}>
                         <m.div variants={varFade().inDown}>
                             <LivePriceCard

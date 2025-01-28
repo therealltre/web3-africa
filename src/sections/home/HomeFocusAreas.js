@@ -10,6 +10,7 @@ import { MotionViewport, varFade } from "../../components/animate";
 
 const RootStyle = styled("div")(({ theme }) => ({
     paddingTop: theme.spacing(15),
+    backgroundColor: theme.palette.background.default,
     [theme.breakpoints.up("md")]: {
         paddingBottom: theme.spacing(15),
     },
@@ -92,29 +93,30 @@ export default function HomeFocusAreas() {
                             width: 400,
                             height: 400,
                             position: "absolute",
-                            top: 50,
-                            right: 0,
-                            zIndex: 1,
+                            top: 0,
+                            right: 50,
+                            // zIndex: 1,
                             display: { xs: "none", md: "block" }, // Hide on small screens, show on medium and up
                         }}
                     >
                         <m.div
-                            // animate={{ scale: 1, rotate: 360, opacity: 1 }}
+                            animate={{ scale: 1, rotate: 360, opacity: 1 }}
                             transition={{
                                 duration: 10,
                                 ease: "linear",
                                 repeat: Infinity,
                                 repeatType: "loop",
                             }}
-                        ><Image
-                                src="/assets/images/home/color-blob.svg"
+                        >
+                            <Image
+                                src="/assets/images/home/color-blob.png"
                                 alt="blob"
-                                objectFit="contain"
+                                objectFit="cover"
                                 sx={{
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "contain",
-                                    height: 300,
-                                    width: 300,
+                                    height: "100%",
+                                    width: "100%",
                                 }}
                             /></m.div>
 
