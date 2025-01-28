@@ -20,7 +20,7 @@ import HomeAbout from "./HomeAbout";
 import { AboutTestimonials } from "../about";
 import HomeProjects from "./HomeProjects";
 import HomeKeyMarkets from "./HomeKeyMarkets";
-import { HomeCarousel, HomeFocusAreas, HomeTrustedBy } from ".";
+import { HomeCarousel, HomeCryptoPrices, HomeFocusAreas, HomeTrustedBy } from ".";
 import NextLink from "next/link";
 
 // ----------------------------------------------------------------------
@@ -200,12 +200,14 @@ export default function HomeHero() {
       >
         <HomeTrustedBy />
         <HomeAbout />
+        <HomeCryptoPrices />
         {/* <HomeAboutWeb3AG /> */}
         <HomeEducation />
         <HomeCommunity />
         <HomeProjects />
         <HomeFocusAreas />
         <HomeKeyMarkets />
+
         <HomeCarousel />
 
       </Box>
