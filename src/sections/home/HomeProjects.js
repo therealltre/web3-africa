@@ -37,7 +37,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     // maxWidth: 365,
     width: "100%",
     // height: "100%",
-    height: 450,
+    height: 300,
     margin: "auto",
     textAlign: "start",
     padding: theme.spacing(5, 5, 5),
