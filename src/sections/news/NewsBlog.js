@@ -63,12 +63,13 @@ const CardStyle = styled(Card)(({ theme }) => {
     border: 0,
     maxWidth: 668,
     minWidth: 358,
-    minHeight: 250,
+    minHeight: 200,
     maxHeight: 480,
     margin: "auto",
-    textAlign: "start",
+    textAlign: "center",
+    textDecoration: "none",
     overflow: "hidden", // Ensure image doesn't overflow the card
-    padding: theme.spacing(0, 0, 0 , 5),
+    padding: theme.spacing(0, 5, 0, 0),
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
@@ -181,15 +182,28 @@ const newsCards = [
 
 const announcements = [
   {
+    href: '#',
     title: "Announcement Title 1",
     description: "This is the first announcement description. Keep it brief and to the point.",
   },
   {
+    href: '#',
     title: "Announcement Title 2",
     description: "Another important message or announcement can go here.",
   },
   {
+    href: '#',
     title: "Announcement Title 3",
+    description: "Feel free to add as many announcements as you like.",
+  },
+  {
+    href: '#',
+    title: "Announcement Title 4",
+    description: "Feel free to add as many announcements as you like.",
+  },
+  {
+    href: '#',
+    title: "Announcement Title 5",
     description: "Feel free to add as many announcements as you like.",
   },
 ];
@@ -364,11 +378,13 @@ export default function NewsBlog() {
                         xs: "repeat(1, 1fr)",
                         md: "repeat(1, 1fr)",
                       },
+                      height: "600px", // Set fixed height
+                      overflowY: "auto", // Allow vertical scrolling
                     }}
                   >
                     {newsCards.map((news, index) => (
                       <m.div key={news.title} variants={varFade().inUp}>
-                        <NextLink href={news.href} passHref>
+                        <NextLink href={news.href} passHref style={{ textDecoration: "none" }}>
                           <Link
                             underline="none"
                             sx={{
@@ -381,7 +397,6 @@ export default function NewsBlog() {
                               sx={{
                                 display: "flex",
                                 flexDirection: { xs: "column", md: "row" },
-                                // padding: { xs: 3, md: 5 },
                                 gap: 2,
                                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                                 "&:hover": {
@@ -410,7 +425,7 @@ export default function NewsBlog() {
                               </Box>
 
                               {/* Content Section */}
-                              <Stack spacing={2} sx={{ textAlign: "start" }}>
+                              <Stack spacing={2} sx={{ textAlign: "start", mt: 2 }}>
                                 <Typography variant="subtitle2" color="text.secondary">
                                   {news.date}
                                 </Typography>
@@ -418,7 +433,6 @@ export default function NewsBlog() {
                                   {news.title}
                                 </Typography>
                                 <Typography variant="body1">{news.description}</Typography>
-
                               </Stack>
                             </CardStyle>
                           </Link>
@@ -426,6 +440,7 @@ export default function NewsBlog() {
                       </m.div>
                     ))}
                   </Box>
+
                 </Grid>
 
                 {/* Right - Announcement Section */}
@@ -433,11 +448,12 @@ export default function NewsBlog() {
                   <Card
                     sx={{
                       padding: 3,
-                      height: "auto",
+                      height: 550,
                       boxShadow: "none",
                       border: (theme) => `1px solid ${theme.palette.divider}`,
                       borderRadius: 2,
                       background: "#fff",
+                      overflowY: "auto", // Allow vertical scrolling
                     }}
                   >
                     <Typography
@@ -450,10 +466,14 @@ export default function NewsBlog() {
                     <Stack spacing={3}>
                       {announcements.map((announcement, index) => (
                         <Box key={index}>
-                          <Typography variant="h6" fontWeight="bold">
-                            {announcement.title}
-                          </Typography>
-                          <Typography variant="body2" color="text.secondary">
+                          <NextLink href={announcement.href} passHref style={{ textDecoration: "none" }}>
+                            <Link underline="none">
+                              <Typography variant="h6" fontWeight="bold" sx={{ cursor: "pointer" }}>
+                                {announcement.title}
+                              </Typography>
+                            </Link>
+                          </NextLink>
+                          <Typography variant="body2" >
                             {announcement.description}
                           </Typography>
                           {index < announcements.length - 1 && <Divider />}
@@ -461,7 +481,8 @@ export default function NewsBlog() {
                       ))}
                     </Stack>
                   </Card>
-                </Grid>;
+
+                </Grid>
               </Grid>
             </ContentStyle>
           </Container>
