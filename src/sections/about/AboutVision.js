@@ -87,8 +87,14 @@ export default function AboutVision() {
         sx={{
           mb: 10,
           position: "relative",
+          width: '700px',
           borderRadius: 2,
-          overflow: "hidden"
+          overflow: "hidden",
+          display: "flex", // Ensures centering
+          justifyContent: "center", // Centers horizontally
+          alignItems: "center", // Centers vertically
+          mx: "auto", // Ensures it's centered inside the Container
+
         }}
       >
         <Image
@@ -98,19 +104,22 @@ export default function AboutVision() {
           style={{
             width: "100%",
             height: "auto",
+            display: "block",
+            margin: "0 auto",
+            position: "relative",
           }}
         />
 
-        {/* <Box
+        <Box
           sx={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
             height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black
+            backgroundColor: "rgba(0, 0, 0, 0.2)", // Semi-transparent black
           }}
-        /> */}
+        />
 
 
         <Box
@@ -127,17 +136,17 @@ export default function AboutVision() {
           {[
             "partner_bog",
             "partner_global_citizen",
-            "partner_gse",
+            "partner_gse1",
             "partner_telos-x",
             "partner_un-digital-library"
           ].map((logo) => (
-            <m.div key={logo} variants={varFade().in}>
+            <m.div key={logo} variants={varFade().inUp}>
               <Image
                 alt={logo}
                 src={`/assets/images/about/${logo}.png`}
                 sx={{
                   m: { xs: 1.5, md: 3 },
-                  height: { xs: 32, md: 84 }
+                  height: { xs: 32, md: 74 }
                 }}
               />
             </m.div>
