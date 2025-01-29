@@ -39,11 +39,11 @@ export default function HomeCommunity() {
     <RootStyle sx={{
       textAlign: "start",
       mb: { xs: 10, md: 10 },
-      backgroundImage: `url('/assets/images/home/wires-1.svg')`,
+      backgroundImage: `url('/assets/images/news/globe.svg')`,
       backgroundRepeat: "no-repeat",
       backgroundSize: "contain",
       height: "100%",
-      backgroundPosition: "right"
+      backgroundPosition: "left"
     }}>
       <Container
         component={MotionViewport}

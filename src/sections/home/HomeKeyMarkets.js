@@ -16,7 +16,7 @@ const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(15),
 
   [theme.breakpoints.up("md")]: {
-    paddingBottom: theme.spacing(0)
+    paddingBottom: theme.spacing(5)
   }
 }));
 

@@ -199,27 +199,26 @@ export default function HomeAbout() {
         </Box>
 
         {IMAGE_POSITIONS.map((pos, index) => (
-          <m.div key={`image-${index}`} variants={varFade().inUp}> {/* Added key */}
+          <m.div key={`image-${index}`} variants={varFade().inUp}>
             <Image
               key={index}
-              src={"/assets/images/home/africa-button.png"}
+              src={`/assets/images/home/button-${index + 1}.png`} // Dynamically use button-1, button-2, button-3
               sx={{
                 position: "absolute",
                 top: pos.top,
                 left: pos.left,
                 width: "90px",
-                height: " 90px",
-                display: { xs: "none", lg: "block" }, // Hide on xs, show on sm and up
-                transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
+                height: "90px",
+                display: { xs: "none", lg: "block" },
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
-                  // borderRadius: 2, // Border radius stays consistent
-                  transform: "translateY(-5px)" // Moves the card up by 5px
-                  // boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
+                  transform: "translateY(-5px)"
                 }
               }}
             />
           </m.div>
         ))}
+
 
 
         <Grid container spacing={2}>
