@@ -79,14 +79,6 @@ const HomeCryptoPrices = () => {
                     backgroundPosition: "right"
                 }}
             >
-                {/* <HeroImgStyle
-                    alt="hero"
-                    src="/assets/images/home/bitcoin-bg.png"
-                    // src="/assets/images/home/bg-african-pattern.png"
-                    // src="/assets/images/home/hero2.png"
-                    variants={varFade().inUp}
-                /> */}
-
                 <Box
                     sx={{
                         textAlign: "start",
