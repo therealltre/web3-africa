@@ -59,14 +59,15 @@ const CardStyle = styled(Card)(({ theme }) => {
     position: "relative", // Enable positioning for overlay
     border: 0,
     maxWidth: "100%",
-    minWidth: 358,
+    minWidth: 200,
     minHeight: 200,
     maxHeight: 480,
     margin: "auto",
     textAlign: "center",
     textDecoration: "none",
     overflow: "hidden", // Ensure image doesn't overflow the card
-    padding: theme.spacing(0, 5, 0, 0),
+    padding: theme.spacing(0), // Removed padding that could affect image size
+
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
@@ -272,7 +273,6 @@ export default function NewsBlog() {
                     overflowY: "auto", // Enable scrolling
                     boxShadow: "none", // Remove box shadow
                     border: `1px solid ${theme.palette.divider}`,
-                    borderRadius: theme.shape.borderRadius, // Optional: Rounded corners
                   }}
                 >
                   <Typography
@@ -364,7 +364,7 @@ export default function NewsBlog() {
                         md: "repeat(1, 1fr)",
                       },
                       mx: 'auto',
-                      height: "600px", // Set fixed height
+                      height: "auto", // Set fixed height
                       overflowY: "auto", // Allow vertical scrolling
                     }}
                   >
@@ -411,7 +411,7 @@ export default function NewsBlog() {
                               </Box>
 
                               {/* Content Section */}
-                              <Stack spacing={2} sx={{ textAlign: "start", mt: 2 }}>
+                              <Stack spacing={2} sx={{ textAlign: "start", m: 2 }}>
                                 <Typography variant="subtitle2" color="text.secondary">
                                   {news.date}
                                 </Typography>
