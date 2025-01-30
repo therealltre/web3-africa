@@ -105,8 +105,7 @@ export default function AboutVision() {
           sx={{
             bottom: { xs: 24, md: 30 },
             width: "100%",
-            display: "flex",
-            flexWrap: "wrap",
+            display: "flex",            
             alignItems: "center",
             position: "absolute",
             justifyContent: "center"
