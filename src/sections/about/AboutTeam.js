@@ -5,8 +5,7 @@ import Slider from "react-slick";
 // @mui
 import { useTheme } from "@mui/material/styles";
 import { Box, Stack, Card, Button, Container, Typography } from "@mui/material";
-// _mock_
-// import { _carouselsMembers } from "../../_mock";
+
 // components
 import Image from "../../components/Image";
 import Iconify from "../../components/Iconify";
@@ -15,13 +14,6 @@ import SocialsButton from "../../components/SocialsButton";
 import { MotionViewport, varFade } from "../../components/animate";
 
 // ----------------------------------------------------------------------
-// const _carouselsMembers = [...Array(5)].map((_, index) => ({
-//   id: _mock.id(index),
-//   name: _mock.name.fullName(index),
-//   role: _mock.role(index),
-//   avatar: `/assets/images/members/member-${index + 1}.jpg`
-// }));
-
 const _carouselsMembers = [
   {
     id: "member-1",
