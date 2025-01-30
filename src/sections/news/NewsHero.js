@@ -148,6 +148,7 @@ export default function NewsHero() {
                         autoPlay
                         muted
                         loop
+                        playsInline
                         style={{
                           borderRadius: "50%", // To match the globe shape
                           objectFit: "cover",
