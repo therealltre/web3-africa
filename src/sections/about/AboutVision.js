@@ -114,7 +114,7 @@ export default function AboutVision() {
           {[
             "partner_bog",
             "partner_global_citizen",
-            "partner_gse1",
+            // "partner_gse1",
             "partner_telos-x",
             "partner_un-digital-library"
           ].map((logo) => (
