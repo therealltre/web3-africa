@@ -124,9 +124,9 @@ export default function AboutVision() {
                 src={`/assets/images/about/${logo}.png`}
                 // height={{ xs: 32, md: 74 }}
                 sx={{
-                  m: { xs: 1.5, md: 3 },
+                  m: { xs: 2, md: 3 },
 
-                  height: { xs: 30, md: 74 }
+                  height: { md: 74 }
                 }}
               />
             </m.div>
