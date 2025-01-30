@@ -241,6 +241,8 @@ export default function NewsBlog() {
                     key={currentVideo.videoSrc} // Force re-render for MP4 videos
                     width="100%"
                     height="450"
+                    autoPlay
+                    muted
                     controls
                     src={currentVideo.videoSrc}
                   >
