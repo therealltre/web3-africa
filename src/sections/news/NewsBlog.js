@@ -37,7 +37,7 @@ const RootStyle = styled(m.div)(({ theme }) => ({
 const ContentStyle = styled((props) => <Stack {...props} />)(({ theme }) => ({
   zIndex: 2,
   maxWidth: 1440,
-  margin: "10",
+  margin: 10,
   position: "relative",
   textAlign: "start",
   display: "flex",
@@ -302,7 +302,7 @@ export default function NewsBlog() {
                             width: 100,
                             height: 70,
                             borderRadius: 1,
-                            objectFit: "cover",
+                            objectfit: "cover",
                           }}
                         />
                         <Typography variant="body1" fontWeight={500}>
@@ -321,40 +321,41 @@ export default function NewsBlog() {
           {/* Section 2 */}
           <Container>
             <ContentStyle>
-              <Grid container spacing={4}>
+              <Grid container spacing={3}>
                 {/* Left - News Grid */}
-                <Grid item xs={12} md={8}>
-                  <Box
-                    sx={{
-                      textAlign: "start",
-                      mb: { xs: 10, md: 5 }
-                    }}
-                  >
-                    <m.div variants={varFade().inDown}>
-                      <Stack
-                        direction={{ xs: "column", md: "row" }}
-                        spacing={1}
+                <Box
+                  sx={{
+                    textAlign: "start",
+                    mb: { xs: 10, md: 5 }
+                  }}
+                >
+                  <m.div variants={varFade().inDown}>
+                    <Stack
+                      direction={{ xs: "column", md: "row" }}
+                      spacing={1}
+                    >
+                      <Typography variant="h2">News</Typography>
+                      <Typography
+                        variant="h2"
+                        sx={{
+                          backgroundcolor: "primary",
+                          backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+                          backgroundSize: "100%",
+                          backgroundRepeat: "repeat",
+                          backgroundClip: "text",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          fontWeight: 600
+                        }}
                       >
-                        <Typography variant="h2">News</Typography>
-                        <Typography
-                          variant="h2"
-                          sx={{
-                            backgroundcolor: "primary",
-                            backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
-                            backgroundSize: "100%",
-                            backgroundRepeat: "repeat",
-                            backgroundClip: "text",
-                            WebkitBackgroundClip: "text",
-                            WebkitTextFillColor: "transparent",
-                            fontWeight: 600
-                          }}
-                        >
-                          Highlights
-                        </Typography>
-                      </Stack>
-                    </m.div>
-                  </Box>
+                        Highlights
+                      </Typography>
+                    </Stack>
+                  </m.div>
+                </Box>
 
+
+                <Grid item xs={12} md={8}>
                   <Box
                     sx={{
                       display: "grid",
@@ -364,7 +365,7 @@ export default function NewsBlog() {
                         md: "repeat(1, 1fr)",
                       },
                       mx: 'auto',
-                      height: "auto", // Set fixed height
+                      height: 650, // Set fixed height
                       overflowY: "auto", // Allow vertical scrolling
                     }}
                   >
@@ -406,7 +407,7 @@ export default function NewsBlog() {
                                   src={news.image}
                                   alt={news.title}
                                   layout="fill"
-                                  objectFit="cover"
+                                  objectfit="cover"
                                 />
                               </Box>
 
@@ -433,7 +434,7 @@ export default function NewsBlog() {
                   <Card
                     sx={{
                       padding: 3,
-                      height: 550,
+                      height: 650,
                       boxShadow: "none",
                       border: (theme) => `1px solid ${theme.palette.divider}`,
                       borderRadius: 2,

@@ -82,6 +82,7 @@ export default function MainHeader() {
               alt="Web3 Africa Logo"
               width={92}
               height={40}
+              priority
             />
           </NextLink>
 

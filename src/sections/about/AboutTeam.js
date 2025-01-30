@@ -25,38 +25,38 @@ import { MotionViewport, varFade } from "../../components/animate";
 const _carouselsMembers = [
   {
     id: "member-1",
-    name: "Member Name 1",
-    role: "Role 1",
+    name: "Del Titus Bawuah ",
+    role: "Chief Executive Officer",
     avatar: "/assets/images/avatars/user-avatar.jpg"
   },
   {
     id: "member-2",
-    name: "Member Name 2",
-    role: "Role 2",
+    name: "George Boateng ",
+    role: "Chief Technical Officer ",
     avatar: "/assets/images/avatars/user-avatar2.jpg"
   },
   {
     id: "member-3",
-    name: "Member Name 3",
-    role: "Role 3",
+    name: "Patrick Kingsley",
+    role: "Chief Policy Office ",
     avatar: "/assets/images/avatars/user-avatar3.jpg"
   },
   {
     id: "member-4",
-    name: "Member Name 4",
-    role: "Role 4",
+    name: "Chantel Bawuah ",
+    role: "Chief of Staff ",
     avatar: "/assets/images/avatars/avatar_4.jpg"
   },
   {
     id: "member-5",
-    name: "Member Name 5",
-    role: "Role 5",
+    name: "Maxwell Sarfo",
+    role: "Executive(s) Assistant",
     avatar: "/assets/images/avatars/avatar_5.jpg"
   },
   {
     id: "member-6",
-    name: "Member Name 6",
-    role: "Role 6",
+    name: "Baiden Bryan Ekow ",
+    role: "Head of Communities",
     avatar: "/assets/images/avatars/avatar_6.jpg"
   }
 ];

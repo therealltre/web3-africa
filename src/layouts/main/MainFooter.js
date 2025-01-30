@@ -24,7 +24,7 @@ const LINKS = [
       { name: "About us", href: PATH_PAGE.about },
       { name: "Contact us", href: PATH_PAGE.contact },
       { name: "News & Insights", href: PATH_PAGE.news },
-      { name: "Partnerships", href: PATH_PAGE.contact }
+      { name: "Partnerships", href: PATH_PAGE.partnerships }
       // { name: 'FAQs', href: PATH_PAGE.faqs },
     ]
   },
@@ -73,6 +73,7 @@ export default function MainFooter() {
                 width={120}
                 height={50}
                 sx={{ mx: { xs: "auto", md: "inherit" } }}
+                priority
               />
             </NextLink>
           </Grid>

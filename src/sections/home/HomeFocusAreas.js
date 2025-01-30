@@ -111,7 +111,7 @@ export default function HomeFocusAreas() {
                             <Image
                                 src="/assets/images/home/color-blob.png"
                                 alt="blob"
-                                objectFit="cover"
+                                objectfit="cover"
                                 sx={{
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "contain",
