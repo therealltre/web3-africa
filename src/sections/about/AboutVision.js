@@ -101,24 +101,12 @@ export default function AboutVision() {
           }}
         />
 
-        {/* <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black
-          }}
-        /> */}
-
-
         <Box
           sx={{
             bottom: { xs: 24, md: 30 },
             width: "100%",
             display: "flex",
-            flexWrap: "wrap",
+            // flexWrap: "wrap",
             alignItems: "center",
             position: "absolute",
             justifyContent: "center"
@@ -137,7 +125,7 @@ export default function AboutVision() {
                 src={`/assets/images/about/${logo}.png`}
                 sx={{
                   m: { xs: 1.5, md: 3 },
-                  height: { xs: 32, md: 84 }
+                  height: { xs: 32, md: 74 }
                 }}
               />
             </m.div>
