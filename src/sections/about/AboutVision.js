@@ -126,7 +126,7 @@ export default function AboutVision() {
                 sx={{
                   m: { xs: 1.5, md: 3 },
 
-                  height: { xs: 28, md: 74 }
+                  height: { xs: 24, md: 74 }
                 }}
               />
             </m.div>
