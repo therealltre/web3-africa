@@ -106,12 +106,10 @@ export default function AboutVision() {
             bottom: { xs: 24, md: 30 },
             width: "100%",
             display: "flex",
-            flexWrap: "wrap", // Ensure images wrap instead of overflowing
+            flexWrap: "wrap",
             alignItems: "center",
             position: "absolute",
-            justifyContent: "center",
-            gap: { xs: 2, md: 4 }, // Add spacing between images
-            px: { xs: 2, md: 0 }, // Add padding to prevent cropping on small screens
+            justifyContent: "center"
           }}
         >
           {[
@@ -119,24 +117,20 @@ export default function AboutVision() {
             "partner_global_citizen",
             "partner_gse1",
             "partner_telos-x",
-            "partner_un-digital-library",
+            "partner_un-digital-library"
           ].map((logo) => (
             <m.div key={logo} variants={varFade().inUp}>
               <Image
                 alt={logo}
                 src={`/assets/images/about/${logo}.png`}
-                width={100} // Set a max width for mobile
-                height={50} // Ensure proportional scaling
-                style={{
-                  objectFit: "contain", // Prevent cropping
-                  maxWidth: "100%", // Responsive width
-                  height: "auto", // Keep aspect ratio
+                sx={{
+                  m: { xs: 1.5, md: 3 },
+                  height: { xs: 32, md: 74 }
                 }}
               />
             </m.div>
           ))}
         </Box>
-
       </Box>
 
       <Box
