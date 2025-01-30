@@ -105,7 +105,7 @@ export default function AboutVision() {
           sx={{
             bottom: { xs: 24, md: 30 },
             width: "100%",
-            display: "flex",            
+            display: "flex",
             alignItems: "center",
             position: "absolute",
             justifyContent: "center"
@@ -122,9 +122,11 @@ export default function AboutVision() {
               <Image
                 alt={logo}
                 src={`/assets/images/about/${logo}.png`}
+                // height={{ xs: 32, md: 74 }}
                 sx={{
                   m: { xs: 1.5, md: 3 },
-                  height: { xs: 32, md: 74 }
+
+                  height: { xs: 28, md: 74 }
                 }}
               />
             </m.div>
