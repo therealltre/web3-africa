@@ -54,7 +54,7 @@ export default function PartnershipAbout() {
         },
         {
             name: "Bank Of Ghana",
-            logo:"/assets/images/home/bank-of-ghana.png",
+            logo: "/assets/images/home/bank-of-ghana.png",
             description:
                 "Telos Crypto Exchange provides secure and scalable cryptocurrency solutions tailored for the African market.",
         },
@@ -89,7 +89,7 @@ export default function PartnershipAbout() {
                             spacing={1}
                             sx={{ justifyContent: "center", mb: 5 }}
                         >
-                            <Typography variant="h2">Our Current</Typography>
+                            <Typography variant="h2">Our </Typography>
                             <Typography
                                 variant="h2"
                                 sx={{
@@ -100,7 +100,7 @@ export default function PartnershipAbout() {
                                     fontWeight: 600,
                                 }}
                             >
-                                Partnership
+                                Partnerships
                             </Typography>
                         </Stack>
                     </Grid>

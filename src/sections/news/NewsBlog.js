@@ -18,7 +18,6 @@ import NextLink from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-
 // ----------------------------------------------------------------------
 
 const RootStyle = styled(m.div)(({ theme }) => ({
@@ -33,7 +32,6 @@ const RootStyle = styled(m.div)(({ theme }) => ({
     display: "flex",
     alignItems: "center"
   }
-
 }));
 
 const ContentStyle = styled((props) => <Stack {...props} />)(({ theme }) => ({
@@ -47,7 +45,6 @@ const ContentStyle = styled((props) => <Stack {...props} />)(({ theme }) => ({
   padding: theme.spacing(10, 2),
   [theme.breakpoints.up("md")]: {
     textAlign: "start",
-    // padding: theme.spacing(15)
   }
 }));
 
@@ -61,7 +58,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     cursor: "pointer",
     position: "relative", // Enable positioning for overlay
     border: 0,
-    maxWidth: 668,
+    maxWidth: "100%",
     minWidth: 358,
     minHeight: 200,
     maxHeight: 480,
@@ -74,8 +71,6 @@ const CardStyle = styled(Card)(({ theme }) => {
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
       backgroundColor: "#fff"
-      //   backgroundColor:
-      //     theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -1 }
@@ -112,12 +107,6 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   right: 0,
   padding: theme.spacing(3),
   background: `linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent)`,
-
-  // background: `linear-gradient(to top, ${theme.palette.grey[900]} 0%,${alpha(
-  //   theme.palette.grey[900],
-  //   0
-  // )} 100%)`,
-
   color: theme.palette.common.white
 }));
 
@@ -243,7 +232,6 @@ export default function NewsBlog() {
               </m.div>
             </Box>
 
-
             <Grid container spacing={2}>
               {/* Video Player */}
               <Grid item xs={12} md={8}>
@@ -283,8 +271,8 @@ export default function NewsBlog() {
                     maxHeight: 450, // Set maximum height
                     overflowY: "auto", // Enable scrolling
                     boxShadow: "none", // Remove box shadow
-                    border: `1px solid ${theme.palette.divider}`, // Optional: Add a subtle border
-                    // borderRadius: theme.shape.borderRadius, // Optional: Rounded corners
+                    border: `1px solid ${theme.palette.divider}`,
+                    borderRadius: theme.shape.borderRadius, // Optional: Rounded corners
                   }}
                 >
                   <Typography
@@ -331,10 +319,8 @@ export default function NewsBlog() {
           </ContentStyle>
 
           {/* Section 2 */}
-
           <Container>
-            <ContentStyle
-            >
+            <ContentStyle>
               <Grid container spacing={4}>
                 {/* Left - News Grid */}
                 <Grid item xs={12} md={8}>
@@ -348,7 +334,6 @@ export default function NewsBlog() {
                       <Stack
                         direction={{ xs: "column", md: "row" }}
                         spacing={1}
-                      // sx={{ justifyContent: "start" }}
                       >
                         <Typography variant="h2">News</Typography>
                         <Typography
@@ -378,6 +363,7 @@ export default function NewsBlog() {
                         xs: "repeat(1, 1fr)",
                         md: "repeat(1, 1fr)",
                       },
+                      mx: 'auto',
                       height: "600px", // Set fixed height
                       overflowY: "auto", // Allow vertical scrolling
                     }}
@@ -440,7 +426,6 @@ export default function NewsBlog() {
                       </m.div>
                     ))}
                   </Box>
-
                 </Grid>
 
                 {/* Right - Announcement Section */}
@@ -466,30 +451,21 @@ export default function NewsBlog() {
                     <Stack spacing={3}>
                       {announcements.map((announcement, index) => (
                         <Box key={index}>
-                          <NextLink href={announcement.href} passHref style={{ textDecoration: "none" }}>
-                            <Link underline="none">
-                              <Typography variant="h6" fontWeight="bold" sx={{ cursor: "pointer" }}>
-                                {announcement.title}
-                              </Typography>
-                            </Link>
-                          </NextLink>
-                          <Typography variant="body2" >
+                          <Typography variant="h6">{announcement.title}</Typography>
+                          <Typography variant="body2" color="text.secondary">
                             {announcement.description}
                           </Typography>
-                          {index < announcements.length - 1 && <Divider />}
+                          <Divider sx={{ my: 2 }} />
                         </Box>
                       ))}
                     </Stack>
                   </Card>
-
                 </Grid>
               </Grid>
             </ContentStyle>
           </Container>
-
-
-        </Container >
-      </RootStyle >
-    </MotionContainer >
+        </Container>
+      </RootStyle>
+    </MotionContainer>
   );
 }
