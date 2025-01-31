@@ -140,7 +140,7 @@ export default function MainFooter() {
             color: 'common.white'
           }}
         >
-          © 2024. All rights reserved Web3AfricaGroup
+          © 2025. All rights reserved Web3AfricaGroup
         </Typography>
       </Container>
     </RootStyle>
