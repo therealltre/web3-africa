@@ -19,7 +19,7 @@ const _carouselsMembers = [
     id: "member-1",
     name: "Del Titus Bawuah ",
     role: "Chief Executive Officer",
-    avatar: "/assets/images/avatars/user-avatar.jpg"
+    avatar: "/assets/images/about/Del.png"
   },
   {
     id: "member-2",
@@ -49,7 +49,7 @@ const _carouselsMembers = [
     id: "member-6",
     name: "Baiden Bryan Ekow ",
     role: "Head of Communities",
-    avatar: "/assets/images/avatars/avatar_6.jpg"
+    avatar: "/assets/images/about/Baiden.png"
   }
 ];
 

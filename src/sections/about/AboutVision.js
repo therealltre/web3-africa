@@ -127,6 +127,7 @@ export default function AboutVision() {
                   m: { xs: 2, md: 3 },
 
                   height: { md: 74 }
+                  // height: { xs: 30, md: 74 }
                 }}
               />
             </m.div>
