@@ -37,7 +37,7 @@ const _carouselsMembers = [
     id: "member-4",
     name: "Chantel Bawuah ",
     role: "Chief of Staff ",
-    avatar: "/assets/images/avatars/avatar_4.jpg"
+    avatar: "/assets/images/about/3.png"
   },
   {
     id: "member-5",
