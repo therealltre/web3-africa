@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 // ----------------------------------------------------------------------
 
 const IMAGES = Array.from({ length: 6 }, (_, index) => ({
-    src: `/assets/images/covers/cover_${index + 1}.jpg`,
+    src: `/assets/images/covers/cover_${index + 1}.jpeg`,
     alt: `Cover Image ${index + 1}`,
 }));
 
