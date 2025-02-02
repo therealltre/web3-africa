@@ -31,7 +31,7 @@ const _carouselsMembers = [
     id: "member-3",
     name: "Patrick Kingsley",
     role: "Chief Policy Office ",
-    avatar: "/assets/images/avatars/user-avatar3.jpg"
+    avatar: "/assets/images/about/Patrick.png"
   },
   {
     id: "member-4",
@@ -43,7 +43,7 @@ const _carouselsMembers = [
     id: "member-5",
     name: "Maxwell Sarfo",
     role: "Executive(s) Assistant",
-    avatar: "/assets/images/avatars/avatar_5.jpg"
+    avatar: "/assets/images/avatars/user-avatar.jpg"
   },
   {
     id: "member-6",
