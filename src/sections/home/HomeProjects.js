@@ -170,7 +170,7 @@ export default function HomeProjects() {
             </Stack>
           </m.div>
 
-          <m.div variants={varFade().inUp}>
+          {/* <m.div variants={varFade().inUp}>
             <Typography
               variant="body1"
               sx={{
@@ -184,7 +184,7 @@ export default function HomeProjects() {
               eu malesuada montes in dui. Lectus diam auctor donec euismod
               semper. In tortor dictum sit cursus vulputate non.
             </Typography>
-          </m.div>
+          </m.div> */}
         </Box>
 
         <Box
