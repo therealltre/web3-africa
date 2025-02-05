@@ -1,19 +1,51 @@
 import { m } from "framer-motion";
 // @mui
 import { alpha, useTheme, styled } from "@mui/material/styles";
-import { Box, Button, Card, Container, Link, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  Typography
+} from "@mui/material";
 // components
 import Image from "../../components/Image";
 import { MotionViewport, varFade } from "../../components/animate";
+import { Icon } from "@iconify/react";
 import NextLink from "next/link";
-
 // ----------------------------------------------------------------------
+
+const CARDS = [
+  {
+    imageUrl: "/assets/images/home/ellipse-red.svg",
+    title: "Technology",
+    description:
+      " Implementing blockchain solutions that foster financial inclusion and economic growth. ",
+    // href: "#contact"
+  },
+  {
+    imageUrl: "/assets/images/home/ellipse-yellow.svg",
+    title: "Policy & Advocacy",
+    description:
+      " Working with regulators to develop progressive policies for blockchain adoption.",
+    // href: "#about"
+  },
+  {
+    imageUrl: "/assets/images/home/ellipse-green.svg",
+    title: "Education",
+    description:
+      "Equipping individuals and organizations with the knowledge to thrive in Web 3 ecosystems.",
+    // href: "#"
+  }
+];
+
+const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
 const RootStyle = styled("div")(({ theme }) => ({
   paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(15),
-  // backgroundImage: `url('/assets/images/home/african-warrior-dance.png')`, // Replace with the actual path of your image
-  // backgroundRepeat: "no-repeat",
   [theme.breakpoints.up("md")]: {
     paddingBottom: theme.spacing(15)
   }
@@ -27,16 +59,20 @@ const CardStyle = styled(Card)(({ theme }) => {
 
   return {
     border: 0,
-    maxWidth: 365,
-    minHeight: 227,
+    // maxWidth: 365,
+    width: "100%",
+    height: "100%",
+    minHeight: 200,
     margin: "auto",
-    textAlign: "center",
+    textAlign: "start",
     padding: theme.spacing(5, 5, 5),
     boxShadow: theme.customShadows.z12,
+    backgroundColor: "#181A20",
+    color: '#fff',
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor:
-        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+      backgroundColor: "#181A20",
+      color: '#fff'
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -44,7 +80,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     "&.cardCenter": {
       [theme.breakpoints.up("md")]: {
         marginTop: -80,
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: theme.palette.background.default,
         boxShadow: `-40px 40px 80px 0 ${shadowCard(0.4)}`,
         "&:before": {
           top: 0,
@@ -58,7 +94,7 @@ const CardStyle = styled(Card)(({ theme }) => {
           width: "calc(100% - 40px)",
           height: "calc(100% - 40px)",
           borderRadius: Number(theme.shape.borderRadius) * 2,
-          backgroundColor: theme.palette.background.paper,
+          backgroundColor: "#fff",
           boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
         }
       }
@@ -66,56 +102,14 @@ const CardStyle = styled(Card)(({ theme }) => {
   };
 });
 
-// Image Wrapper for overlay styling
-const ContentWrapper = styled(Box)(({ theme }) => ({
-  position: "absolute",
-  bottom: 0,
-  left: 0,
-  right: 0,
-  padding: theme.spacing(3),
-  background: `linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent)`,
-
-  // background: `linear-gradient(to top, ${theme.palette.grey[900]} 0%,${alpha(
-  //   theme.palette.grey[900],
-  //   0
-  // )} 100%)`,
-
-  color: theme.palette.common.white
-}));
-
-const CARDS = [
-  {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Blockchain 101",
-    href: "#1",
-    description:
-      "The set is built on the principles of the atomic design system. It helps you to create projects fastest and easily customized packages for your projects."
-  },
-  {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "Block Chain Development",
-    href: "#2",
-    description:
-      "Easy to customize and extend each component, saving you time and money."
-  },
-  {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Modeling",
-    href: "#3",
-    description:
-      "Consistent design in colors, fonts ... makes brand recognition easy."
-  },
-  {
-    icon: "/assets/images/home/card-image-placeholder.png",
-    title: "AI Structuring",
-    href: "#4",
-    description:
-      "Consistent design in colors, fonts ... makes brand recognition easy."
-  }
+const IMAGE_POSITIONS = [
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 500 } },
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 900 } },
+  { top: { xs: 590, md: 530 }, left: { xs: 50, md: 1300 } }
 ];
 // ----------------------------------------------------------------------
 
-export default function HomeAboutWeb3AG() {
+export default function HomeAbout() {
   const theme = useTheme();
 
   const isLight = theme.palette.mode === "light";
@@ -129,160 +123,124 @@ export default function HomeAboutWeb3AG() {
           backgroundRepeat: "no-repeat",
           backgroundSize: "contain",
           backgroundPosition: "right",
+          // position: "absolute",
+          // height: "60vh",
           padding: theme.spacing(2, 2)
         }}
       >
         <Box
           sx={{
-            textAlign: "start",
+            textAlign: "center",
             mb: { xs: 10, md: 10 }
           }}
         >
           <m.div variants={varFade().inUp}>
-            <Typography variant="h1">ABOUT US</Typography>
-          </m.div>
-
-          <m.div variants={varFade().inUp}>
             <Typography
-              variant="body2"
-              sx={{ width: { xs: 300, lg: 745 }, marginTop: 2 }}
+              component="div"
+              variant="overline"
+              sx={{ mb: 2, color: "text.disabled" }}
             >
-              Web3 Africa Group (W3AG) is a visionary organization committed to
-              spearheading the decentralized digital revolution across Africa.
-              As the parent company of various Web 3 hubs across the continent,
-              W3AG aims to establish innovation centers that will drive
-              education, policy advocacy, and community development in the Web 3
-              ecosystem. Our flagship hub, Web 3 Accra (W3A), based in Ghana,
-              serves as a pioneering incubator and a launchpad for
-              entrepreneurs, creators, and innovators within the decentralized
-              space.
+              Web3AfricaGroup
             </Typography>
-
-            <NextLink href={"/about-us"} passhref="true">
-              <Link>
-                <Button
-                  variant="contained"
-                  sx={{
-                    position: "relative",
-                    overflow: "hidden",
-                    backgroundColor: "#fff",
-                    marginTop: 2,
-                    color: "#060606",
-                    border: "2px solid transparent", // Ensures a default border is present
-                    borderRadius: 1, // Border radius stays consistent
-                    transition:
-                      "color 0.3s ease, background-color 0.3s ease, transform 0.3s ease",
-                    "&:hover": {
-                      color: "#fff", // Text color changes to white on hover
-
-                      borderRadius: 1, // Border radius stays consistent
-                      backgroundColor: "#6ADD0B", // Background changes to black
-                      transform: "translateY(-5px)" // Moves the button up by 5px on hover
-                    }
-                  }}
-                >
-                  More About Us
-                </Button>
-              </Link>
-            </NextLink>
           </m.div>
-        </Box>
 
-        <Box
-          sx={{
-            display: "grid",
-            gap: { xs: 4, md: 3 },
-            gridTemplateColumns: {
-              xs: "repeat(1, 1fr)",
-              md: "repeat(2, 1fr)",
-              lg: "repeat(3, 1fr)"
-            }
-          }}
-        >
-          {CARDS.map((card, index) => (
-            <m.div key={card.title} variants={varFade().inUp}>
-              <NextLink href={card.href} passHref>
-                <Link
-                  underline="none"
-                  sx={{
-                    textDecoration: "none",
-                    display: "block",
-                    cursor: "pointer"
-                  }}
-                >
-                  <CardStyle
-                    sx={{
-                      maxWidth: { xs: "100%", sm: 360, md: 400, lg: 640 },
-                      padding: { xs: 3, md: 5 },
-                      transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                      "&:hover": {
-                        color: "#fff", // Text color changes to white on hover
-                        borderRadius: 1, // Border radius stays consistent
-                        transform: "translateY(-5px)", // Moves the card up by 5px
-                        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                      }
-                    }}
-                  >
-                    <Image
-                      src={card.icon}
-                      alt={card.title}
-                      sx={{
-                        position: "absolute",
-                        top: 0,
-                        left: 0,
-                        width: "100%",
-                        height: "100%",
-                        objectfit: "cover" // Ensure the image covers the card
-                      }}
-                    />
+          <m.div variants={varFade().inDown}>
+            <Stack
+              direction={"row"}
+              spacing={1}
+              sx={{ justifyContent: "center" }}
+            >
+              <Typography variant="h2">Why</Typography>
+              <Typography
+                variant="h2"
+                sx={{
+                  backgroundcolor: "primary",
+                  backgroundImage: `linear-gradient(45deg, #FF8C42 , #02735E)`,
+                  backgroundSize: "100%",
+                  backgroundRepeat: "repeat",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  fontWeight: 600
+                }}
+              >
+                Blockchain?
+              </Typography>
+            </Stack>
+          </m.div>
 
-                    <ContentWrapper sx={{ textAlign: "start" }}>
-                      <Typography variant="h5" paragraph>
-                        {card.title}
-                      </Typography>
-                      <Typography variant="body2">
-                        {card.description}
-                      </Typography>
-                    </ContentWrapper>
-                  </CardStyle>
-                </Link>
-              </NextLink>
+          <Box
+            sx={{
+              // display: "flex",
+              // justifyContent: "center",
+              padding: 2, // Reduced padding
+              maxWidth: 700, // Limit the maximum width of the Box
+              margin: "auto" // Center align within its container
+            }}
+          >
+            <m.div variants={varFade().inDown}>
+              <Typography
+                variant="body1" // Use a smaller typography variant
+                sx={{
+                  fontWeight: "regular",
+                  lineHeight: 1.5 // Set a comfortable line height
+                }}
+              >
+                Web 3 technologies—blockchain, decentralized finance (DeFi), tokenization, and digital identity
+                allow Africa to leapfrog traditional barriers in finance, governance, and innovation.
+              </Typography>
             </m.div>
-          ))}
+            <m.div variants={varFade().inDown}>
+              <Typography
+                variant="body1" // Use a smaller typography variant
+                sx={{
+                  fontWeight: "regular",
+                  lineHeight: 1.5,
+                  mt: 2
+                }}
+              >
+                However, widespread adoption requires accessible, high-quality education that demystifies
+                these innovations and showcases their real-world applications.
+              </Typography>
+            </m.div>
+            <m.div variants={varFade().inDown}>
+              <Typography
+                variant="body1" // Use a smaller typography variant
+                sx={{
+                  fontWeight: "regular",
+                  lineHeight: 1.5,
+                  mt: 2
+                }}
+              >
+                W3A ensures these technologies are accessible, understood, and used to create economic
+                opportunities.
+              </Typography>
+            </m.div>
+          </Box>
         </Box>
 
-        {/* right */}
-        <Box
-          sx={{
-            textAlign: "end",
-            mb: { xs: 10, md: 10 }
-          }}
-        >
-          {/* <BgImage /> */}
-          <m.div variants={varFade().inUp}>
-            <Typography variant="h1">WHY W3A?</Typography>
-          </m.div>
-
-          <m.div variants={varFade().inUp}>
-            <Typography
-              variant="body2"
+        {IMAGE_POSITIONS.map((pos, index) => (
+          <m.div key={`image-${index}`} variants={varFade().inUp}>
+            <Image
+              key={index}
+              src={`/assets/images/home/button-${index + 1}.png`} // Dynamically use button-1, button-2, button-3
               sx={{
-                width: { xs: 300, lg: 745 },
-                marginTop: 2,
-                textAlign: "end",
-                display: "inline-block",
-                justifyContent: "center"
+                position: "absolute",
+                top: pos.top,
+                left: pos.left,
+                width: "90px",
+                height: "90px",
+                display: { xs: "none", lg: "block" },
+                transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                "&:hover": {
+                  transform: "translateY(-5px)"
+                }
               }}
-            >
-              Lorem ipsum dolor sit amet consectetur. Mi in maecenas sodales
-              velit molestie pharetra id consequat. Viverra bibendum id diam id
-              eu malesuada montes in dui. Lectus diam auctor donec euismod
-              semper. In tortor dictum sit cursus vulputate non.
-            </Typography>
+            />
           </m.div>
-        </Box>
+        ))}
+
       </Container>
-      {/* <Box sx={{ height: { md: "100vh" } }} /> */}
     </RootStyle>
   );
 }

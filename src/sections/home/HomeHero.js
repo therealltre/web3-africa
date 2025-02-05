@@ -201,10 +201,10 @@ export default function HomeHero() {
         <HomeTrustedBy />
         <HomeAbout />
         <HomeCryptoPrices />
-        {/* <HomeAboutWeb3AG /> */}
         <HomeEducation />
         <HomeCommunity />
         <HomeProjects />
+        <HomeAboutWeb3AG />
         <HomeFocusAreas />
         <HomeKeyMarkets />
 
