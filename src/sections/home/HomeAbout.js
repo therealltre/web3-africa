@@ -186,13 +186,10 @@ export default function HomeAbout() {
                   lineHeight: 1.5 // Set a comfortable line height
                 }}
               >
-                At Web3 Africa Group, our mission is to drive Africa's digital
-                transformation by establishing a network of Web 3 hubs that
-                foster innovation, education, and policy development. <br />
-                We are dedicated to empowering entrepreneurs, creators, and
-                communities with the tools and knowledge needed to thrive in the
-                decentralized economy, while shaping a sustainable and inclusive
-                digital future for the continent.
+                Africa stands at the edge of a digital revolution. At Web 3 Africa Group (W3A), we are leading
+                this transformation by harnessing blockchain technology, fostering policy innovation, and
+                empowering individuals through education. <br />
+                Our goal? A decentralized, inclusive, and economically empowered Africa.
               </Typography>
             </m.div>
           </Box>

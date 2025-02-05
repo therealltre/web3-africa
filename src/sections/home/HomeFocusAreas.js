@@ -187,7 +187,7 @@ export default function HomeFocusAreas() {
                                         flexDirection: "column",
                                         borderRadius: 2,
                                         overflow: "hidden",
-                                        height: {xs: 'auto', md: 'auto' ,lg: 700},
+                                        height: { xs: 'auto', md: 'auto', lg: 700 },
                                         backgroundColor: '#181A20',
                                         color: 'common.white',
                                         transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
@@ -219,52 +219,6 @@ export default function HomeFocusAreas() {
                         </Grid>
                     ))}
                 </Grid>
-
-                <Card sx={{
-                    mt: 4, spacing: 2, width: 'auto', transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
-                    "&:hover": {
-                        borderRadius: 2, // Border radius stays consistent
-                        transform: "translateY(-5px)", // Moves the card up by 5px
-                        boxShadow: "0 8px 20px rgba(0, 0, 0, 0.15)" // Adds a subtle shadow for depth
-                    }
-                }}>
-                    <CardContent>
-                        <Stack container spacing={2}>
-                            <m.div variants={varFade().inLeft}>
-                                <Typography
-                                    variant="h5"
-                                    sx={{
-                                        width: { xs: "100%", md: "100%" },
-
-                                    }}
-                                >
-                                    Africa’s Time is Now
-                                </Typography>
-                            </m.div>
-
-                            <m.div variants={varFade().inLeft}>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        width: { xs: "100%", md: "100%" },
-                                    }}
-                                >
-                                    The world is shifting toward decentralization, tokenized economies, and digital sovereignty—and Africa cannot afford to be left behind. Web 3 Africa Group is here to ensure that Africa is not just a participant in this revolution, but a global leader.
-                                </Typography>
-                            </m.div>
-                            <m.div variants={varFade().inDown}>
-                                <Typography
-                                    variant="body1"
-                                    sx={{
-                                        width: { xs: "100%", md: "80%" },
-                                    }}
-                                >
-                                    Through technology, policy, and education, we are paving the way for a digitally empowered Africa—one that is built on innovation, economic freedom, and sustainable growth.
-                                </Typography>
-                            </m.div>
-                        </Stack>
-                    </CardContent>
-                </Card>
             </Container>
         </RootStyle>
     );

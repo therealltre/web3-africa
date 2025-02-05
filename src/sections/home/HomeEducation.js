@@ -203,7 +203,9 @@ export default function HomeEducation() {
                   width: { xs: "100%", md: "80%" }
                 }}
               >
-                At Web 3 Africa Group, we believe that education and awareness are the cornerstones of Africa’s digital and economic transformation. Our mission is to empower individuals, businesses, and policymakers with the knowledge and skills needed to navigate and leverage the decentralized economy.
+                Education is key to Web 3 adoption and digital transformation. We provide accessible, high
+                quality training to ensure that businesses, entrepreneurs, developers, and policymakers
+                understand and harness the power of blockchain.
               </Typography>
             </m.div>
 
