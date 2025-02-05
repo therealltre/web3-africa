@@ -260,7 +260,7 @@ export default function HomeAboutWeb3AG() {
         >
           {/* <BgImage /> */}
           <m.div variants={varFade().inUp}>
-            <Typography variant="h1">WHY CHOOSE US</Typography>
+            <Typography variant="h1">WHY W3A?</Typography>
           </m.div>
 
           <m.div variants={varFade().inUp}>

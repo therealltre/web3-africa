@@ -40,6 +40,18 @@ export default function SocialsButton({ initialColor = false, simple = true, lin
       socialColor: '#00AAEC',
       path: links.twitter || 'https://x.com/web3africagroup',
     },
+    {
+      name: 'Youtube',
+      icon: 'si:youtube-fill',
+      socialColor: '#00AAEC',
+      path: links.twitter || 'https://www.youtube.com/@Web3africagroup',
+    },
+    {
+      name: 'LinkedIn',
+      icon: 'lineicons:linkedin',
+      socialColor: '#00AAEC',
+      path: links.twitter || 'https://www.linkedin.com/company/web3-africa-group/',
+    },
   ];
 
   return (

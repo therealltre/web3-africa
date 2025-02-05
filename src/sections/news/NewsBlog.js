@@ -165,7 +165,7 @@ const newsCards = [
     description:
       "at EDCON 2024 in Japan alongside 24 other global leaders, hosted by Vitalik Buterin and the Ethereum Foundation.",
     href: "https://www.youtube.com/live/7dPKrzSVUTs",
-    image: "/assets/images/news/blog-4.png",
+    image: "/assets/images/news/blog-4.jpeg",
     date: 'March 4, 2023',
   }
 ];

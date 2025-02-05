@@ -37,7 +37,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     // maxWidth: 365,
     width: "100%",
     // height: "100%",
-    height: 450,
+    height: 'auto',
     margin: "auto",
     textAlign: "start",
     padding: theme.spacing(5, 5, 5),
@@ -105,26 +105,35 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
 const CARDS = [
   {
     backgroundImage: "/assets/images/home/blockchain-development.svg",
-    title: "Blockchain Development",
+    title: "Bridging the Knowledge Gap",
     href: "#1",
     description:
-      "Leading the development of decentralized infrastructure across Africa, Web 3 Africa Group builds scalable blockchain solutions to enhance transparency, efficiency, and financial inclusion. Our innovative technologies aim to drive Africa’s digital transformation and economic growth."
+      "Web 3 technologies—blockchain, decentralized finance (DeFi), tokenization, and digital identity—offer Africa an unprecedented opportunity to leapfrog traditional financial and technological barriers. However, widespread adoption requires accessible, high-quality education that demystifies these innovations and showcases their real-world applications."
   },
   {
     backgroundImage: "/assets/images/home/digital-assets.svg",
-    title: "Digital Assets Policy Frameworks",
+    title: "Our Approach",
     href: "#2",
-    description:
-      "Partnering with governments and policymakers, we strive to establish robust legal frameworks that encourage innovation while ensuring regulatory compliance. Our mission is to legitimize digital assets in Africa, positioning the continent as a global leader in the decentralized economy."
+    description: {
+      intro: "We are committed to building a Web 3-literate continent through:",
+      points: [
+        "Workshops & Training Programs – Hands-on learning experiences tailored for entrepreneurs, developers, and creatives.",
+        "Policy & Regulatory Awareness – Equipping governments and institutions with the insights to create progressive Web 3 policies.",
+        "University & Institutional Partnerships – Integrating Web 3 education into curricula to foster the next generation of blockchain leaders.",
+        "Public Engagement & Media Initiatives – Utilizing content, podcasts, and digital campaigns to inform and inspire communities."
+      ]
+    }
   },
   {
     backgroundImage: "/assets/images/home/blockchain-education.svg",
-    title: "Blockchain Education",
+    title: "A Decentralized Future Starts with Knowledge",
     href: "#3",
     description:
-      "Web 3 Africa Group is dedicated to equipping individuals with essential knowledge and skills for success in blockchain and digital asset industries. Through partnerships and educational initiatives, we lay the foundation for a new generation of African innovators and leaders in Web 3."
+      "We envision an Africa where Web 3 is not just understood, but actively harnessed to drive financial inclusion, innovation, and digital sovereignty. Through strategic education and awareness, we aim to bridge the gap between potential and impact, ensuring that Africa leads the charge in the decentralized revolution."
   }
 ];
+
+
 
 const shadowIcon = (color) => `drop-shadow(2px 2px 2px ${alpha(color, 0.48)})`;
 
@@ -186,6 +195,7 @@ export default function HomeEducation() {
               </Stack>
             </m.div>
 
+
             <m.div variants={varFade().inUp}>
               <Typography
                 variant="body1"
@@ -193,12 +203,22 @@ export default function HomeEducation() {
                   width: { xs: "100%", md: "80%" }
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur. Mi in maecenas sodales
-                velit molestie pharetra id consequat. Viverra bibendum id diam
-                id eu malesuada montes in dui. Lectus diam auctor donec euismod
-                semper. In tortor dictum sit cursus vulputate non.
+                At Web 3 Africa Group, we believe that education and awareness are the cornerstones of Africa’s digital and economic transformation. Our mission is to empower individuals, businesses, and policymakers with the knowledge and skills needed to navigate and leverage the decentralized economy.
               </Typography>
             </m.div>
+
+            <m.div variants={varFade().inLeft}>
+              <Typography
+                variant="body1"
+                sx={{
+                  width: { xs: "100%", md: "80%", },
+                  mt: 2
+                }}
+              >
+                Join us in shaping an informed and empowered Web 3 Africa
+              </Typography>
+            </m.div>
+
           </Box>
         </Box>
 
@@ -224,7 +244,7 @@ export default function HomeEducation() {
           }}
         >
           {CARDS.map((card, index) => (
-            <Grid item xs={12} lg={4} key={index}>
+            <Grid item xs={12} lg={6} key={index}>
               <m.div variants={varFade().inUp}>
                 <CardStyle
                   sx={{
@@ -260,6 +280,7 @@ export default function HomeEducation() {
                   >
                     {card.title}
                   </Typography>
+
                   <Typography
                     variant="body1"
                     sx={{
@@ -267,8 +288,23 @@ export default function HomeEducation() {
                       textAlign: "start"
                     }}
                   >
-                    {card.description}
+                    {typeof card.description === "object" ? (
+                      <>
+                        <Typography variant="body1" fontWeight="bold">
+                          {card.description.intro}
+                        </Typography>
+                        <ul style={{ paddingLeft: "20px", marginTop: "8px" }}>
+                          {card.description.points.map((point, idx) => (
+                            <li key={idx} style={{ marginBottom: "6px" }}>{point}</li>
+                          ))}
+                        </ul>
+                      </>
+                    ) : (
+                      card.description
+                    )}
                   </Typography>
+
+
 
 
                 </CardStyle>

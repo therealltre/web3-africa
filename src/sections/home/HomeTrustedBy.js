@@ -63,7 +63,6 @@ export default function TrustedBy() {
     "/assets/images/home/bank-of-ghana.png",
     "/assets/images/home/gse.png",
     "/assets/images/home/telos-x.png",
-    "/assets/images/home/un-digital-library.png",
     "/assets/images/home/global_citizen.png",
   ];
 

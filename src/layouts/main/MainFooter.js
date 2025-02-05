@@ -78,9 +78,9 @@ export default function MainFooter() {
             </NextLink>
           </Grid>
           <Grid item xs={8} md={4}>
-            <Typography variant="body2" sx={{ pr: { md: 5 }, color: 'common.white' }}>
+            {/* <Typography variant="body2" sx={{ pr: { md: 5 }, color: 'common.white' }}>
               A little description here about the website
-            </Typography>
+            </Typography> */}
 
             <Stack
               direction="row"

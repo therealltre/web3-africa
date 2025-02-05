@@ -70,12 +70,7 @@ export default function PartnershipAbout() {
             description:
                 "Telos Crypto Exchange provides secure and scalable cryptocurrency solutions tailored for the African market.",
         },
-        {
-            name: "United Nations Digital Library",
-            logo: "/assets/images/home/un-digital-library.png",
-            description:
-                "Telos Crypto Exchange provides secure and scalable cryptocurrency solutions tailored for the African market.",
-        },
+
     ];
 
     return (
