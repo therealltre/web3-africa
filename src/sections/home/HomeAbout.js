@@ -21,23 +21,23 @@ import NextLink from "next/link";
 const CARDS = [
   {
     imageUrl: "/assets/images/home/ellipse-red.svg",
-    title: "Empowering Africa’s Decentralized Future",
+    title: "Technology",
     description:
-      "At Web3 Africa Group, our mission is to drive Africa's digital transformation by establishing a network of Web 3 hubs..",
+      " Implementing blockchain solutions that foster financial inclusion and economic growth. ",
     // href: "#contact"
   },
   {
     imageUrl: "/assets/images/home/ellipse-yellow.svg",
-    title: "How Our Company Can Boost Your Business",
+    title: "Policy & Advocacy",
     description:
-      "We are the top digital marketing agency for  branding corp. We offer a full rang  engine ....",
+      " Working with regulators to develop progressive policies for blockchain adoption.",
     // href: "#about"
   },
   {
     imageUrl: "/assets/images/home/ellipse-green.svg",
-    title: "Our Core Values",
+    title: "Education",
     description:
-      "Leading the charge in developing and scaling digital solutions. Ensuring communities across Africa benefit from digital growth. Providing the tools and education needed for economic ...",
+      "Equipping individuals and organizations with the knowledge to thrive in Web 3 ecosystems.",
     // href: "#"
   }
 ];
@@ -62,7 +62,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     // maxWidth: 365,
     width: "100%",
     height: "100%",
-    minHeight: 300,
+    minHeight: 200,
     margin: "auto",
     textAlign: "start",
     padding: theme.spacing(5, 5, 5),
@@ -164,7 +164,7 @@ export default function HomeAbout() {
                   fontWeight: 600
                 }}
               >
-                Choose Us?
+                W3A?
               </Typography>
             </Stack>
           </m.div>

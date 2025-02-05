@@ -44,7 +44,7 @@ const CardStyle = styled(Card)(({ theme }) => {
     boxShadow: theme.customShadows.z12,
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
-      backgroundColor: "#fff"
+      backgroundColor: "#fff",
     },
     "&.cardLeft": {
       [theme.breakpoints.up("md")]: { marginTop: -40 }
@@ -238,7 +238,7 @@ export default function HomeEducation() {
             gap: { xs: 4, md: 3 },
             gridTemplateColumns: {
               xs: "repeat(1, 1fr)",
-              md: "repeat(2, 1fr)",
+              md: "repeat(1, 1fr)",
               lg: "repeat(3, 1fr)"
             }
           }}

@@ -78,18 +78,52 @@ export default function HomeCommunity() {
             </Stack>
           </m.div>
 
-          <m.div variants={varFade().inUp}>
-            <Typography
-              variant="body1"
-              sx={{
-                width: { xs: "100%", md: "80%" },
-                mx: "auto",
-                textAlign: "center"
-              }}
-            >
-              Join the movement shaping Africa’s digital future! At Web 3 Africa Group, we believe in the power of collective action to drive change and innovation. Whether you’re a blockchain enthusiast, a policymaker, an educator, or simply passionate about the transformative potential of decentralized technology, there’s a place for you in our mission. By getting involved, you’ll have the opportunity to contribute to groundbreaking blockchain development projects, advocate for progressive digital asset policies, and help build a robust education ecosystem that equips the next generation of African leaders. Be part of Africa’s leap into the global decentralized economy—connect, collaborate, and create with us.
-            </Typography>
-          </m.div>
+          <Box>
+            <m.div variants={varFade().inUp}>
+              <Typography
+                variant="body1"
+                sx={{
+                  width: { xs: "100%", md: "80%" },
+                  mx: "auto",
+                  textAlign: "center"
+                }}
+              >
+                As the world moves toward decentralization, tokenized economies, and digital sovereignty,
+                Africa must seize this opportunity to shape its own digital destiny. At Web 3 Africa Group, we
+                believe in the power of collective action to drive change and innovation. Whether you’re a
+                blockchain enthusiast, a policymaker, an educator, or simply passionate about the
+                transformative potential of decentralized technology, there’s a place for you in our mission.            </Typography>
+            </m.div>
+            <m.div variants={varFade().inUp}>
+              <Typography
+                variant="body1"
+                sx={{
+                  width: { xs: "100%", md: "80%" },
+                  mx: "auto",
+                  textAlign: "center",
+                  mt: 2
+                }}
+              >
+                Be part of Africa’s leap into the global decentralized economy - connect, collaborate, and
+                create with us!
+              </Typography>
+            </m.div>
+
+            <m.div variants={varFade().inUp}>
+              <Typography
+                variant="h6"
+                sx={{
+                  width: { xs: "100%", md: "80%" },
+                  mx: "auto",
+                  textAlign: "center",
+                  mt: 2
+                }}
+              >
+                Africa’s time is now. Let’s lead the revolution together!
+
+              </Typography>
+            </m.div>
+          </Box>
         </Box>
 
         {/* QR Code Section */}

@@ -179,7 +179,7 @@ export default function HomeFocusAreas() {
                 {/* Cards Section */}
                 <Grid container spacing={4}>
                     {CARDS.map((card, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Grid item xs={12} sm={6} md={12} lg={4} key={index}>
                             <m.div variants={varFade().inUp}>
                                 <Card
                                     sx={{
@@ -187,7 +187,7 @@ export default function HomeFocusAreas() {
                                         flexDirection: "column",
                                         borderRadius: 2,
                                         overflow: "hidden",
-                                        height: 700,
+                                        height: {xs: 'auto', md: 'auto' ,lg: 700},
                                         backgroundColor: '#181A20',
                                         color: 'common.white',
                                         transition: "transform 0.3s ease, box-shadow 0.3s ease", // Added box-shadow for a smooth hover effect
